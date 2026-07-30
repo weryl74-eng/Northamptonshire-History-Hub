@@ -1,133 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Northamptonshire History Hub</title>
-
-    <meta name="description" content="The digital gateway to Northamptonshire's history, heritage, museums, archives, history groups and historic places.">
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Northants History Network</title>
+  <meta name="description" content="Connecting Northamptonshire's past with today's community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-<header>
-
-    <div class="container">
-
-        <div class="logo-area">
-
-            <img src="images/nhn-logo.png"
-                 alt="Northants History Network Logo"
-                 class="logo">
-
-            <div>
-
-                <h1>Northamptonshire History Hub</h1>
-
-                <p class="tagline">
-                    Your gateway to the rich history of Northamptonshire
-                </p>
-
-            </div>
-
-        </div>
-
-        <nav>
-
-            <ul>
-
-                <li><a href="#">Home</a></li>
-
-                <li><a href="#">Explore</a></li>
-
-                <li><a href="#">History Groups</a></li>
-
-                <li><a href="#">Events</a></li>
-
-                <li><a href="#">Resources</a></li>
-
-                <li><a href="#">News</a></li>
-
-                <li><a href="#">About NHN</a></li>
-
-                <li><a href="#">Contact</a></li>
-
-            </ul>
-
-        </nav>
-
-    </div>
-
+<header class="topbar">
+  <div class="wrap header-grid">
+    <a class="identity" href="#home">
+      <img src="images/nhn-logo-green.jpg" alt="Northants History Network circular logo">
+      <div>
+        <strong>Northants<br>History<br>Network</strong>
+        <em>Connecting Northamptonshire's Past<br>with Today's Community</em>
+      </div>
+    </a>
+    <button class="menu-button" aria-expanded="false" aria-controls="main-menu">☰</button>
+    <nav id="main-menu">
+      <a class="selected" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#journey">Explore⌄</a>
+      <a href="#groups">History Groups</a>
+      <a href="#events">Events</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+      <span class="search">⌕</span>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-
-    <div class="overlay">
-
-        <div class="hero-content">
-
-            <h2>
-                Discover the Story of Northamptonshire
-            </h2>
-
-            <p>
-
-                Bringing together local history societies,
-                museums, archives, heritage organisations,
-                researchers and everyone with an interest in
-                Northamptonshire's remarkable past.
-
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#" class="button">
-                    Explore Historic Places
-                </a>
-
-                <a href="#" class="button secondary">
-                    Find History Groups
-                </a>
-
-                <a href="#" class="button">
-                    What's On
-                </a>
-
-            </div>
-
-        </div>
-
+<main>
+<section class="hero" id="home">
+  <div class="hero-layout">
+    <div class="hero-copy">
+      <h1>Northants History Network</h1>
+      <div class="flourish">— ❧ —</div>
+      <p>Connecting Northamptonshire's Past<br>with Today's Community</p>
+      <div class="hero-buttons">
+        <a href="#journey">✥ &nbsp; Explore Places</a>
+        <a href="#groups">♟ &nbsp; History Groups</a>
+        <a href="#events">▣ &nbsp; What's On</a>
+      </div>
     </div>
-
+    <div class="hero-picture" role="img" aria-label="Northampton Guildhall"></div>
+  </div>
 </section>
 
-<section class="welcome">
-
-    <div class="container">
-
-        <h2>Welcome</h2>
-
-        <p>
-
-            Whether you're researching your family history,
-            looking for a local history society,
-            planning a visit to one of Northamptonshire's
-            fascinating heritage sites,
-            or simply curious about the people and places that
-            shaped our county,
-            you've come to the right place.
-
-        </p>
-
+<section class="featured">
+  <div class="wrap featured-card">
+    <div class="featured-picture">
+      <span class="explorable">✥<br><b>EXPLORABLE<br>GAMES</b></span>
     </div>
-
+    <div class="featured-text">
+      <div class="compass">✣</div>
+      <p class="label">★ &nbsp; Featured Experience</p>
+      <h2>Step into Northampton in 1885</h2>
+      <p>Travel back in time and explore the streets of Victorian Northampton through an immersive digital walkthrough created by Explorable Games.</p>
+      <div class="actions">
+        <a class="solid" href="#">▶ &nbsp; Launch the Experience</a>
+        <a class="outline" href="#">About Explorable Games</a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="journey wrap" id="journey">
+  <h2><span>— ❧ —</span> Begin Your Journey <span>— ❧ —</span></h2>
+  <div class="card-grid">
+    <article class="journey-card">
+      <div class="photo castle"></div><div class="badge">♜</div>
+      <h3>Historic Places</h3><p>Discover castles, churches, heritage buildings and historic landscapes.</p><a href="#">Learn more →</a>
+    </article>
+    <article class="journey-card">
+      <div class="photo train"></div><div class="badge">♧</div>
+      <h3>Industrial Heritage</h3><p>Explore railways, canals, mills, factories and the stories of industry.</p><a href="#">Learn more →</a>
+    </article>
+    <article class="journey-card">
+      <div class="photo family"></div><div class="badge gold">♣</div>
+      <h3>Family History</h3><p>Find resources to help you research your Northamptonshire ancestors.</p><a href="#">Learn more →</a>
+    </article>
+    <article class="journey-card" id="groups">
+      <div class="photo meeting"></div><div class="badge">♟</div>
+      <h3>History Groups</h3><p>Connect with local societies and heritage organisations.</p><a href="#">Learn more →</a>
+    </article>
+    <article class="journey-card" id="events">
+      <div class="photo lecture"></div><div class="badge gold">▣</div>
+      <h3>Events</h3><p>Find talks, exhibitions, walks and activities across the county.</p><a href="#">Learn more →</a>
+    </article>
+    <article class="journey-card">
+      <div class="photo county"></div><div class="badge">●</div>
+      <h3>Explore the County</h3><p>Browse Northamptonshire by town, district or community.</p><a href="#">Learn more →</a>
+    </article>
+  </div>
+</section>
+
+<section class="columns wrap">
+  <section class="column">
+    <h2>What's Happening Across<br>Northamptonshire History</h2>
+    <div class="ornament">— ❧ —</div>
+    <article class="list-item"><div class="thumb abbey"></div><div><h3>Delapré Abbey Exhibition</h3><p>New exhibition explores 900 years of Delapré Abbey's history.</p></div><time>24<span>May</span></time></article>
+    <article class="list-item"><div class="thumb rail"></div><div><h3>Nene Valley Railway Gala</h3><p>Special steam gala weekend with visiting locomotives.</p></div><time>17<span>May</span></time></article>
+    <article class="list-item"><div class="thumb roman"></div><div><h3>Roman Finds at Leicester</h3><p>Fascinating new discoveries from local archaeological digs.</p></div><time>10<span>May</span></time></article>
+    <a class="all-link" href="#">View all news & stories →</a>
+  </section>
+
+  <section class="column">
+    <h2>Upcoming Events</h2><div class="ornament">— ❧ —</div>
+    <article class="event"><time><b>31</b><span>May</span></time><div><h3>Church Architecture Walk</h3><p>◷ 10:30am &nbsp; ● Northampton</p></div></article>
+    <article class="event"><time><b>7</b><span>Jun</span></time><div><h3>Local History Talk:<br>Northampton Castle</h3><p>◷ 7:00pm &nbsp; ● Towcester</p></div></article>
+    <article class="event"><time><b>14</b><span>Jun</span></time><div><h3>Industrial Heritage Day</h3><p>◷ 10:00am &nbsp; ● Wellingborough</p></div></article>
+    <a class="all-link" href="#">View all events →</a>
+  </section>
+
+  <section class="column">
+    <h2>Featured History Groups</h2><div class="ornament">— ❧ —</div>
+    <article class="society"><span class="seal red">NAS</span><div><h3>Northamptonshire Archaeological Society</h3><p>Promoting archaeology and heritage across the county.</p></div><a href="#">Visit website →</a></article>
+    <article class="society"><span class="seal grey">KHS</span><div><h3>Kettering Local History Society</h3><p>Researching and sharing the history of Kettering.</p></div><a href="#">Visit website →</a></article>
+    <article class="society"><span class="seal blue">WD</span><div><h3>Wellingborough & District Local History Society</h3><p>Discovering the people and places of Wellingborough's past.</p></div><a href="#">Visit website →</a></article>
+    <a class="all-link" href="#">View all history groups →</a>
+  </section>
+</section>
+
+<section class="community" id="about">
+  <div class="wrap community-grid">
+    <div class="community-text"><span class="people">♟</span><div><h2>Community Powered</h2><p>The Northants History Network is built by our community. History groups and organisations can submit their events, news and updates using simple online forms. Together we keep the story of Northamptonshire alive and thriving.</p></div></div>
+    <div class="submit-links">
+      <a href="#"><b>♟</b>Add Your<br>History Group</a>
+      <a href="#"><b>▣</b>Submit<br>an Event</a>
+      <a href="#"><b>▤</b>Submit<br>a News Story</a>
+      <a href="#"><b>▧</b>Share Your<br>Photos</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap footer-grid">
+    <div class="footer-brand"><img src="images/nhn-logo-green.jpg" alt=""><div><h2>Northants<br>History<br>Network</h2><em>Connecting Northamptonshire's Past<br>with Today's Community</em></div></div>
+    <div><h3>Quick Links</h3><a href="#about">About Us</a><a href="#journey">Explore Northamptonshire</a><a href="#">Interactive History</a><a href="#groups">History Groups Directory</a><a href="#events">Events Calendar</a><a href="#resources">Resources & Archives</a><a href="#contact">Contact Us</a></div>
+    <div id="resources"><h3>For Organisations</h3><a href="#">Add Your History Group</a><a href="#">Submit an Event</a><a href="#">Submit News</a><a href="#">Share Your Photos</a><a href="#">Partnerships</a><a href="#">Volunteers</a></div>
+    <div><h3>Stay Connected</h3><p>Join our mailing list for heritage news, events and stories.</p><input type="email" placeholder="Your email address"><button>Subscribe</button></div>
+    <div><h3>Contact</h3><p>✉ northantshistory@gmail.com</p><p>● Northants History Network<br>Northamptonshire, UK</p><p>f &nbsp; Find us on Facebook<br>Northants History Network<br>Community Group</p></div>
+  </div>
+  <div class="copyright">© 2026 Northants History Network. All rights reserved.</div>
+</footer>
+
+<script>
+const button=document.querySelector('.menu-button');
+const menu=document.querySelector('#main-menu');
+button.addEventListener('click',()=>{const open=menu.classList.toggle('open');button.setAttribute('aria-expanded',open)});
+</script>
+</body>
+</html>
