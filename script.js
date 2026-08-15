@@ -25,3 +25,18 @@ const slideTimeline = (direction) => {
 };
 document.querySelector('.timeline-prev')?.addEventListener('click', () => slideTimeline(-1));
 document.querySelector('.timeline-next')?.addEventListener('click', () => slideTimeline(1));
+
+const authorFormDialog = document.querySelector('#author-form-dialog');
+document.querySelector('[data-open-author-form]')?.addEventListener('click', () => {
+  authorFormDialog?.showModal();
+  document.body.classList.add('author-dialog-open');
+});
+document.querySelector('[data-close-author-form]')?.addEventListener('click', () => {
+  authorFormDialog?.close();
+});
+authorFormDialog?.addEventListener('close', () => {
+  document.body.classList.remove('author-dialog-open');
+});
+authorFormDialog?.addEventListener('click', (event) => {
+  if (event.target === authorFormDialog) authorFormDialog.close();
+});
