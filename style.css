@@ -1246,3 +1246,128 @@ body.author-dialog-open { overflow:hidden; }
   .author-copy blockquote { margin-bottom:24px; padding-left:20px; }
   .author-copy .button { padding:16px 22px; font-size:16px; }
 }
+
+/* Heritage Open Days homepage mockup.
+   The feature deliberately inherits the established Featured Experience card. */
+html, body { overflow-x: hidden; }
+.author-homepage-feature { height: 258px; margin-top: 22px; }
+.author-homepage-feature > img { object-position: center 38%; }
+.author-homepage-feature .featured-copy { padding: 0 12px; }
+.author-homepage-feature .featured-copy .eyebrow { margin: 0 0 2px; }
+.author-homepage-feature .featured-copy h2 {
+  margin: 3px 0 2px;
+  font-size: 32px;
+}
+.author-card-flourish {
+  display: block;
+  width: min(250px, 70%);
+  height: 14px;
+  margin: 0 0 6px;
+  object-fit: contain;
+  object-position: left center;
+}
+.author-homepage-feature .featured-copy > p:not(.eyebrow) {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.hod-homepage-feature { height: 258px; margin-top: 22px; }
+.hod-feature-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 232px;
+  padding: 22px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #e854a1;
+  color: #fff;
+  text-align: center;
+}
+.hod-feature-visual::before,
+.hod-feature-visual::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 50%;
+}
+.hod-feature-visual::before { left: -92px; top: -88px; }
+.hod-feature-visual::after { right: -90px; bottom: -96px; }
+.hod-feature-mark {
+  color: #fff;
+  font: 900 58px/.8 Arial, sans-serif;
+}
+.hod-feature-visual p {
+  margin: 9px 0 0;
+  color: #fff;
+  font: 600 28px/.82 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+}
+.hod-feature-visual p strong { font-size: 36px; }
+.hod-feature-visual small {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,.72);
+  color: #fff;
+  font: 700 10px/1 Arial, sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.hod-feature-date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 11px 13px 12px 18px;
+  border-radius: 0 0 0 30px;
+  background: var(--green);
+  color: #fff8e8;
+  font: 700 9px/1.25 Arial, sans-serif;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.hod-feature-date strong { color: #e2bd72; font-size: 15px; }
+.hod-card-flourish {
+  display: block;
+  width: min(250px, 70%);
+  height: 12px;
+  margin: 0 0 4px;
+  object-fit: contain;
+  object-position: left center;
+}
+.hod-homepage-feature .featured-copy { padding: 0 12px; }
+.hod-homepage-feature .featured-copy .eyebrow { margin: 0 0 1px; }
+.hod-homepage-feature .featured-copy h2 {
+  margin: 2px 0;
+  font-size: 28px;
+  line-height: .98;
+}
+.hod-homepage-feature .featured-copy > p:not(.eyebrow) {
+  margin: 0 0 7px;
+  font-size: 13.5px;
+  line-height: 1.42;
+}
+.hod-homepage-feature .actions { gap: 10px; }
+.hod-homepage-feature .button {
+  min-height: 38px;
+  padding: 11px 16px;
+  font-size: 12px;
+}
+.hod-homepage-mockup .community-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 780px;
+}
+
+@media (max-width: 800px) {
+  .author-homepage-feature { height: auto; margin-top: 28px; }
+  .author-card-flourish { margin-inline: auto; object-position: center; }
+  .hod-homepage-feature { height: auto; margin-top: 28px; }
+  .hod-feature-visual { height: 220px; }
+  .hod-card-flourish { margin-inline: auto; object-position: center; }
+  .hod-homepage-mockup .community-grid { grid-template-columns: 1fr; }
+}
