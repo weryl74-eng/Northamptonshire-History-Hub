@@ -1,3 +1,8 @@
+const finalStyles = document.createElement('link');
+finalStyles.rel = 'stylesheet';
+finalStyles.href = 'homepage-22aug-final.css';
+document.head.appendChild(finalStyles);
+
 const searchButton = document.querySelector('.search-toggle');
 
 searchButton?.addEventListener('click', () => {
