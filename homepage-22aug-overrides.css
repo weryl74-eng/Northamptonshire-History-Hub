@@ -9,13 +9,16 @@
 
 /* Five useful gateway tiles. */
 .quick-links{border-radius:14px;margin-top:-24px;padding:22px 28px 30px;background:rgba(251,245,233,.98);grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
-.quick-links a{white-space:normal;overflow-wrap:anywhere;line-height:1.15;padding-inline:14px;min-width:0}
-.quick-links .quick-icon{display:grid;place-items:center;font-size:35px;font-family:Georgia,serif}
+.quick-links a,.quick-links .quick-link-pending{display:flex;min-width:0;flex-direction:column;align-items:center;gap:5px;text-align:center;text-transform:uppercase;font-weight:700;font-size:13px;border-right:1px solid var(--nhn-gold);white-space:normal;overflow-wrap:anywhere;line-height:1.15;padding-inline:14px}
+.quick-links a{text-decoration:none}
+.quick-links .quick-link-pending{color:var(--ink);cursor:default}
+.quick-links>*:last-child{border-right:0}
+.quick-links .quick-icon{display:grid;place-items:center;font-size:35px;font-family:Georgia,serif;color:#294e2d;width:43px;height:43px}
 .quick-links:after{content:"—  ❧❦❧  —"}
 
 /* Text must remain inside cards and buttons. */
 .featured,.featured-copy,.timeline,.era-grid article,.panel,.archives,.author-invitation,.homepage-feature-pair>*{min-width:0}
-.featured-copy p,.featured-copy h2,.panel p,.panel h2,.author-invitation h3,.author-invitation p,.future-note p{overflow-wrap:anywhere}
+.featured-copy p,.featured-copy h2,.panel p,.panel h2,.author-invitation h3,.author-invitation p{overflow-wrap:anywhere}
 .button{white-space:normal;text-align:center;line-height:1.2;max-width:100%;height:auto}
 
 /* Timeline remains the approved seven-era horizontal slider. */
@@ -51,9 +54,6 @@
 .community-facebook-feature .facebook-cta{display:flex;width:100%;margin-top:20px;padding:18px 24px;border:1px solid #dfc49c;border-radius:9px;background:#fffaf0;color:var(--nhn-green);font:700 18px "Cormorant Garamond",Georgia,serif;text-decoration:none;text-transform:uppercase;justify-content:center}
 .community-facebook-feature .facebook-cta:hover{background:#f3e7ce}
 
-/* These anchors exist only so the test navigation has destinations while their pages are built separately. */
-.future-page-notes{display:none}
-
 /* Approved footer option 5 direction: organisation only. */
 footer{padding:22px 0 10px;border-top:1px solid #b69045}
 .footer-inner{grid-template-columns:150px minmax(230px,1fr) minmax(260px,1fr) auto;gap:22px}
@@ -65,7 +65,7 @@ footer{padding:22px 0 10px;border-top:1px solid #b69045}
 footer .contact{text-align:left;display:block;font-family:"Cormorant Garamond",Georgia,serif}
 footer .contact a{overflow-wrap:anywhere;color:#f5ead6;text-decoration:none;font-size:16px}
 .footer-inner nav{border-left:1px solid var(--nhn-gold);padding-left:22px;gap:20px;justify-content:flex-start}
-.footer-inner nav a{color:#f5ead6}
+.footer-inner nav span{color:#f5ead6;font-family:"Cormorant Garamond",Georgia,serif}
 
 @media(max-width:900px){
  .hero-actions{gap:10px}
