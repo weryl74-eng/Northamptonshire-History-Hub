@@ -1,7 +1,8 @@
 /* Navigation refinements — 23 Aug 2026. TEST BRANCH ONLY. Uses approved existing assets only. */
 .quick-links{
-  padding-bottom:76px!important;
+  padding-bottom:92px!important;
   border-radius:38px!important;
+  margin-bottom:34px!important;
 }
 .quick-links .quick-icon{
   width:68px!important;
@@ -27,7 +28,7 @@
   content:""!important;
   position:absolute!important;
   left:50%!important;
-  bottom:-8px!important;
+  bottom:12px!important;
   transform:translateX(-50%)!important;
   width:min(720px,72%)!important;
   height:64px!important;
@@ -37,9 +38,20 @@
   font-size:0!important;
   pointer-events:none!important;
 }
+
+/* Featured Experience — replace the leaf/text ornament with the approved NHN flourish asset. */
+#explore .section-flourish{
+  font-size:0!important;
+  width:170px!important;
+  height:34px!important;
+  margin:2px 0 10px!important;
+  background:transparent url('assets/hero-flourish-bottom.png') left center/contain no-repeat!important;
+}
+
 @media(max-width:800px){
-  .quick-links{padding-bottom:66px!important}
+  .quick-links{padding-bottom:78px!important;margin-bottom:28px!important}
   .quick-links .quick-icon{width:62px!important;height:62px!important}
   .quick-links .quick-icon svg{width:55px!important;height:55px!important}
-  .quick-links:after{width:min(520px,82%)!important;height:54px!important;bottom:-5px!important}
+  .quick-links:after{width:min(520px,82%)!important;height:54px!important;bottom:10px!important}
+  #explore .section-flourish{width:145px!important;height:30px!important}
 }
