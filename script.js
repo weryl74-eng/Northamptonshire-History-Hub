@@ -1,7 +1,7 @@
-const finalStyles = document.createElement('link');
-finalStyles.rel = 'stylesheet';
-finalStyles.href = 'homepage-22aug-final.css';
-document.head.appendChild(finalStyles);
+const currentStyles = document.createElement('link');
+currentStyles.rel = 'stylesheet';
+currentStyles.href = 'homepage-23aug-current.css';
+document.head.appendChild(currentStyles);
 
 // Keep the approved 22 August hero visible even if the preview service serves stale CSS.
 const hero = document.querySelector('.hero');
