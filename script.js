@@ -93,7 +93,7 @@ const applyAuthorResponsiveLayout = () => {
 applyAuthorResponsiveLayout();
 window.addEventListener('resize', applyAuthorResponsiveLayout);
 
-// Match the approved Facebook-community reference without fabricating posts.
+// Low-maintenance Facebook-community feature using the verified John Speed map asset.
 const community = document.querySelector('.community-facebook-feature');
 if (community) {
   community.innerHTML = `
@@ -103,14 +103,13 @@ if (community) {
     <p class="community-tagline">Discover what is happening around Northamptonshire.</p>
     <p class="community-copy"><em>Together we can celebrate, explore and preserve our county’s heritage.</em></p>
     <div class="mini-flourish">— ✦ —</div>
-    <div class="facebook-glimpse">
-      <h3>A glimpse of our Facebook community recent posts</h3>
+    <div class="facebook-map-panel">
+      <h3>Northants History Network on Facebook</h3>
       <div class="mini-flourish">— ✦ —</div>
-      <div class="facebook-reference-grid">
-        <a href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer" class="facebook-reference-card"><span class="facebook-badge">f</span><strong>Northants History Network</strong><span>Local history discussions</span><small>Open the Facebook community →</small></a>
-        <a href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer" class="facebook-reference-card"><span class="facebook-badge">f</span><strong>Northants History Network</strong><span>Events and heritage updates</span><small>Open the Facebook community →</small></a>
-        <a href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer" class="facebook-reference-card"><span class="facebook-badge">f</span><strong>Northants History Network</strong><span>Community discoveries</span><small>Open the Facebook community →</small></a>
-      </div>
+      <a class="facebook-map-link" href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Northants History Network Facebook community">
+        <img src="assets/John Speed Map 1610.jpg" alt="John Speed's 1610 map of Northampton">
+      </a>
+      <p>Join our Facebook community for local history conversations, events, discoveries and shared memories from across Northamptonshire.</p>
     </div>
     <a class="facebook-cta" href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer">Visit Our Facebook Community →</a>`;
 
@@ -122,16 +121,13 @@ if (community) {
     .community-facebook-feature .mini-flourish{margin:4px auto!important}
     .community-facebook-feature .community-tagline{font-size:20px!important;margin:7px auto 2px!important}
     .community-facebook-feature .community-copy{font-size:18px!important;margin:0 auto 8px!important}
-    .community-facebook-feature .facebook-glimpse{margin:10px auto 12px!important;padding:12px 14px 14px!important;border:1px solid #e1c99f!important;border-radius:10px!important;background:rgba(255,255,255,.08)!important}
-    .community-facebook-feature .facebook-glimpse h3{font-size:24px!important;line-height:1.05!important;margin:0!important}
-    .facebook-reference-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;margin-top:10px!important}
-    .facebook-reference-card{min-height:190px!important;padding:16px!important;border:1px solid #ddd3c3!important;border-radius:9px!important;background:#fff!important;color:#24463c!important;text-decoration:none!important;text-align:left!important;display:flex!important;flex-direction:column!important;box-shadow:0 2px 7px rgb(44 55 48/.06)!important}
-    .facebook-reference-card .facebook-badge{align-self:flex-end!important;width:31px!important;height:31px!important;border-radius:50%!important;background:#1877f2!important;color:white!important;display:grid!important;place-items:center!important;font:700 24px Arial,sans-serif!important;margin-bottom:-24px!important}
-    .facebook-reference-card strong{font-size:16px!important;margin:0 38px 18px 0!important}
-    .facebook-reference-card>span:not(.facebook-badge){font-size:17px!important;line-height:1.35!important;flex:1!important}
-    .facebook-reference-card small{font-size:13px!important;margin-top:18px!important;color:#49665d!important}
-    .community-facebook-feature .facebook-cta{margin-top:12px!important;padding:16px 20px!important;font-size:24px!important;border-radius:10px!important}
-    @media(max-width:800px){.facebook-reference-grid{grid-template-columns:1fr!important}.facebook-reference-card{min-height:120px!important}.community-facebook-feature{width:min(calc(100% - 28px),680px)!important}}
+    .facebook-map-panel{margin:10px auto 12px!important;padding:14px 16px 16px!important;border:1px solid #e1c99f!important;border-radius:10px!important;background:rgba(255,255,255,.08)!important}
+    .facebook-map-panel h3{font-size:24px!important;line-height:1.05!important;margin:0!important}
+    .facebook-map-link{display:block!important;max-width:780px!important;margin:12px auto 10px!important;border-radius:10px!important;overflow:hidden!important;border:1px solid #d8c29b!important;background:#f7f0e3!important;text-decoration:none!important}
+    .facebook-map-link img{display:block!important;width:100%!important;height:auto!important;max-height:430px!important;object-fit:contain!important;background:#f6f0e5!important}
+    .facebook-map-panel p{max-width:820px!important;margin:10px auto 0!important;font-size:17px!important;line-height:1.45!important;color:#345349!important}
+    .community-facebook-feature .facebook-cta{display:block!important;margin-top:12px!important;padding:16px 20px!important;font-size:24px!important;border-radius:10px!important}
+    @media(max-width:800px){.community-facebook-feature{width:min(calc(100% - 28px),680px)!important}.facebook-map-link{max-width:100%!important}.facebook-map-panel h3{font-size:21px!important}.community-facebook-feature .facebook-cta{font-size:20px!important}}
   `;
   document.head.appendChild(facebookStyle);
 }
