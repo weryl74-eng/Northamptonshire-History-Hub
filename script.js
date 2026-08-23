@@ -3,6 +3,15 @@ finalStyles.rel = 'stylesheet';
 finalStyles.href = 'homepage-22aug-final.css';
 document.head.appendChild(finalStyles);
 
+// Keep the approved 22 August hero visible even if the preview service serves stale CSS.
+const hero = document.querySelector('.hero');
+if (hero) {
+  hero.style.setProperty('background-image', "url('assets/heritage-landscape.png')", 'important');
+  hero.style.setProperty('background-position', 'center center', 'important');
+  hero.style.setProperty('background-size', '100% 100%', 'important');
+  hero.style.setProperty('background-repeat', 'no-repeat', 'important');
+}
+
 const searchButton = document.querySelector('.search-toggle');
 
 searchButton?.addEventListener('click', () => {
