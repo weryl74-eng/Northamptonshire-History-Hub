@@ -5,7 +5,7 @@ document.head.appendChild(finalStyles);
 
 const navStyles = document.createElement('link');
 navStyles.rel = 'stylesheet';
-navStyles.href = 'homepage-23aug-nav.css';
+navStyles.href = 'navigation-reference.css';
 document.head.appendChild(navStyles);
 
 const searchButton = document.querySelector('.search-toggle');
