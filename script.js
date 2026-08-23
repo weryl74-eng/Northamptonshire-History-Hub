@@ -93,7 +93,7 @@ const applyAuthorResponsiveLayout = () => {
 applyAuthorResponsiveLayout();
 window.addEventListener('resize', applyAuthorResponsiveLayout);
 
-// Low-maintenance Facebook-community feature using the verified John Speed map asset.
+// Wide John Speed map + copy layout, based on preferred mockup C.
 const community = document.querySelector('.community-facebook-feature');
 if (community) {
   community.innerHTML = `
@@ -103,31 +103,39 @@ if (community) {
     <p class="community-tagline">Discover what is happening around Northamptonshire.</p>
     <p class="community-copy"><em>Together we can celebrate, explore and preserve our county’s heritage.</em></p>
     <div class="mini-flourish">— ✦ —</div>
-    <div class="facebook-map-panel">
-      <h3>Northants History Network on Facebook</h3>
-      <div class="mini-flourish">— ✦ —</div>
-      <a class="facebook-map-link" href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Northants History Network Facebook community">
+    <div class="facebook-wide-panel">
+      <a class="facebook-wide-map" href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Northants History Network Facebook community">
         <img src="assets/John Speed Map 1610.jpg" alt="John Speed's 1610 map of Northampton">
       </a>
-      <p>Join our Facebook community for local history conversations, events, discoveries and shared memories from across Northamptonshire.</p>
-    </div>
-    <a class="facebook-cta" href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer">Visit Our Facebook Community →</a>`;
+      <div class="facebook-wide-copy">
+        <h3>Our History. Our Community.</h3>
+        <div class="section-flourish" aria-hidden="true">— ❦ —</div>
+        <p class="facebook-wide-intro"><em>Northamptonshire’s stories are still being discovered every day.</em></p>
+        <div class="mini-flourish">— ✦ —</div>
+        <p>Join the Northants History Network Facebook community to discover local history talks, authors and their work, heritage open days, re-enactments, events and much more from across Northamptonshire.</p>
+        <a class="facebook-wide-button" href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer">Visit Our Facebook Community →</a>
+      </div>
+    </div>`;
 
   const facebookStyle = document.createElement('style');
   facebookStyle.textContent = `
-    .community-facebook-feature{width:min(1080px,calc(100% - 48px))!important;margin:28px auto 24px!important;padding:18px 18px 14px!important;text-align:center!important}
+    .community-facebook-feature{width:min(1180px,calc(100% - 40px))!important;margin:28px auto 24px!important;padding:18px 18px 20px!important;text-align:center!important}
     .community-facebook-feature .ornate-flourish{width:280px!important;height:34px!important;margin:0 auto 2px!important}
     .community-facebook-feature h2{font-size:clamp(30px,3vw,43px)!important;line-height:1.02!important;margin:0 auto 4px!important}
     .community-facebook-feature .mini-flourish{margin:4px auto!important}
     .community-facebook-feature .community-tagline{font-size:20px!important;margin:7px auto 2px!important}
     .community-facebook-feature .community-copy{font-size:18px!important;margin:0 auto 8px!important}
-    .facebook-map-panel{margin:10px auto 12px!important;padding:14px 16px 16px!important;border:1px solid #e1c99f!important;border-radius:10px!important;background:rgba(255,255,255,.08)!important}
-    .facebook-map-panel h3{font-size:24px!important;line-height:1.05!important;margin:0!important}
-    .facebook-map-link{display:block!important;max-width:780px!important;margin:12px auto 10px!important;border-radius:10px!important;overflow:hidden!important;border:1px solid #d8c29b!important;background:#f7f0e3!important;text-decoration:none!important}
-    .facebook-map-link img{display:block!important;width:100%!important;height:auto!important;max-height:430px!important;object-fit:contain!important;background:#f6f0e5!important}
-    .facebook-map-panel p{max-width:820px!important;margin:10px auto 0!important;font-size:17px!important;line-height:1.45!important;color:#345349!important}
-    .community-facebook-feature .facebook-cta{display:block!important;margin-top:12px!important;padding:16px 20px!important;font-size:24px!important;border-radius:10px!important}
-    @media(max-width:800px){.community-facebook-feature{width:min(calc(100% - 28px),680px)!important}.facebook-map-link{max-width:100%!important}.facebook-map-panel h3{font-size:21px!important}.community-facebook-feature .facebook-cta{font-size:20px!important}}
+    .facebook-wide-panel{display:grid!important;grid-template-columns:minmax(0,1.22fr) minmax(360px,.95fr)!important;gap:28px!important;align-items:center!important;margin:14px auto 0!important;padding:10px!important;border:1px solid #e0c28b!important;border-radius:12px!important;background:rgba(255,255,255,.16)!important}
+    .facebook-wide-map{display:block!important;border-radius:10px!important;overflow:hidden!important;border:1px solid #d5b87d!important;background:#f6efe1!important;text-decoration:none!important}
+    .facebook-wide-map img{display:block!important;width:100%!important;height:100%!important;max-height:450px!important;object-fit:cover!important;object-position:center!important}
+    .facebook-wide-copy{padding:18px 28px 20px!important;text-align:center!important}
+    .facebook-wide-copy h3{font-family:Georgia,'Times New Roman',serif!important;font-size:clamp(28px,2.6vw,40px)!important;line-height:1.05!important;color:#0b4938!important;margin:0 0 6px!important;text-transform:uppercase!important;letter-spacing:.02em!important}
+    .facebook-wide-copy .section-flourish{margin:4px auto 8px!important;color:#b77b20!important}
+    .facebook-wide-intro{font-family:Georgia,'Times New Roman',serif!important;font-size:19px!important;color:#6e4a2a!important;margin:8px auto!important}
+    .facebook-wide-copy>p:not(.facebook-wide-intro){font-size:18px!important;line-height:1.5!important;color:#234a3f!important;margin:12px auto 20px!important;max-width:560px!important}
+    .facebook-wide-button{display:block!important;max-width:470px!important;margin:0 auto!important;padding:15px 20px!important;border-radius:7px!important;background:#07543f!important;color:#d5a54a!important;text-decoration:none!important;text-transform:uppercase!important;font-family:Georgia,'Times New Roman',serif!important;font-size:19px!important;font-weight:700!important;border:1px solid #c99a43!important}
+    @media(max-width:900px){.facebook-wide-panel{grid-template-columns:1fr!important;gap:16px!important}.facebook-wide-copy{padding:10px 18px 18px!important}.facebook-wide-map img{max-height:none!important}}
+    @media(max-width:600px){.community-facebook-feature{width:min(calc(100% - 24px),680px)!important;padding:14px 10px 16px!important}.facebook-wide-copy h3{font-size:27px!important}.facebook-wide-copy>p:not(.facebook-wide-intro){font-size:16px!important}.facebook-wide-button{font-size:16px!important}}
   `;
   document.head.appendChild(facebookStyle);
 }
