@@ -1,9 +1,6 @@
-const currentStyles = document.createElement('link');
-currentStyles.rel = 'stylesheet';
-currentStyles.href = 'homepage-23aug-current.css';
-document.head.appendChild(currentStyles);
+// Current test script — no stylesheet injection.
 
-// Keep the approved 22 August hero visible even if the preview service serves stale CSS.
+// Keep the approved 22 August hero visible as a fallback.
 const hero = document.querySelector('.hero');
 if (hero) {
   hero.style.setProperty('background-image', "url('assets/heritage-landscape.png')", 'important');
@@ -12,8 +9,20 @@ if (hero) {
   hero.style.setProperty('background-repeat', 'no-repeat', 'important');
 }
 
-const searchButton = document.querySelector('.search-toggle');
+// Force Jack's approved photograph to a true circle, overriding any older cached layout rule.
+const authorPhoto = document.querySelector('.author-homepage-feature > img');
+if (authorPhoto) {
+  authorPhoto.style.setProperty('width', '250px', 'important');
+  authorPhoto.style.setProperty('height', '250px', 'important');
+  authorPhoto.style.setProperty('min-width', '250px', 'important');
+  authorPhoto.style.setProperty('min-height', '250px', 'important');
+  authorPhoto.style.setProperty('max-width', '250px', 'important');
+  authorPhoto.style.setProperty('max-height', '250px', 'important');
+  authorPhoto.style.setProperty('object-fit', 'cover', 'important');
+  authorPhoto.style.setProperty('border-radius', '50%', 'important');
+}
 
+const searchButton = document.querySelector('.search-toggle');
 searchButton?.addEventListener('click', () => {
   const query = window.prompt('Search the Northamptonshire History Gateway');
   if (!query) return;
