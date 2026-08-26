@@ -4,6 +4,20 @@
 .hero{height:auto!important;aspect-ratio:1728/864!important;min-height:0!important;background:#f5ead6!important;overflow:hidden!important}
 .landscape{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;background-image:url('assets/heritage-landscape.png')!important;background-position:center center!important;background-size:100% 100%!important;background-repeat:no-repeat!important}
 .hero .site-nav,.hero .hero-copy{display:none!important}
+/* Viewer-only cleanup: mask just the baked-in gold outlines around Search, Get Involved and Facebook. */
+.hero::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 63.25% 5.10%/10.05% .34% no-repeat,
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 63.25% 13.40%/10.05% .34% no-repeat,
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 63.25% 5.10%/.22% 8.65% no-repeat,
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 73.08% 5.10%/.22% 8.65% no-repeat,
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 74.76% 5.10%/12.55% .34% no-repeat,
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 74.76% 13.40%/12.55% .34% no-repeat,
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 74.76% 5.10%/.22% 8.65% no-repeat,
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 87.09% 5.10%/.22% 8.65% no-repeat,
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 88.53% 5.10%/10.05% .34% no-repeat,
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 88.53% 13.40%/10.05% .34% no-repeat,
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 88.53% 5.10%/.22% 8.65% no-repeat,
+linear-gradient(rgba(247,239,224,.94),rgba(247,239,224,.94)) 98.36% 5.10%/.22% 8.65% no-repeat!important}
 
 /* QUICK LINKS — slimmer proportions to match approved reference. */
 .quick-links{width:min(1160px,calc(100% - 48px))!important;margin-top:-28px!important;padding:16px 28px 58px!important;border:1px solid #eadbc6!important;border-radius:50% 50% 34px 34px / 12% 12% 34px 34px!important;background:rgba(251,245,233,.985)!important;box-shadow:0 6px 16px rgb(67 45 19/.07)!important;overflow:visible!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;position:relative!important;margin-bottom:40px!important}
