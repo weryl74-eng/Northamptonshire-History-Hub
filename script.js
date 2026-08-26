@@ -122,19 +122,19 @@ if (community) {
 
   const facebookStyle = document.createElement('style');
   facebookStyle.textContent = `
-    .community-facebook-feature{width:min(1240px,calc(100% - 40px))!important;margin:28px auto 24px!important;padding:20px 18px 24px!important;text-align:center!important}
-    .community-facebook-feature .ornate-flourish{width:300px!important;height:40px!important;margin:0 auto 4px!important}
-    .community-facebook-feature h2{font-size:clamp(30px,3vw,43px)!important;line-height:1.05!important;margin:0 auto 5px!important}
-    .community-facebook-feature .community-tagline{font-size:20px!important;margin:8px auto 2px!important}
-    .community-facebook-feature .community-copy{font-size:18px!important;margin:0 auto 10px!important}
-    .facebook-real-posts{padding:14px 14px 16px!important;margin:14px auto 18px!important;overflow:hidden!important}
-    .facebook-real-posts h3{font-size:25px!important;margin:0 0 4px!important;text-transform:uppercase!important}
-    .facebook-embed-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important;align-items:start!important;margin-top:10px!important}
-    .facebook-embed-card{height:560px!important;overflow:hidden!important;border:1px solid #e4d6c1!important;border-radius:10px!important;background:#fff!important}
-    .facebook-embed-card iframe{display:block!important;width:100%!important;height:560px!important;border:0!important;background:#fff!important}
-    .community-facebook-feature .facebook-cta{margin-top:16px!important}
-    @media(max-width:1000px){.facebook-embed-grid{grid-template-columns:1fr!important}.facebook-embed-card{width:min(500px,100%)!important;margin:0 auto!important;height:620px!important}.facebook-embed-card iframe{height:620px!important}}
-    @media(max-width:600px){.community-facebook-feature{width:min(calc(100% - 20px),680px)!important;padding:16px 8px 20px!important}.facebook-real-posts{padding:10px 6px 12px!important}.facebook-real-posts h3{font-size:21px!important}.facebook-embed-card{height:590px!important}.facebook-embed-card iframe{height:590px!important}}
+    .community-facebook-feature{width:min(1180px,calc(100% - 40px))!important;margin:24px auto 22px!important;padding:16px 16px 20px!important;text-align:center!important}
+    .community-facebook-feature .ornate-flourish{width:270px!important;height:34px!important;margin:0 auto 2px!important}
+    .community-facebook-feature h2{font-size:clamp(28px,2.7vw,39px)!important;line-height:1.04!important;margin:0 auto 4px!important}
+    .community-facebook-feature .community-tagline{font-size:18px!important;margin:6px auto 2px!important}
+    .community-facebook-feature .community-copy{font-size:17px!important;margin:0 auto 8px!important}
+    .facebook-real-posts{padding:10px 10px 12px!important;margin:10px auto 14px!important;overflow:hidden!important}
+    .facebook-real-posts h3{font-size:21px!important;margin:0 0 2px!important;text-transform:uppercase!important}
+    .facebook-embed-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important;align-items:start!important;margin-top:7px!important}
+    .facebook-embed-card{height:400px!important;overflow:hidden!important;border:1px solid #e4d6c1!important;border-radius:8px!important;background:#fff!important}
+    .facebook-embed-card iframe{display:block!important;width:100%!important;height:500px!important;border:0!important;background:#fff!important;transform:scale(.80)!important;transform-origin:top left!important;width:125%!important}
+    .community-facebook-feature .facebook-cta{margin-top:12px!important}
+    @media(max-width:1000px){.facebook-embed-grid{grid-template-columns:1fr!important}.facebook-embed-card{width:min(440px,100%)!important;margin:0 auto!important;height:500px!important}.facebook-embed-card iframe{height:625px!important}}
+    @media(max-width:600px){.community-facebook-feature{width:min(calc(100% - 20px),680px)!important;padding:14px 8px 18px!important}.facebook-real-posts{padding:8px 5px 10px!important}.facebook-real-posts h3{font-size:19px!important}.facebook-embed-card{height:470px!important}.facebook-embed-card iframe{height:588px!important}}
   `;
   document.head.appendChild(facebookStyle);
 }
