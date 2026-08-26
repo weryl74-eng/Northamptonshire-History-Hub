@@ -9,6 +9,86 @@ if (hero) {
   hero.style.setProperty('background-repeat', 'no-repeat', 'important');
 }
 
+// Delicate hero controls: keep the current test artwork (including the cleaner Hazelrigg House),
+// softly veil the baked-in button area, and show the real links as lightweight webpage controls.
+if (hero) {
+  const siteNav = hero.querySelector('.site-nav');
+  const brand = hero.querySelector('.brand');
+  const heroActions = hero.querySelector('.hero-actions');
+
+  if (!hero.querySelector('.hero-control-veil')) {
+    const veil = document.createElement('div');
+    veil.className = 'hero-control-veil';
+    veil.setAttribute('aria-hidden', 'true');
+    veil.style.setProperty('position', 'absolute', 'important');
+    veil.style.setProperty('z-index', '6', 'important');
+    veil.style.setProperty('top', '3.8%', 'important');
+    veil.style.setProperty('right', '0', 'important');
+    veil.style.setProperty('width', '40%', 'important');
+    veil.style.setProperty('height', '11.8%', 'important');
+    veil.style.setProperty('pointer-events', 'none', 'important');
+    veil.style.setProperty('background', 'linear-gradient(90deg, rgba(247,239,224,0) 0%, rgba(247,239,224,.92) 9%, rgba(247,239,224,.97) 22%, rgba(247,239,224,.97) 100%)', 'important');
+    hero.appendChild(veil);
+  }
+
+  if (siteNav) {
+    siteNav.style.setProperty('display', 'block', 'important');
+    siteNav.style.setProperty('position', 'absolute', 'important');
+    siteNav.style.setProperty('inset', '0', 'important');
+    siteNav.style.setProperty('width', '100%', 'important');
+    siteNav.style.setProperty('max-width', 'none', 'important');
+    siteNav.style.setProperty('z-index', '7', 'important');
+    siteNav.style.setProperty('pointer-events', 'none', 'important');
+    siteNav.style.setProperty('padding', '0', 'important');
+  }
+  if (brand) brand.style.setProperty('display', 'none', 'important');
+
+  if (heroActions) {
+    heroActions.style.setProperty('display', 'flex', 'important');
+    heroActions.style.setProperty('position', 'absolute', 'important');
+    heroActions.style.setProperty('right', '4.1%', 'important');
+    heroActions.style.setProperty('top', '5.5%', 'important');
+    heroActions.style.setProperty('gap', '28px', 'important');
+    heroActions.style.setProperty('align-items', 'center', 'important');
+    heroActions.style.setProperty('padding', '0', 'important');
+    heroActions.style.setProperty('z-index', '8', 'important');
+    heroActions.style.setProperty('pointer-events', 'auto', 'important');
+
+    [...heroActions.children].forEach((item) => {
+      item.style.setProperty('border', '0', 'important');
+      item.style.setProperty('border-radius', '0', 'important');
+      item.style.setProperty('background', 'transparent', 'important');
+      item.style.setProperty('box-shadow', 'none', 'important');
+      item.style.setProperty('padding', '4px 0', 'important');
+      item.style.setProperty('color', '#17392f', 'important');
+      item.style.setProperty('font-family', '"Cormorant Garamond", Georgia, serif', 'important');
+      item.style.setProperty('font-size', '15px', 'important');
+      item.style.setProperty('font-weight', '600', 'important');
+      item.style.setProperty('letter-spacing', '.02em', 'important');
+      item.style.setProperty('text-transform', 'none', 'important');
+      item.style.setProperty('text-decoration', 'none', 'important');
+      item.style.setProperty('text-shadow', '0 1px 3px rgba(255,255,255,.9)', 'important');
+    });
+  }
+
+  const applyHeroResponsiveControls = () => {
+    if (!heroActions) return;
+    if (window.innerWidth <= 700) {
+      heroActions.style.setProperty('right', '2.2%', 'important');
+      heroActions.style.setProperty('top', '5.0%', 'important');
+      heroActions.style.setProperty('gap', window.innerWidth <= 480 ? '8px' : '14px', 'important');
+      [...heroActions.children].forEach((item) => item.style.setProperty('font-size', window.innerWidth <= 480 ? '10px' : '12px', 'important'));
+    } else {
+      heroActions.style.setProperty('right', '4.1%', 'important');
+      heroActions.style.setProperty('top', '5.5%', 'important');
+      heroActions.style.setProperty('gap', '28px', 'important');
+      [...heroActions.children].forEach((item) => item.style.setProperty('font-size', '15px', 'important'));
+    }
+  };
+  applyHeroResponsiveControls();
+  window.addEventListener('resize', applyHeroResponsiveControls);
+}
+
 // Match the approved Featured Author reference.
 const authorCard = document.querySelector('.author-homepage-feature');
 const authorPhoto = document.querySelector('.author-homepage-feature > img');
