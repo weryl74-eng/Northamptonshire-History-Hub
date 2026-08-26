@@ -4,20 +4,20 @@
 .hero{height:auto!important;aspect-ratio:1728/864!important;min-height:0!important;background:#f5ead6!important;overflow:hidden!important}
 .landscape{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;background-image:url('assets/heritage-landscape.png')!important;background-position:center center!important;background-size:100% 100%!important;background-repeat:no-repeat!important}
 .hero .site-nav,.hero .hero-copy{display:none!important}
-/* Viewer-only cleanup: slightly broader masks cover the complete baked-in outlines while leaving icons and labels untouched. */
+/* Viewer-only cleanup: feathered masks blend away the final baked-in control outlines without touching the labels/icons. */
 .hero::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 62.9% 4.55%/10.75% .72% no-repeat,
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 62.9% 13.38%/10.75% .72% no-repeat,
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 62.9% 4.55%/.48% 9.55% no-repeat,
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 73.22% 4.55%/.48% 9.55% no-repeat,
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 74.35% 4.55%/13.25% .72% no-repeat,
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 74.35% 13.38%/13.25% .72% no-repeat,
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 74.35% 4.55%/.48% 9.55% no-repeat,
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 87.20% 4.55%/.48% 9.55% no-repeat,
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 88.12% 4.55%/10.95% .72% no-repeat,
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 88.12% 13.38%/10.95% .72% no-repeat,
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 88.12% 4.55%/.48% 9.55% no-repeat,
-linear-gradient(rgba(247,239,224,.97),rgba(247,239,224,.97)) 98.62% 4.55%/.48% 9.55% no-repeat!important}
+linear-gradient(to bottom,transparent 0,rgba(247,239,224,.82) 34%,rgba(247,239,224,.82) 66%,transparent 100%) 62.9% 4.60%/10.8% 1.05% no-repeat,
+linear-gradient(to bottom,transparent 0,rgba(247,239,224,.82) 34%,rgba(247,239,224,.82) 66%,transparent 100%) 62.9% 13.05%/10.8% 1.05% no-repeat,
+linear-gradient(to right,transparent 0,rgba(247,239,224,.82) 36%,rgba(247,239,224,.82) 64%,transparent 100%) 62.95% 4.70%/.62% 9.25% no-repeat,
+linear-gradient(to right,transparent 0,rgba(247,239,224,.82) 36%,rgba(247,239,224,.82) 64%,transparent 100%) 73.02% 4.70%/.62% 9.25% no-repeat,
+linear-gradient(to bottom,transparent 0,rgba(247,239,224,.82) 34%,rgba(247,239,224,.82) 66%,transparent 100%) 74.35% 4.60%/13.15% 1.05% no-repeat,
+linear-gradient(to bottom,transparent 0,rgba(247,239,224,.82) 34%,rgba(247,239,224,.82) 66%,transparent 100%) 74.35% 13.05%/13.15% 1.05% no-repeat,
+linear-gradient(to right,transparent 0,rgba(247,239,224,.82) 36%,rgba(247,239,224,.82) 64%,transparent 100%) 74.33% 4.70%/.62% 9.25% no-repeat,
+linear-gradient(to right,transparent 0,rgba(247,239,224,.82) 36%,rgba(247,239,224,.82) 64%,transparent 100%) 87.02% 4.70%/.62% 9.25% no-repeat,
+linear-gradient(to bottom,transparent 0,rgba(247,239,224,.82) 34%,rgba(247,239,224,.82) 66%,transparent 100%) 88.10% 4.60%/10.9% 1.05% no-repeat,
+linear-gradient(to bottom,transparent 0,rgba(247,239,224,.82) 34%,rgba(247,239,224,.82) 66%,transparent 100%) 88.10% 13.05%/10.9% 1.05% no-repeat,
+linear-gradient(to right,transparent 0,rgba(247,239,224,.82) 36%,rgba(247,239,224,.82) 64%,transparent 100%) 88.08% 4.70%/.62% 9.25% no-repeat,
+linear-gradient(to right,transparent 0,rgba(247,239,224,.82) 36%,rgba(247,239,224,.82) 64%,transparent 100%) 98.45% 4.70%/.62% 9.25% no-repeat!important}
 
 /* QUICK LINKS — slimmer proportions to match approved reference. */
 .quick-links{width:min(1160px,calc(100% - 48px))!important;margin-top:-28px!important;padding:16px 28px 58px!important;border:1px solid #eadbc6!important;border-radius:50% 50% 34px 34px / 12% 12% 34px 34px!important;background:rgba(251,245,233,.985)!important;box-shadow:0 6px 16px rgb(67 45 19/.07)!important;overflow:visible!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;position:relative!important;margin-bottom:40px!important}
