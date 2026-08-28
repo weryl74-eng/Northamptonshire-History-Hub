@@ -50,7 +50,10 @@
     .approved-footer-image{display:block;width:100%;height:auto}
     .approved-footer-hotspot{position:absolute;z-index:3;display:block;border-radius:6px;text-decoration:none}
     .approved-footer-about-link{left:3.5%;top:23%;width:39%;height:52%}
-    .approved-footer-email-link{left:48.45%;top:43.9%;width:20%;height:20.2%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 .45% 0 .75%;overflow:hidden;background:#063d2c;color:#f5ead6;font-family:"Cormorant Garamond",Georgia,serif;white-space:nowrap}
+    .approved-footer-email-mask{position:absolute;z-index:2;left:48.75%;top:43.9%;width:20.3%;height:20.2%;background:#002718}
+    .approved-footer-email-mask::after{content:"";position:absolute;z-index:0;left:100%;top:40%;width:11.25%;height:60%;background:#002718}
+    .approved-footer-email-mask::before{content:"";position:absolute;z-index:1;left:101.55%;top:40%;width:max(1px,.08vw);height:60%;background:rgba(183,150,70,.62)}
+    .approved-footer-email-link{left:48.45%;top:43.9%;width:20.65%;height:20.2%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 .45% 0 .75%;overflow:hidden;background:transparent;color:#f5ead6;font-family:"Cormorant Garamond",Georgia,serif;white-space:nowrap}
     .approved-footer-email-link strong{font-size:clamp(5px,1.38vw,27px);line-height:1.02;font-weight:500}
     .approved-footer-email-link span{font-size:clamp(5px,1vw,20px);line-height:1.22}
     .approved-footer-accessibility-link{left:70.2%;top:34%;width:14.3%;height:38%}
@@ -159,6 +162,7 @@
 <footer class="approved-footer" aria-label="Northants History Network footer">
   <img class="approved-footer-image" src="NHN-footer-approved-28aug2026.png" alt="">
   <a class="approved-footer-hotspot approved-footer-about-link" href="#about" aria-label="About Northants History Network"></a>
+  <span class="approved-footer-email-mask" aria-hidden="true"></span>
   <a class="approved-footer-hotspot approved-footer-email-link" href="mailto:northantshistorynetwork@gmail.com" aria-label="Email Northants History Network"><strong>Email us</strong><span>northantshistorynetwork@gmail.com</span></a>
   <a class="approved-footer-hotspot approved-footer-accessibility-link" href="#accessibility" aria-label="Read the accessibility statement"></a>
   <a class="approved-footer-hotspot approved-footer-privacy-link" href="#privacy" aria-label="Read the privacy notice"></a>
