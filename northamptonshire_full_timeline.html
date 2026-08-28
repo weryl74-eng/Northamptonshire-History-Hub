@@ -5,25 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Explore the Full Timeline | Northants History Network</title>
 <meta name="description" content="Journey through Northamptonshire history from prehistory and Roman Britain to the present day.">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;700&family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--cream:#F8F3E9;--parchment:#F1E9D8;--ink:#231B14;--ink-mid:#584B3C;--ink-light:#948572;--green:#2E4A3B;--green-dark:#1D3128;--green-light:#E6EDE6;--gold:#A3781B;--gold-light:#F6EBCF;--burgundy:#6E2A3B;--burgundy-light:#F3E7EA;--border:rgba(35,27,20,0.14);--r:14px}
+  :root{--cream:#F8F3E9;--parchment:#F1E9D8;--ink:#231B14;--ink-mid:#584B3C;--ink-light:#948572;--green:#2E4A3B;--green-dark:#1D3128;--green-light:#E6EDE6;--gold:#A3781B;--gold-light:#F6EBCF;--burgundy:#6E2A3B;--burgundy-light:#F3E7EA;--border:rgba(35,27,20,0.14);--r:14px;--nhn-green:#063d2c;--nhn-gold:#a26d20;--nhn-paper:#fffaf0}
   html{scroll-behavior:smooth}
   body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--ink);line-height:1.5}
-  .skip-link{position:fixed;z-index:100;left:1rem;top:-5rem;background:#fff;padding:.7rem 1rem;color:var(--green-dark)}
+  .skip-link{position:fixed;z-index:100;left:1rem;top:-5rem;background:#fff;padding:.75rem 1rem;border:2px solid var(--nhn-gold);color:var(--nhn-green)}
   .skip-link:focus{top:1rem}
-  .flourish{color:var(--gold);font-size:13px;letter-spacing:.3em;display:block;text-align:center;opacity:.85}
-  .nav{background:var(--cream);border-bottom:1px solid var(--border);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:40}
-  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-  .seal{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F6EBCF,var(--gold) 70%,#7C5B12 100%);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;color:var(--green-dark);font-weight:700;font-size:15px;border:2px solid var(--green-dark);box-shadow:0 0 0 3px var(--cream),0 0 0 4px var(--border)}
-  .brand-text{line-height:1.2}.brand-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--ink)}.brand-est{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-light)}
-  .nav-links{display:flex;gap:22px;align-items:center}.nav-links a,.nav-muted{font-size:13px;color:var(--ink-mid);text-decoration:none;font-weight:500}.nav-links a.current{color:var(--green-dark);border-bottom:2px solid var(--gold);padding-bottom:3px}.nav-muted{color:var(--ink-light)}
-  header{background:linear-gradient(180deg,var(--green-dark),var(--green));color:var(--cream);padding:3.5rem 1.5rem 3rem;text-align:center;position:relative}
-  header .flourish{color:#C9A94E}header h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:600;margin:.6rem 0 .8rem;letter-spacing:.01em}header p{max-width:540px;margin:0 auto;color:rgba(248,243,233,.78);font-size:15px;font-weight:300}
-  .breadcrumb{font-size:12px;color:rgba(248,243,233,.55);margin-top:1.4rem}.breadcrumb a{color:#C9A94E;text-decoration:none}
+  .topbar{background:var(--nhn-green);color:#fff;border-bottom:3px solid var(--nhn-gold)}
+  .topbar-inner{width:min(1120px,calc(100% - 36px));min-height:86px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:13px;color:#fff;text-decoration:none}
+  .brand img{width:66px;height:66px;object-fit:contain}
+  .brand strong{display:block;font:600 1.25rem/1.05 "Cormorant Garamond",Georgia,serif}
+  .brand small{display:block;margin-top:4px;color:#e9d7ae;letter-spacing:.08em;text-transform:uppercase;font:400 .7rem/1.2 Lato,Arial,sans-serif}
+  .topnav{display:flex;align-items:center;gap:19px;flex-wrap:wrap;justify-content:flex-end}
+  .topnav a{color:#fff;text-decoration:none;font:700 .92rem/1.2 Lato,Arial,sans-serif}
+  .topnav a:hover,.topnav a:focus-visible{color:#f2cf72}
+  .header-hero{background:linear-gradient(120deg,#073d2d,#0b5138);color:#fff;text-align:center;padding:54px 20px 48px}
+  .header-hero h1{font:600 clamp(2.45rem,6vw,4.25rem)/1 "Cormorant Garamond",Georgia,serif;margin:5px 0 8px}
+  .header-hero p{max-width:720px;margin:0 auto;color:#f4ead7;font:400 1.06rem/1.68 Lato,Arial,sans-serif}
+  .flourish{color:#d3ad4e;letter-spacing:.25em;margin:10px 0;text-align:center}
   .container{max-width:900px;margin:0 auto;padding:0 1.5rem}
-  .filter-wrap{background:var(--parchment);border-bottom:1px solid var(--border);padding:1rem 1.5rem;position:sticky;top:69px;z-index:30}
+  .filter-wrap{background:var(--parchment);border-bottom:1px solid var(--border);padding:1rem 1.5rem;position:sticky;top:0;z-index:30}
   .filter-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.filter-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-light);margin-right:6px}
   .fbtn{font-family:'Source Sans 3',sans-serif;font-size:12.5px;font-weight:500;padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:var(--cream);color:var(--ink-mid);cursor:pointer;transition:.15s}.fbtn:hover{background:var(--gold-light)}.fbtn.active{background:var(--green-dark);color:var(--cream);border-color:var(--green-dark)}.fbtn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
   #timeline{padding:2.5rem 0 1rem}.era{display:grid;grid-template-columns:96px 30px 1fr;gap:0 1.25rem;position:relative}.era-date{text-align:right;padding-top:.35rem}.era-date .yrs{font-family:'Playfair Display',serif;font-size:13px;color:var(--ink-mid);font-weight:600;line-height:1.35}
@@ -31,32 +35,48 @@
   .era-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1.6rem;margin:0 0 2.1rem}.era-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:600;margin-bottom:5px}.era-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:9px}.era-desc{font-size:14px;color:var(--ink-mid);line-height:1.65;margin-bottom:14px}
   .connections{background:var(--green-light);border-radius:10px;padding:12px 14px}.connections-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--green-dark);font-weight:600;margin-bottom:7px}.chip-row{display:flex;flex-wrap:wrap;gap:6px}.chip{font-size:11.5px;padding:4px 10px;border-radius:20px;background:#fff;border:1px solid rgba(46,74,59,.2);color:var(--green-dark)}.chip.tbc{background:var(--gold-light);border-color:rgba(163,120,27,.25);color:#6B4E0F;font-style:italic}
   .cta-band{background:var(--burgundy-light);border:1px solid rgba(110,42,59,.18);border-radius:var(--r);padding:1.5rem 1.75rem;margin:1rem 0 2.5rem;text-align:center}.cta-band h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--burgundy);margin-bottom:6px}.cta-band p{font-size:13.5px;color:#5A2130;margin:0 auto 12px;max-width:480px}.cta-btn{display:inline-block;background:var(--burgundy);color:#fff;font-size:13px;font-weight:600;padding:9px 20px;border-radius:24px;text-decoration:none}
-  footer{background:var(--green-dark);color:rgba(248,243,233,.8);padding:2.5rem 1.5rem 2rem;margin-top:1rem}.footer-inner{max-width:900px;margin:0 auto;text-align:center}.footer-seal{width:46px;height:46px;margin:0 auto 10px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F6EBCF,var(--gold) 70%,#7C5B12 100%);border:2px solid rgba(248,243,233,.5)}.footer-est{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#C9A94E;margin-bottom:14px}.footer-inner p{font-size:13px;line-height:1.8}.footer-inner a{color:#C9A94E;text-decoration:none}.footer-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:10px}.footer-copy{font-size:11px;color:rgba(248,243,233,.45);margin-top:1.4rem}
-  @media(max-width:700px){.nav-links{display:none}}
+  .approved-footer{position:relative;width:100%;margin:0;padding:0;background:#fff}
+  .approved-footer-image{display:block;width:100%;height:auto}
+  .approved-footer-hotspot{position:absolute;z-index:3;display:block;border-radius:6px;text-decoration:none}
+  .approved-footer-about-link{left:3.5%;top:23%;width:39%;height:52%}
+  .approved-footer-email-mask{position:absolute;z-index:2;left:48.75%;top:43.9%;width:20.3%;height:20.2%;background:#002718}
+  .approved-footer-email-mask::after{content:"";position:absolute;z-index:0;left:100%;top:40%;width:11.25%;height:60%;background:#002718}
+  .approved-footer-email-mask::before{content:"";position:absolute;z-index:1;left:101.55%;top:40%;width:max(1px,.08vw);height:60%;background:rgba(183,150,70,.62)}
+  .approved-footer-email-link{left:48.45%;top:43.9%;width:20.65%;height:20.2%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 .45% 0 .75%;overflow:hidden;background:transparent;color:#f5ead6;font-family:"Cormorant Garamond",Georgia,serif;white-space:nowrap}
+  .approved-footer-email-link strong{font-size:clamp(5px,1.38vw,27px);line-height:1.02;font-weight:500}
+  .approved-footer-email-link span{font-size:clamp(5px,1vw,20px);line-height:1.22}
+  .approved-footer-accessibility-link{left:70.2%;top:34%;width:14.3%;height:38%}
+  .approved-footer-privacy-link{left:85.2%;top:34%;width:11.7%;height:38%}
+  .approved-footer-hotspot:hover{box-shadow:inset 0 0 0 2px rgba(205,164,62,.55)}
+  .approved-footer-hotspot:focus-visible{outline:3px solid #f4d276;outline-offset:3px}
+  .approved-footer-accessible{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+  @media(max-width:720px){.topbar-inner{align-items:flex-start;flex-direction:column;padding:12px 0 15px}.topnav{justify-content:flex-start;gap:14px}.header-hero{padding-top:42px}}
   @media(max-width:600px){.era{grid-template-columns:64px 24px 1fr}.era-mark{width:24px;height:24px;font-size:10px}.era-date .yrs{font-size:11.5px}.era-card{padding:1.1rem 1.2rem}.filter-wrap{position:static}}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fbtn{transition:none}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
-<nav class="nav" aria-label="Main navigation">
-  <a class="brand" href="index.html">
-    <div class="seal" aria-hidden="true">N</div>
-    <div class="brand-text"><div class="brand-name">Northants History Network</div><div class="brand-est">Est. 2022</div></div>
-  </a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="northamptonshire_full_timeline.html" class="current" aria-current="page">Explore</a>
-    <a href="index.html#featured-whats-on">Events</a>
-    <a href="index.html#community">Groups</a>
-    <span class="nav-muted">Archives</span>
-  </div>
-</nav>
 <header>
-  <span class="flourish">— ✦ —</span>
-  <h1>The Northamptonshire Timeline</h1>
-  <p>Journey through the county's story, from earliest beginnings to the Northamptonshire we know today — and discover the groups, places and people keeping each era alive.</p>
-  <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Explore the Full Timeline</div>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Northants History Network home">
+        <img src="assets/nhn-seal.png" alt="">
+        <span><strong>Northants History Network</strong><small>Established 2022</small></span>
+      </a>
+      <nav class="topnav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="northamptonshire_full_timeline.html" aria-current="page">Timeline</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </nav>
+    </div>
+  </div>
+  <div class="header-hero">
+    <div class="flourish" aria-hidden="true">— ✦ —</div>
+    <h1>The Northamptonshire Timeline</h1>
+    <p>Journey through the county's story, from earliest beginnings to the Northamptonshire we know today — and discover the groups, places and people keeping each era alive.</p>
+  </div>
 </header>
 <main id="main">
   <div class="filter-wrap">
@@ -79,16 +99,14 @@
     </div>
   </div>
 </main>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-seal" aria-hidden="true"></div>
-    <div class="footer-est">Est. 2022</div>
-    <p><strong>Cheryl Workman</strong> · Founder, Northants History Network<br>
-    <a href="mailto:northantshistorynetwork@gmail.com">northantshistorynetwork@gmail.com</a><br>
-    <a href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer">Northants History Network | Facebook</a></p>
-    <nav class="footer-links" aria-label="Footer navigation"><a href="about.html#about">About NHN</a><a href="about.html#accessibility">Accessibility</a><a href="about.html#privacy">Privacy</a></nav>
-    <p class="footer-copy">© 2026 Northants History Network</p>
-  </div>
+<footer class="approved-footer" aria-label="Northants History Network footer">
+  <img class="approved-footer-image" src="NHN-footer-approved-28aug2026.png" alt="">
+  <a class="approved-footer-hotspot approved-footer-about-link" href="about.html#about" aria-label="About Northants History Network"></a>
+  <span class="approved-footer-email-mask" aria-hidden="true"></span>
+  <a class="approved-footer-hotspot approved-footer-email-link" href="mailto:northantshistorynetwork@gmail.com" aria-label="Email Northants History Network"><strong>Email us</strong><span>northantshistorynetwork@gmail.com</span></a>
+  <a class="approved-footer-hotspot approved-footer-accessibility-link" href="about.html#accessibility" aria-label="Read the accessibility statement"></a>
+  <a class="approved-footer-hotspot approved-footer-privacy-link" href="about.html#privacy" aria-label="Read the privacy notice"></a>
+  <div class="approved-footer-accessible"><strong>Northants History Network</strong><span>Connecting Northamptonshire’s Past with Today’s Community</span><a href="about.html#about">About Northants History Network</a><a href="mailto:northantshistorynetwork@gmail.com">Email us at northantshistorynetwork@gmail.com</a><a href="about.html#accessibility">Accessibility statement</a><a href="about.html#privacy">Privacy notice</a><span>© 2026 Northants History Network</span></div>
 </footer>
 <script>
 const eras = [
