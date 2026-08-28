@@ -27,7 +27,7 @@ if (hero) {
     veil.style.setProperty('width', '40%', 'important');
     veil.style.setProperty('height', '11.8%', 'important');
     veil.style.setProperty('pointer-events', 'none', 'important');
-    veil.style.setProperty('background', 'linear-gradient(90deg, rgba(247,239,224,0) 0%, rgba(247,239,224,.92) 9%, rgba(247,239,224,.97) 22%, rgba(247,239,224,.97) 100%)', 'important');
+    veil.style.setProperty('background', 'linear-gradient(90deg, rgba(247,239,224,0) 0%, rgba(247,239,224,.98) 9%, #f7efe0 22%, #f7efe0 100%)', 'important');
     hero.appendChild(veil);
   }
 
@@ -198,7 +198,7 @@ if (community) {
         <div class="facebook-embed-card"><iframe src="${plugin(delapreUrl)}" title="Delapré Abbey Facebook post" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
       </div>
     </div>
-    <a class="facebook-cta" href="https://www.facebook.com/groups/northantshistorynetwork/" target="_blank" rel="noopener noreferrer">Visit Our Facebook Community →</a>`;
+    <a class="facebook-cta" href="https://www.facebook.com/groups/872721351232099/" target="_blank" rel="noopener noreferrer">Visit Our Facebook Community →</a>`;
 
   const facebookStyle = document.createElement('style');
   facebookStyle.textContent = `
