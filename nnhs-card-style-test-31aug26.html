@@ -22,7 +22,7 @@
 <p class="description">The Northamptonshire Natural History Society has been part of the local community since 1876. For 150 years, we have been recording and preserving Northamptonshire’s fascinating natural and local history.</p>
 <div class="more-content" id="more-nnhs">Our collections include fossils, historic photographs, journals and records gathered over generations. The History Section meets at the Humfrey Rooms, Northampton, NN1 1LD, on the last Thursday of each month at 2.30pm. Everyone is welcome – you don’t need to be a member or an expert to come along.</div>
 <button class="more-toggle" type="button" aria-expanded="false" aria-controls="more-nnhs" onclick="toggleMore(this)">More about NNHS…</button>
-<div class="links"><a class="resource-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">Visit NNHS ↗</a><a class="resource-link" href="https://nnhs.info/whats-on/" target="_blank" rel="noopener noreferrer">What's On ↗</a></div>
+<div class="links"><a class="resource-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">Visit NNHS ↗</a></div>
 <div class="credit">Image credit: NNHS</div>
 </article>
 <article class="specialist-card">
@@ -31,11 +31,11 @@
 <div class="tag">County-wide · Specialist body</div>
 <p class="description">This example shows how a second card would align with NNHS even if its image and description are different lengths.</p>
 <div class="more-content" id="more-example">Longer information can sit behind the More option so the main page remains easy to scan.</div>
-<button class="more-toggle" type="button" aria-expanded="false" aria-controls="more-example" onclick="toggleMore(this)">More information…</button>
+<button class="more-toggle" type="button" aria-expanded="false" aria-controls="more-example">More information…</button>
 <div class="links"><a class="resource-link" href="#">Visit website ↗</a></div>
 </article>
 </div>
 </main>
-<script>function toggleMore(btn){const el=document.getElementById(btn.getAttribute('aria-controls'));const open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));el.style.display=open?'none':'block';btn.textContent=open?'More information…':'Show less';}</script>
+<script>function toggleMore(btn){const el=document.getElementById(btn.getAttribute('aria-controls'));const open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));el.style.display=open?'none':'block';btn.textContent=open?'More about NNHS…':'Show less';}</script>
 </body>
 </html>
