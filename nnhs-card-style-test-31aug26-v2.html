@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NNHS Card Style Test | Northants History Network</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;700&display=swap');
+:root{--green:#063d2c;--gold:#a26d20;--cream:#fbf5e9;--paper:#fffaf0;--body:#344b4a;--line:#dfc49c}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--body);font-family:Lato,Arial,sans-serif;line-height:1.62}.hero{background:linear-gradient(120deg,#073d2d,#0b5138);color:#fff;text-align:center;padding:45px 20px}.hero h1{font:600 clamp(2.3rem,5vw,3.7rem)/1 "Cormorant Garamond",Georgia,serif;margin:5px 0 8px}.hero p{max-width:760px;margin:auto;color:#f4ead7}.flourish{color:#d3ad4e;letter-spacing:.25em;margin:10px 0}main{width:min(1100px,calc(100% - 32px));margin:40px auto 60px}.section-heading{text-align:center;margin-bottom:20px}.section-heading h2{font:600 clamp(2rem,4vw,2.75rem)/1.08 "Cormorant Garamond",Georgia,serif;color:var(--green);margin:0 0 6px}.section-heading p{max-width:720px;margin:auto}.specialist-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.specialist-card{background:#fffdf7;border:1px solid var(--line);border-radius:14px;padding:21px;display:flex;flex-direction:column}.image-slot{width:100%;height:180px;border-radius:10px;border:1px solid #eadbc5;background:#f3ead9;display:flex;align-items:center;justify-content:center;margin:0 0 16px;color:#766b5d;font-size:.9rem;text-align:center}.specialist-card h3{font:700 1.3rem/1.15 "Cormorant Garamond",Georgia,serif;color:var(--green);margin:0 0 7px}.tag{font-size:.86rem;color:#766b5d;margin-bottom:12px}.description{margin:0 0 10px}.more-content{display:none;margin:0 0 12px}.more-toggle{align-self:flex-start;background:none;border:0;padding:0;color:#765018;font:700 1rem Lato,Arial,sans-serif;text-decoration:underline;cursor:pointer;margin-bottom:14px}.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}.resource-link{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--gold);border-radius:999px;padding:.55rem .85rem;color:var(--green);font-weight:700;text-decoration:none;background:#fff9ee}.credit{font-size:.78rem;color:#766b5d;margin-top:8px}@media(max-width:760px){.specialist-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="flourish">— ✦ —</div><h1>County-wide &amp; specialist bodies</h1><p>Test preview of the proposed uniform card layout and fixed image area.</p></header>
+<main>
+<div class="section-heading"><h2>Test preview</h2><div class="flourish">— ✦ —</div><p>This page is a test only. The live website has not been changed.</p></div>
+<div class="specialist-grid">
+<article class="specialist-card">
+<div class="image-slot">NNHS image area<br><small>Supplied image will go here</small></div>
+<h3>Northamptonshire Natural History Society (NNHS)</h3>
+<div class="tag">County-wide · Specialist body</div>
+<p class="description">The Northamptonshire Natural History Society has been part of the local community since 1876. For 150 years, we have been recording and preserving Northamptonshire’s fascinating natural and local history.</p>
+<div class="more-content" id="more-nnhs">Our collections include fossils, historic photographs, journals and records gathered over generations. The History Section meets at the Humfrey Rooms, Northampton, NN1 1LD, on the last Thursday of each month at 2.30pm. Everyone is welcome – you don’t need to be a member or an expert to come along.</div>
+<button class="more-toggle" type="button" aria-expanded="false" aria-controls="more-nnhs" onclick="toggleMore(this)">More about NNHS…</button>
+<div class="links"><a class="resource-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">Visit NNHS ↗</a></div>
+<div class="credit">Image credit: NNHS</div>
+</article>
+<article class="specialist-card">
+<div class="image-slot">Reserved image area</div>
+<h3>Example existing specialist body</h3>
+<div class="tag">County-wide · Specialist body</div>
+<p class="description">This example shows how a second card would align with NNHS even if its image and description are different lengths.</p>
+<div class="more-content" id="more-example">Longer information can sit behind the More option so the main page remains easy to scan.</div>
+<button class="more-toggle" type="button" aria-expanded="false" aria-controls="more-example" onclick="document.getElementById('more-example').style.display='block';this.style.display='none'">More information…</button>
+<div class="links"><a class="resource-link" href="#">Visit website ↗</a></div>
+</article>
+</div>
+</main>
+<script>function toggleMore(btn){const el=document.getElementById(btn.getAttribute('aria-controls'));const open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));el.style.display=open?'none':'block';btn.textContent=open?'More about NNHS…':'Show less';}</script>
+</body>
+</html>
