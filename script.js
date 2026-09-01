@@ -219,6 +219,61 @@ if (community) {
   document.head.appendChild(facebookStyle);
 }
 
+// Natural History Society card — TEST branch only.
+// The image has been uploaded to this branch as assets/Natural History.png.
+const addNaturalHistoryCard = () => {
+  const communitySection = document.querySelector('.community-facebook-feature');
+  if (!communitySection || communitySection.querySelector('.natural-history-card')) return;
+
+  const card = document.createElement('section');
+  card.className = 'natural-history-feature';
+  card.innerHTML = `
+    <div class="mini-flourish">— ✦ —</div>
+    <h3>County-wide &amp; Specialist Bodies</h3>
+    <article class="natural-history-card">
+      <img src="assets/Natural History.png" alt="Northamptonshire Natural History Society">
+      <div class="natural-history-card-copy">
+        <p class="eyebrow">★ County-wide &amp; Specialist Body</p>
+        <h4>Northamptonshire Natural History Society</h4>
+        <p>Northamptonshire Natural History Society — a county-wide specialist organisation with an interest in the natural history of Northamptonshire.</p>
+        <details class="natural-history-more">
+          <summary>More</summary>
+          <div class="natural-history-more-content">
+            <p>Explore the Northamptonshire Natural History Society website for more information about the society and its activities.</p>
+            <a class="button natural-history-button" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">Visit Website →</a>
+          </div>
+        </details>
+      </div>
+    </article>`;
+
+  const posts = communitySection.querySelector('.facebook-real-posts');
+  if (posts) communitySection.insertBefore(card, posts);
+  else communitySection.appendChild(card);
+
+  const style = document.createElement('style');
+  style.textContent = `
+    .natural-history-feature{width:min(900px,100%);margin:18px auto 20px;text-align:center}
+    .natural-history-feature>h3{font-size:clamp(22px,2.2vw,30px);margin:4px 0 12px;color:var(--nhn-green,#17392f)}
+    .natural-history-card{display:grid;grid-template-columns:minmax(220px,36%) minmax(0,1fr);gap:22px;align-items:center;text-align:left;background:#fffdf8;border:1px solid #e4d6c1;border-radius:10px;padding:16px;box-shadow:0 2px 8px rgba(23,57,47,.08)}
+    .natural-history-card>img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:7px;border:1px solid #e4d6c1}
+    .natural-history-card-copy{min-width:0}
+    .natural-history-card-copy .eyebrow{margin:0 0 5px;font-size:13px}
+    .natural-history-card-copy h4{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(24px,2.3vw,32px);line-height:1.08;color:var(--nhn-green,#17392f);margin:0 0 8px}
+    .natural-history-card-copy>p:not(.eyebrow){font-size:16px;line-height:1.5;margin:0 0 10px}
+    .natural-history-more{border-top:1px solid #e4d6c1;padding-top:8px;margin-top:8px}
+    .natural-history-more summary{cursor:pointer;color:var(--nhn-green,#17392f);font-family:"Cormorant Garamond",Georgia,serif;font-size:18px;font-weight:600;list-style:none}
+    .natural-history-more summary::-webkit-details-marker{display:none}
+    .natural-history-more summary::after{content:' +';font-family:Georgia,serif}
+    .natural-history-more[open] summary::after{content:' −'}
+    .natural-history-more-content{padding-top:8px}
+    .natural-history-more-content p{font-size:15px;line-height:1.45;margin:0 0 10px}
+    .natural-history-button{display:inline-block!important;width:auto!important;margin-top:0!important;padding:8px 14px!important}
+    @media(max-width:700px){.natural-history-card{grid-template-columns:1fr;gap:14px}.natural-history-card>img{max-width:420px;margin:0 auto}.natural-history-card-copy{text-align:left}}
+  `;
+  document.head.appendChild(style);
+};
+addNaturalHistoryCard();
+
 const searchButton = document.querySelector('.search-toggle');
 searchButton?.addEventListener('click', () => {
   const query = window.prompt('Search the Northamptonshire History Gateway');
