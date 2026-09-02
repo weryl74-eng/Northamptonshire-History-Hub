@@ -1,0 +1,32 @@
+name: Tidy NNHS card
+on:
+  push:
+    branches:
+      - TEST-NHN-WORKING-SEP-2026
+jobs:
+  tidy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tidy only NNHS grid spacing
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('archives-resources.html')
+          s = p.read_text(encoding='utf-8')
+          old = 'grid-template-areas:"image title" "website copy" "website more"'
+          new = 'grid-template-areas:"image title" "image copy" "website more"'
+          if old not in s:
+              raise SystemExit('Expected NNHS grid rule not found; no change made.')
+          s2 = s.replace(old, new, 1)
+          p.write_text(s2, encoding='utf-8')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archives-resources.html
+          if git diff --cached --quiet; then
+            echo "No change needed"
+          else
+            git commit -m "Tidy NNHS card title spacing"
+            git push
+          fi
