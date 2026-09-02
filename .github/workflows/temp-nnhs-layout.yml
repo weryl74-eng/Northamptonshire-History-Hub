@@ -1,0 +1,60 @@
+name: Temporary NNHS card layout
+
+on:
+  push:
+    branches:
+      - TEST-NHN-WORKING-SEP-2026
+
+permissions:
+  contents: write
+
+jobs:
+  adjust-card:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Adjust NNHS card and remove temporary workflow
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('archives-resources.html')
+          s = p.read_text(encoding='utf-8')
+
+          s = s.replace(
+              '.specialist-card{background:#fffdf7;border:1px solid var(--line);border-radius:14px;padding:21px;box-shadow:var(--shadow);display:flex;flex-direction:column;height:360px;overflow:hidden}',
+              '.specialist-card{background:#fffdf7;border:1px solid var(--line);border-radius:14px;padding:21px}'
+          )
+          s = s.replace(
+              '.specialist-card p{margin:0 0 15px;flex:1;overflow:hidden}',
+              '.specialist-card p{margin:0 0 15px}'
+          )
+          s = s.replace(
+              '.specialist-card .resource-link{margin-top:auto}',
+              '.specialist-card .resource-link{margin-top:2px}'
+          )
+          s = s.replace(
+              '.specialist-image{display:block;width:100%;height:100px;object-fit:cover;border-radius:10px;margin:0 0 12px;border:1px solid #eadbc5;flex:0 0 100px}',
+              '.specialist-image{display:block;width:100%;max-height:180px;object-fit:cover;border-radius:10px;margin:0 0 16px;border:1px solid #eadbc5}'
+          )
+          s = s.replace(
+              '.specialist-card{height:360px}',
+              ''
+          )
+
+          target = '<article class="specialist-card">\n        <img class="specialist-image" src="assets/Natural History.png" alt="Northamptonshire Natural History Society image, supplied by NNHS">'
+          replacement = '<article class="specialist-card nnhs-card">\n        <img class="specialist-image" src="assets/Natural History.png" alt="Northamptonshire Natural History Society image, supplied by NNHS">'
+          s = s.replace(target, replacement, 1)
+
+          insert = '''\n    .nnhs-card{height:285px;overflow:hidden}\n    .nnhs-card .specialist-image{height:90px;max-height:90px;object-fit:cover;margin-bottom:12px}\n    .nnhs-card p{max-height:78px;overflow:hidden}\n    .nnhs-card .resource-link{margin-top:auto}\n'''
+          s = s.replace('    .region-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}', insert + '    .region-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}', 1)
+
+          p.write_text(s, encoding='utf-8')
+          Path('.github/workflows/temp-nnhs-layout.yml').unlink()
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archives-resources.html .github/workflows/temp-nnhs-layout.yml
+          git diff --cached --quiet && exit 0
+          git commit -m "Set Natural History card to compact earlier layout"
+          git push
