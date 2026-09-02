@@ -57,7 +57,7 @@
     .nnhs-card{height:285px;overflow:hidden;display:grid;grid-template-columns:155px minmax(0,1fr);grid-template-rows:auto 1fr auto;grid-template-areas:"image title" "website copy" "website more";column-gap:18px;align-items:start}
     .nnhs-card .specialist-image{grid-area:image;display:block;width:145px;height:110px;max-height:none;object-fit:contain;object-position:center;border-radius:8px;margin:0 0 8px;border:1px solid #eadbc5}
     .nnhs-card h3{grid-area:title}
-    .nnhs-card p{grid-area:copy;max-height:none;min-height:0;overflow-y:auto;overflow-x:hidden;margin:0;padding-right:8px;scrollbar-width:thin}
+    .nnhs-card p{grid-area:copy;height:116px;min-height:0;max-height:116px;overflow-y:scroll;overflow-x:hidden;margin:0;padding-right:8px;scrollbar-width:thin}
     .nnhs-card .nnhs-website-link{grid-area:website;align-self:end;justify-self:start;display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--gold);border-radius:999px;padding:.48rem .7rem;color:var(--green);font-weight:700;text-decoration:none;background:#fff9ee;white-space:nowrap}
     .nnhs-card .nnhs-website-link::after{content:"↗";font-size:1rem}
     .nnhs-card .resource-link{grid-area:more;margin-top:8px;justify-self:start}
@@ -90,7 +90,7 @@
     .approved-footer-hotspot:hover{box-shadow:inset 0 0 0 2px rgba(205,164,62,.55)}
     .approved-footer-hotspot:focus-visible{outline:3px solid #f4d276;outline-offset:3px}
     .approved-footer-accessible{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-    @media(max-width:760px){.topbar-inner{align-items:flex-start;flex-direction:column;padding:12px 0 15px}.topnav{justify-content:flex-start;gap:14px}.section-nav{grid-template-columns:1fr;margin-top:-18px}.section-nav a{border-right:0;border-bottom:1px solid var(--line)}.section-nav a:last-child{border-bottom:0}.hero{padding-top:42px}.resource-grid,.specialist-grid,.region-grid{grid-template-columns:1fr}.resource-card,.region-card{border-radius:13px}.nnhs-card{grid-template-columns:125px minmax(0,1fr);grid-template-rows:auto 1fr auto;grid-template-areas:"image title" "website copy" "website more";column-gap:14px}.nnhs-card .specialist-image{width:115px;height:92px}.nnhs-card .nnhs-website-link{font-size:.88rem}.nnhs-card .resource-link{font-size:.88rem}}
+    @media(max-width:760px){.topbar-inner{align-items:flex-start;flex-direction:column;padding:12px 0 15px}.topnav{justify-content:flex-start;gap:14px}.section-nav{grid-template-columns:1fr;margin-top:-18px}.section-nav a{border-right:0;border-bottom:1px solid var(--line)}.section-nav a:last-child{border-bottom:0}.hero{padding-top:42px}.resource-grid,.specialist-grid,.region-grid{grid-template-columns:1fr}.resource-card,.region-card{border-radius:13px}.nnhs-card{grid-template-columns:125px minmax(0,1fr);grid-template-rows:auto 1fr auto;grid-template-areas:"image title" "website copy" "website more";column-gap:14px}.nnhs-card .specialist-image{width:115px;height:92px}.nnhs-card p{height:130px;max-height:130px}.nnhs-card .nnhs-website-link{font-size:.88rem}.nnhs-card .resource-link{font-size:.88rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -152,7 +152,7 @@
       <article class="resource-card">
         <h3>Northamptonshire Heritage Forum</h3>
         <p>Find museums, galleries, historic houses, heritage sites and societies across the county.</p>
-        <a class="resource-link" href="https://www.northamptonshireheritageforum.co.uk/" target="_blank" rel="noopener noreferrer">Visit the Heritage Forum</a>
+        <a class="resource-link" href="https://www.northantsheritageforum.co.uk/" target="_blank" rel="noopener noreferrer">Visit the forum</a>
       </article>
     </div>
   </section>
@@ -161,24 +161,9 @@
     <div class="section-heading">
       <h2 id="specialists-title">County-wide &amp; specialist bodies</h2>
       <div class="flourish" aria-hidden="true">— ✦ —</div>
-      <p>Organisations with county-wide collections, specialist knowledge or a particular area of historical interest.</p>
+      <p>Organisations and societies with specialist collections, expertise or a county-wide remit.</p>
     </div>
     <div class="specialist-grid">
-      <article class="specialist-card">
-        <h3>Northamptonshire Family History Society</h3>
-        <p>Support for family historians researching Northamptonshire people and places, including publications, indexes and member resources.</p>
-        <a class="resource-link" href="https://www.northants-fhs.org/" target="_blank" rel="noopener noreferrer">More</a>
-      </article>
-      <article class="specialist-card">
-        <h3>Northamptonshire Record Society</h3>
-        <p>Publishes historical records and research relating to the county, with a long tradition of making source material accessible to researchers.</p>
-        <a class="resource-link" href="https://www.northamptonshirerecordsociety.org.uk/" target="_blank" rel="noopener noreferrer">More</a>
-      </article>
-      <article class="specialist-card">
-        <h3>Northamptonshire Industrial Archaeology Group</h3>
-        <p>Promotes research and recording of the county’s industrial heritage, including buildings, sites, transport and working landscapes.</p>
-        <a class="resource-link" href="https://www.niag.org.uk/" target="_blank" rel="noopener noreferrer">More</a>
-      </article>
       <article class="specialist-card nnhs-card">
         <img class="specialist-image" src="assets/Natural History.png" alt="Northamptonshire Natural History Society image, supplied by NNHS">
         <h3>Northamptonshire Natural History Society (NNHS)</h3>
@@ -191,18 +176,51 @@
 
   <section class="resource-section" id="local" aria-labelledby="local-title">
     <div class="section-heading">
-      <h2 id="local-title">Local societies &amp; groups</h2>
+      <h2 id="local-title">Local history societies</h2>
       <div class="flourish" aria-hidden="true">— ✦ —</div>
-      <p>Local history societies and groups are often the best source of detailed knowledge about individual towns, villages and communities.</p>
+      <p>Local groups and societies are listed by area. Where a web address has not yet been verified, it is marked clearly.</p>
     </div>
     <div class="region-grid">
-      <article class="region-card"><h3>North Northamptonshire</h3><ul class="society-list"><li><a href="https://www.ketteringartscentre.com/" target="_blank" rel="noopener noreferrer">Kettering &amp; District Historical Society</a></li><li><a href="https://www.wellingboroughhistory.org.uk/" target="_blank" rel="noopener noreferrer">Wellingborough &amp; District Local History Society</a></li></ul></article>
-      <article class="region-card"><h3>West Northamptonshire</h3><ul class="society-list"><li><a href="https://www.daventryhistory.org.uk/" target="_blank" rel="noopener noreferrer">Daventry Local History Society</a></li><li><a href="https://www.banburycivic.org.uk/" target="_blank" rel="noopener noreferrer">Towcester &amp; District Local History Society</a></li></ul></article>
+      <article class="region-card">
+        <h3>Daventry &amp; West Northamptonshire</h3>
+        <ul class="society-list">
+          <li><a href="https://daventryhistory.co.uk/" target="_blank" rel="noopener noreferrer">Daventry Local History Society</a></li>
+          <li><a href="https://www.daventrymuseum.org.uk/" target="_blank" rel="noopener noreferrer">Daventry Museum</a></li>
+        </ul>
+      </article>
+      <article class="region-card">
+        <h3>Kettering &amp; East Northamptonshire</h3>
+        <ul class="society-list">
+          <li><a href="https://www.kettering.gov.uk/" target="_blank" rel="noopener noreferrer">Kettering Local History Society</a></li>
+          <li><a href="https://www.heritagefund.org.uk/" target="_blank" rel="noopener noreferrer">Local heritage resources</a></li>
+        </ul>
+      </article>
+      <article class="region-card">
+        <h3>Northampton</h3>
+        <ul class="society-list">
+          <li><a href="https://www.northamptonshirerecordsociety.co.uk/" target="_blank" rel="noopener noreferrer">Northamptonshire Record Society</a></li>
+        </ul>
+      </article>
+      <article class="region-card">
+        <h3>South Northamptonshire</h3>
+        <ul class="society-list">
+          <li><span>Local societies and groups will be added as links are verified.</span></li>
+        </ul>
+      </article>
     </div>
   </section>
+
+  <div class="page-note">
+    <p><strong>Have a Northamptonshire archive, society or specialist organisation to suggest?</strong></p>
+    <p>Use the <a href="get-involved.html">Get Involved</a> form and choose “Suggest a useful resource, archive or website”.</p>
+  </div>
 </main>
-<footer class="approved-footer" aria-label="Northants History Network footer">
-  <img class="approved-footer-image" src="assets/NHN-footer-approved.png" alt="">
+<footer class="approved-footer" aria-label="Site footer">
+  <img class="approved-footer-image" src="assets/NHN-email-footer.png" alt="Northants History Network footer with contact and policy links">
+  <a class="approved-footer-hotspot approved-footer-about-link" href="about.html"><span class="approved-footer-accessible">About Northants History Network</span></a>
+  <a class="approved-footer-hotspot approved-footer-email-link" href="mailto:info@northantshistorynetwork.org.uk"><strong>Email us</strong><span>info@northantshistorynetwork.org.uk</span></a>
+  <a class="approved-footer-hotspot approved-footer-accessibility-link" href="accessibility.html"><span class="approved-footer-accessible">Accessibility statement</span></a>
+  <a class="approved-footer-hotspot approved-footer-privacy-link" href="privacy.html"><span class="approved-footer-accessible">Privacy statement</span></a>
 </footer>
 </body>
 </html>
