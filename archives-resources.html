@@ -53,6 +53,17 @@
     .specialist-card p{margin:0 0 15px}
     .specialist-card .resource-link{margin-top:2px}
     .specialist-image{display:block;width:100%;max-height:180px;object-fit:cover;border-radius:10px;margin:0 0 16px;border:1px solid #eadbc5}
+
+    .nnhs-card{display:grid;grid-template-columns:145px minmax(0,1fr);grid-template-areas:"media title" "media copy" "media more";column-gap:18px;align-items:start;background:#fffdf7;border:1px solid var(--line);border-radius:14px;padding:21px;overflow:visible}
+    .nnhs-media{grid-area:media;display:flex;flex-direction:column;gap:12px}
+    .nnhs-card .specialist-image{display:block;width:145px;height:122px;max-height:none;object-fit:cover;object-position:center;border-radius:10px;margin:0;border:1px solid #eadbc5}
+    .nnhs-card h3{grid-area:title;font:700 1.3rem/1.15 "Cormorant Garamond",Georgia,serif;margin:0 0 8px;color:var(--green)}
+    .nnhs-card p{grid-area:copy;margin:0 0 10px;font-size:.9rem;line-height:1.45;overflow:visible;height:auto;max-height:none;padding:0;color:var(--body)}
+    .nnhs-card .nnhs-website-link{display:flex;align-items:center;justify-content:center;min-height:40px;border:0;border-radius:999px;padding:.5rem .7rem;background:#354726;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;font-size:.88rem}
+    .nnhs-card .nnhs-website-link:hover,.nnhs-card .nnhs-website-link:focus-visible{background:#26371d;color:#fff}
+    .nnhs-card .nnhs-more-link{grid-area:more;justify-self:start;align-self:end;color:var(--green);font:600 1.08rem/1.2 "Cormorant Garamond",Georgia,serif;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;background:none;border:0;padding:0;border-radius:0}
+    .nnhs-card .nnhs-more-link::after{content:none}
+
     .region-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
     .region-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:23px;box-shadow:var(--shadow)}
     .region-card h3{font:700 1.48rem/1.12 "Cormorant Garamond",Georgia,serif;color:var(--green);margin:0 0 13px;padding-bottom:10px;border-bottom:1px solid var(--line)}
@@ -81,7 +92,7 @@
     .approved-footer-hotspot:hover{box-shadow:inset 0 0 0 2px rgba(205,164,62,.55)}
     .approved-footer-hotspot:focus-visible{outline:3px solid #f4d276;outline-offset:3px}
     .approved-footer-accessible{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-    @media(max-width:760px){.topbar-inner{align-items:flex-start;flex-direction:column;padding:12px 0 15px}.topnav{justify-content:flex-start;gap:14px}.section-nav{grid-template-columns:1fr;margin-top:-18px}.section-nav a{border-right:0;border-bottom:1px solid var(--line)}.section-nav a:last-child{border-bottom:0}.hero{padding-top:42px}.resource-grid,.specialist-grid,.region-grid{grid-template-columns:1fr}.resource-card,.region-card{border-radius:13px}}
+    @media(max-width:760px){.topbar-inner{align-items:flex-start;flex-direction:column;padding:12px 0 15px}.topnav{justify-content:flex-start;gap:14px}.section-nav{grid-template-columns:1fr;margin-top:-18px}.section-nav a{border-right:0;border-bottom:1px solid var(--line)}.section-nav a:last-child{border-bottom:0}.hero{padding-top:42px}.resource-grid,.specialist-grid,.region-grid{grid-template-columns:1fr}.resource-card,.region-card{border-radius:13px}.nnhs-card{grid-template-columns:120px minmax(0,1fr);grid-template-areas:"media title" "media copy" "media more";column-gap:14px;padding:18px}.nnhs-card .specialist-image{width:120px;height:105px}.nnhs-card h3{font-size:1.2rem}.nnhs-card p{font-size:.85rem}.nnhs-card .nnhs-website-link{font-size:.8rem;min-height:38px}.nnhs-card .nnhs-more-link{font-size:1rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -195,11 +206,14 @@
         <p>Preserves historic public-transport vehicles and archive material connected with road and passenger transport.</p>
         <a class="resource-link" href="https://ntheritage.org/" target="_blank" rel="noopener noreferrer">Visit website</a>
       </article>
-      <article class="specialist-card">
-        <img class="specialist-image" src="Natural History.png" alt="Northamptonshire Natural History Society image, supplied by NNHS">
-        <h3>Northamptonshire Natural History Society (NNHS)</h3>
-        <p>The Northamptonshire Natural History Society has been part of the local community since 1876. For 150 years, we have been recording and preserving Northamptonshire’s fascinating natural and local history, with collections including fossils, historic photographs, journals and records gathered over generations. Our History Section meets at the Humfrey Rooms, Northampton, NN1 1LD, on the last Thursday of each month at 2.30pm. Everyone is welcome – you don’t need to be a member or an expert to come along.</p>
-        <a class="resource-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">Visit NNHS website</a>
+      <article class="specialist-card nnhs-card">
+        <div class="nnhs-media">
+          <img class="specialist-image" src="assets/Natural History.png" alt="Northamptonshire Natural History Society image, supplied by NNHS">
+          <a class="nnhs-website-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+        </div>
+        <h3>Northamptonshire Natural History Society</h3>
+        <p>The Northamptonshire Natural History Society has been part of the local community since 1876, recording and preserving the county’s natural and local history. Its collections include fossils, historic photographs, journals and records gathered over generations.</p>
+        <a class="nnhs-more-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">More</a>
       </article>
     </div>
   </section>
@@ -209,6 +223,17 @@
       <h2 id="local-title">Local historical &amp; heritage societies</h2>
       <div class="flourish" aria-hidden="true">— ✦ —</div>
       <p>Browse by area to find organisations researching and sharing the history of towns, villages and districts.</p>
+    </div>
+    <div class="specialist-grid" style="margin-bottom:18px">
+      <article class="specialist-card nnhs-card">
+        <div class="nnhs-media">
+          <img class="specialist-image" src="assets/Great Addington.webp" alt="Great Addington village image, supplied by Great Addington History">
+          <a class="nnhs-website-link" href="https://www.greataddingtonhistory.uk/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+        </div>
+        <h3>Great Addington History</h3>
+        <p>Great Addington History explores the story of this Northamptonshire village, its people, buildings and Nene Valley landscape from the Iron Age to the modern day. The site includes material on archaeology, village buildings, maps, All Saints Church, transport and life through different historical periods.</p>
+        <a class="nnhs-more-link" href="https://www.greataddingtonhistory.uk/" target="_blank" rel="noopener noreferrer">More</a>
+      </article>
     </div>
     <div class="region-grid">
       <section class="region-card" aria-labelledby="region-central">
