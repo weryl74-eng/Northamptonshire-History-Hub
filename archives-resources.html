@@ -3,6 +3,323 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Northamptonshire Archives &amp; Local History Resources | Northants History Network</title>
-  <meta name="description" content="Find trusted Northamptonshire archives, heritage organisations, specialist bodies and local history societies for researching the county’s past.">
+  <title>Archives &amp; Resources | Northants History Network</title>
+  <meta name="description" content="Trusted archives, heritage organisations and local history societies for researching Northamptonshire's past.">
   <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;700&display=swap');
+    :root{--green:#063d2c;--green-2:#164d35;--gold:#a26d20;--cream:#fbf5e9;--paper:#fffaf0;--ink:#17392f;--body:#344b4a;--line:#dfc49c;--shadow:0 10px 30px rgba(49,42,28,.08)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:24px}
+    body{margin:0;background:var(--cream);color:var(--body);font-family:Lato,Arial,sans-serif;line-height:1.62}
+    a{color:#765018;text-underline-offset:3px}
+    a:hover{color:var(--green)}
+    .skip-link{position:fixed;z-index:100;left:1rem;top:-5rem;background:#fff;padding:.75rem 1rem;border:2px solid var(--gold)}
+    .skip-link:focus{top:1rem}
+    .topbar{background:var(--green);color:#fff;border-bottom:3px solid var(--gold)}
+    .topbar-inner{width:min(1120px,calc(100% - 36px));min-height:86px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:13px;color:#fff;text-decoration:none}
+    .brand img{width:66px;height:66px;object-fit:contain}
+    .brand strong{display:block;font:600 1.25rem/1.05 "Cormorant Garamond",Georgia,serif}
+    .brand small{display:block;margin-top:4px;color:#e9d7ae;letter-spacing:.08em;text-transform:uppercase}
+    .topnav{display:flex;align-items:center;gap:19px;flex-wrap:wrap;justify-content:flex-end}
+    .topnav a{color:#fff;text-decoration:none;font-weight:700;font-size:.92rem}
+    .topnav a:hover,.topnav a:focus-visible{color:#f2cf72}
+    .hero{background:linear-gradient(120deg,#073d2d,#0b5138);color:#fff;text-align:center;padding:54px 20px 48px}
+    .hero h1{font:600 clamp(2.45rem,6vw,4.25rem)/1 "Cormorant Garamond",Georgia,serif;margin:5px 0 8px}
+    .hero p{max-width:760px;margin:0 auto;color:#f4ead7;font-size:1.06rem}
+    .flourish{color:#d3ad4e;letter-spacing:.25em;margin:10px 0}
+    .section-nav{width:min(940px,calc(100% - 32px));margin:-23px auto 34px;display:grid;grid-template-columns:repeat(3,1fr);background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .section-nav a{display:flex;align-items:center;justify-content:center;min-height:58px;padding:12px;text-align:center;text-decoration:none;color:var(--green);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.13rem;font-weight:700;border-right:1px solid var(--line)}
+    .section-nav a:last-child{border-right:0}
+    .section-nav a:hover,.section-nav a:focus-visible{background:#f2e8d7}
+    main{width:min(1100px,calc(100% - 32px));margin:0 auto 54px}
+    .intro-panel{max-width:850px;margin:0 auto 28px;text-align:center}
+    .intro-panel p{font-size:1.05rem;margin:0}
+    .resource-section{scroll-margin-top:24px;margin:0 0 42px}
+    .section-heading{text-align:center;margin:0 0 20px}
+    .section-heading h2{font:600 clamp(2rem,4vw,2.75rem)/1.08 "Cormorant Garamond",Georgia,serif;color:var(--green);margin:0 0 6px}
+    .section-heading p{max-width:720px;margin:0 auto}
+    .resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .resource-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:100%}
+    .resource-card h3{font:700 1.5rem/1.12 "Cormorant Garamond",Georgia,serif;color:var(--green);margin:0 0 8px}
+    .resource-card p{margin:0 0 18px;flex:1}
+    .resource-link{align-self:flex-start;display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--gold);border-radius:999px;padding:.55rem .85rem;color:var(--green);font-weight:700;text-decoration:none;background:#fff9ee}
+    .resource-link::after{content:"↗";font-size:1rem}
+    .resource-link:hover,.resource-link:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
+    .specialist-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+    .specialist-card{background:#fffdf7;border:1px solid var(--line);border-radius:14px;padding:21px}
+    .specialist-card h3{font:700 1.3rem/1.15 "Cormorant Garamond",Georgia,serif;color:var(--green);margin:0 0 7px}
+    .specialist-card p{margin:0 0 15px}
+    .specialist-card .resource-link{margin-top:2px}
+    .specialist-image{display:block;width:100%;max-height:180px;object-fit:cover;border-radius:10px;margin:0 0 16px;border:1px solid #eadbc5}
+
+    .nnhs-card{display:grid;grid-template-columns:145px minmax(0,1fr);grid-template-areas:"media title" "media copy" "media more";column-gap:18px;align-items:start;background:#fffdf7;border:1px solid var(--line);border-radius:14px;padding:21px;overflow:visible}
+    .nnhs-media{grid-area:media;display:flex;flex-direction:column;gap:12px}
+    .nnhs-card .specialist-image{display:block;width:145px;height:122px;max-height:none;object-fit:cover;object-position:center;border-radius:10px;margin:0;border:1px solid #eadbc5}
+    .nnhs-card h3{grid-area:title;font:700 1.3rem/1.15 "Cormorant Garamond",Georgia,serif;margin:0 0 8px;color:var(--green)}
+    .nnhs-card p{grid-area:copy;margin:0 0 10px;font-size:.9rem;line-height:1.45;overflow:visible;height:auto;max-height:none;padding:0;color:var(--body)}
+    .nnhs-card .nnhs-website-link{display:flex;align-items:center;justify-content:center;min-height:40px;border:0;border-radius:999px;padding:.5rem .7rem;background:#354726;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;font-size:.88rem}
+    .nnhs-card .nnhs-website-link:hover,.nnhs-card .nnhs-website-link:focus-visible{background:#26371d;color:#fff}
+    .nnhs-card .nnhs-more-link{grid-area:more;justify-self:start;align-self:end;color:var(--green);font:600 1.08rem/1.2 "Cormorant Garamond",Georgia,serif;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;background:none;border:0;padding:0;border-radius:0;cursor:pointer}
+    .nnhs-card .nnhs-more-link::after{content:none}
+    .card-extra[hidden]{display:none}
+
+    .region-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .region-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:23px;box-shadow:var(--shadow)}
+    .region-card h3{font:700 1.48rem/1.12 "Cormorant Garamond",Georgia,serif;color:var(--green);margin:0 0 13px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+    .society-list{list-style:none;margin:0;padding:0}
+    .society-list li{border-bottom:1px solid #eadbc5;padding:10px 0}
+    .society-list li:last-child{border-bottom:0;padding-bottom:0}
+    .society-list a{font-weight:700;color:var(--green);text-decoration-thickness:1px}
+    .society-list a::after{content:" ↗";color:var(--gold);font-weight:400}
+    .unverified{display:block;color:#766b5d;font-size:.86rem;margin-top:3px}
+    .page-note{background:#f3ead9;border-left:4px solid var(--gold);border-radius:9px;padding:17px 18px;margin-top:25px}
+    .page-note p{margin:0 0 8px}
+    .page-note p:last-child{margin-bottom:0}
+    .page-note a{font-weight:700}
+    .approved-footer{position:relative;width:100%;margin:0;padding:0;background:#fff}
+    .approved-footer-image{display:block;width:100%;height:auto}
+    .approved-footer-hotspot{position:absolute;z-index:3;display:block;border-radius:6px;text-decoration:none}
+    .approved-footer-about-link{left:3.5%;top:23%;width:39%;height:52%}
+    .approved-footer-email-mask{position:absolute;z-index:2;left:48.75%;top:43.9%;width:20.3%;height:20.2%;background:#002718}
+    .approved-footer-email-mask::after{content:"";position:absolute;z-index:0;left:100%;top:40%;width:11.25%;height:60%;background:#002718}
+    .approved-footer-email-mask::before{content:"";position:absolute;z-index:1;left:101.55%;top:40%;width:max(1px,.08vw);height:60%;background:rgba(183,150,70,.62)}
+    .approved-footer-email-link{left:48.45%;top:43.9%;width:20.65%;height:20.2%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 .45% 0 .75%;overflow:hidden;background:transparent;color:#f5ead6;font-family:"Cormorant Garamond",Georgia,serif;white-space:nowrap}
+    .approved-footer-email-link strong{font-size:clamp(5px,1.38vw,27px);line-height:1.02;font-weight:500}
+    .approved-footer-email-link span{font-size:clamp(5px,1vw,20px);line-height:1.22}
+    .approved-footer-accessibility-link{left:70.2%;top:34%;width:14.3%;height:38%}
+    .approved-footer-privacy-link{left:85.2%;top:34%;width:11.7%;height:38%}
+    .approved-footer-hotspot:hover{box-shadow:inset 0 0 0 2px rgba(205,164,62,.55)}
+    .approved-footer-hotspot:focus-visible{outline:3px solid #f4d276;outline-offset:3px}
+    .approved-footer-accessible{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    @media(max-width:760px){.topbar-inner{align-items:flex-start;flex-direction:column;padding:12px 0 15px}.topnav{justify-content:flex-start;gap:14px}.section-nav{grid-template-columns:1fr;margin-top:-18px}.section-nav a{border-right:0;border-bottom:1px solid var(--line)}.section-nav a:last-child{border-bottom:0}.hero{padding-top:42px}.resource-grid,.specialist-grid,.region-grid{grid-template-columns:1fr}.resource-card,.region-card{border-radius:13px}.nnhs-card{grid-template-columns:120px minmax(0,1fr);grid-template-areas:"media title" "media copy" "media more";column-gap:14px;padding:18px}.nnhs-card .specialist-image{width:120px;height:105px}.nnhs-card h3{font-size:1.2rem}.nnhs-card p{font-size:.85rem}.nnhs-card .nnhs-website-link{font-size:.8rem;min-height:38px}.nnhs-card .nnhs-more-link{font-size:1rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Northants History Network home">
+        <img src="assets/nhn-seal.png" alt="">
+        <span><strong>Northants History Network</strong><small>Established 2022</small></span>
+      </a>
+      <nav class="topnav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="northamptonshire_full_timeline.html">Timeline</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="https://www.facebook.com/groups/872721351232099/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </nav>
+    </div>
+  </div>
+  <div class="hero">
+    <div class="flourish" aria-hidden="true">— ✦ —</div>
+    <h1>Archives &amp; Resources</h1>
+    <p>A gateway to trusted archives, specialist organisations and local societies exploring Northamptonshire’s past.</p>
+  </div>
+</header>
+<nav class="section-nav" aria-label="On this page">
+  <a href="#archives">Archives &amp; heritage partners</a>
+  <a href="#specialists">County-wide specialists</a>
+  <a href="#local">Local societies</a>
+</nav>
+<main id="main">
+  <div class="intro-panel">
+    <p>Use these links to find records, collections, research support and groups with knowledge of particular places or subjects. External websites open in a new tab.</p>
+  </div>
+
+  <section class="resource-section" id="archives" aria-labelledby="archives-title">
+    <div class="section-heading">
+      <h2 id="archives-title">Archives &amp; heritage partners</h2>
+      <div class="flourish" aria-hidden="true">— ✦ —</div>
+      <p>Places to begin when you want to consult original records, explore collections or discover county heritage.</p>
+    </div>
+    <div class="resource-grid">
+      <article class="resource-card">
+        <h3>Northamptonshire Archives Service</h3>
+        <p>Explore more than 800 years of Northamptonshire’s history through written records, maps, drawings and photographs held at Wootton Hall Park.</p>
+        <a class="resource-link" href="https://www.westnorthants.gov.uk/northamptonshire-archives-service" target="_blank" rel="noopener noreferrer">Visit the archives service</a>
+      </article>
+      <article class="resource-card">
+        <h3>Northampton Museum &amp; Art Gallery</h3>
+        <p>Discover local history, archaeology, art and the museum’s nationally significant footwear collection in the centre of Northampton.</p>
+        <a class="resource-link" href="https://www.northamptonmuseums.com/" target="_blank" rel="noopener noreferrer">Visit the museum</a>
+      </article>
+      <article class="resource-card">
+        <h3>Chester House Estate</h3>
+        <p>Explore a nationally significant heritage site in Irchester with evidence of more than 10,000 years of human activity.</p>
+        <a class="resource-link" href="https://chesterhouseestate.org/" target="_blank" rel="noopener noreferrer">Visit Chester House Estate</a>
+      </article>
+      <article class="resource-card">
+        <h3>Northamptonshire Heritage Forum</h3>
+        <p>Find museums, galleries, historic houses, heritage sites and societies across the county through this supporting network.</p>
+        <a class="resource-link" href="https://www.northamptonshireheritageforum.co.uk/" target="_blank" rel="noopener noreferrer">Visit the Heritage Forum</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="resource-section" id="specialists" aria-labelledby="specialists-title">
+    <div class="section-heading">
+      <h2 id="specialists-title">County-wide &amp; specialist bodies</h2>
+      <div class="flourish" aria-hidden="true">— ✦ —</div>
+      <p>Organisations supporting research, preservation and public interest across Northamptonshire.</p>
+    </div>
+    <div class="specialist-grid">
+      <article class="specialist-card">
+        <h3>Northamptonshire Record Society</h3>
+        <p>Historical publications, research support, a specialist library and the journal <em>Northamptonshire Past and Present</em>.</p>
+        <a class="resource-link" href="https://www.northamptonshirerecordsociety.org.uk/" target="_blank" rel="noopener noreferrer">Visit website</a>
+      </article>
+      <article class="specialist-card">
+        <h3>Northamptonshire Archaeological Society</h3>
+        <p>Promotes the study and appreciation of archaeology and history in the county through publications, lectures and visits.</p>
+        <a class="resource-link" href="https://www.northants-archaeology.org.uk/" target="_blank" rel="noopener noreferrer">Visit website</a>
+      </article>
+      <article class="specialist-card">
+        <h3>Northamptonshire Family History Society</h3>
+        <p>Resources and support for family-history research in Northamptonshire, including local records and member projects.</p>
+        <a class="resource-link" href="https://northants-fhs.org/" target="_blank" rel="noopener noreferrer">Visit website</a>
+      </article>
+      <article class="specialist-card">
+        <h3>Northamptonshire Battlefields Society</h3>
+        <p>Researches, promotes and helps to preserve Northamptonshire’s battlefield heritage, including Naseby and Northampton.</p>
+        <a class="resource-link" href="https://northantsbattles.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
+      </article>
+      <article class="specialist-card">
+        <h3>Northamptonshire Industrial Archaeology Group (NIAG)</h3>
+        <p>Explores the county’s industrial heritage through meetings, fieldwork, publications, reports and photographic records.</p>
+        <a class="resource-link" href="https://www.niag.org.uk/" target="_blank" rel="noopener noreferrer">Visit website</a>
+      </article>
+      <article class="specialist-card">
+        <h3>Northamptonshire Gardens Trust</h3>
+        <p>Researches and helps to protect the county’s historic parks, gardens and designed landscapes.</p>
+        <a class="resource-link" href="https://sites.google.com/view/northamptonshiregardenstrust2/home" target="_blank" rel="noopener noreferrer">Visit website</a>
+      </article>
+      <article class="specialist-card">
+        <h3>Northamptonshire Historic Churches Trust</h3>
+        <p>Supports the preservation and repair of churches and chapels of historic and architectural interest across the county.</p>
+        <a class="resource-link" href="https://www.nhct.org.uk/" target="_blank" rel="noopener noreferrer">Visit website</a>
+      </article>
+      <article class="specialist-card">
+        <h3>Northampton Transport Heritage</h3>
+        <p>Preserves historic public-transport vehicles and archive material connected with road and passenger transport.</p>
+        <a class="resource-link" href="https://ntheritage.org/" target="_blank" rel="noopener noreferrer">Visit website</a>
+      </article>
+      <article class="specialist-card nnhs-card">
+        <div class="nnhs-media">
+          <img class="specialist-image" src="assets/Natural History.png" alt="Northamptonshire Natural History Society image, supplied by NNHS">
+          <a class="nnhs-website-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+        </div>
+        <h3>Northamptonshire Natural History Society</h3>
+        <p>The Northamptonshire Natural History Society has been part of the local community since 1876.<span class="card-extra" id="nnhs-more-text" hidden> For 150 years, we have been recording and preserving Northamptonshire’s fascinating natural and local history, with collections including fossils, historic photographs, journals and records gathered over generations. Our History Section meets at the Humfrey Rooms, Northampton, NN1 1LD, on the last Thursday of each month at 2.30pm. Everyone is welcome – you don’t need to be a member or an expert to come along.</span></p>
+        <button class="nnhs-more-link" type="button" aria-expanded="false" aria-controls="nnhs-more-text">More</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="resource-section" id="local" aria-labelledby="local-title">
+    <div class="section-heading">
+      <h2 id="local-title">Local historical &amp; heritage societies</h2>
+      <div class="flourish" aria-hidden="true">— ✦ —</div>
+      <p>Browse by area to find organisations researching and sharing the history of towns, villages and districts.</p>
+    </div>
+    <div class="specialist-grid" style="margin-bottom:18px">
+      <article class="specialist-card nnhs-card">
+        <div class="nnhs-media">
+          <img class="specialist-image" src="assets/Great Addington.webp" alt="Great Addington village image, supplied by Great Addington History">
+          <a class="nnhs-website-link" href="https://www.greataddingtonhistory.uk/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+        </div>
+        <h3>Great Addington History</h3>
+        <p>Great Addington History explores the story of this Northamptonshire village, its people, buildings and Nene Valley landscape from the Iron Age to the modern day.<span class="card-extra" id="great-addington-more-text" hidden> The site includes material on archaeology, village buildings, maps, All Saints Church, transport and life through different historical periods.</span></p>
+        <button class="nnhs-more-link" type="button" aria-expanded="false" aria-controls="great-addington-more-text">More</button>
+      </article>
+    </div>
+    <div class="region-grid">
+      <section class="region-card" aria-labelledby="region-central">
+        <h3 id="region-central">Northampton &amp; Central</h3>
+        <ul class="society-list">
+          <li><a href="https://www.duston-pc.gov.uk/duston-history-society" target="_blank" rel="noopener noreferrer">Duston History Society</a></li>
+          <li><a href="https://www.cogenhoeheritage.org.uk/" target="_blank" rel="noopener noreferrer">Cogenhoe &amp; Whiston Heritage Society</a></li>
+          <li>Kingsthorpe Local History Society<span class="unverified">A current public website has not yet been verified.</span></li>
+          <li>Billing History Group<span class="unverified">A current public website has not yet been verified.</span></li>
+        </ul>
+      </section>
+      <section class="region-card" aria-labelledby="region-south">
+        <h3 id="region-south">South Northamptonshire</h3>
+        <ul class="society-list">
+          <li><a href="https://www.northamptonshireheritageforum.co.uk/societies/towcester-and-district-history-society" target="_blank" rel="noopener noreferrer">Towcester &amp; District History Society</a></li>
+          <li><a href="https://www.balh.org.uk/societies-brackley-district-historical-society" target="_blank" rel="noopener noreferrer">Brackley &amp; District Historical Society</a></li>
+          <li><a href="https://aynho.org/village_life/aynho-history-society/" target="_blank" rel="noopener noreferrer">Aynho History Society</a></li>
+          <li><a href="https://www.potterspuryhistorygroup.co.uk/" target="_blank" rel="noopener noreferrer">Potterspury History Group</a></li>
+          <li><a href="https://www.mkheritage.org.uk/yghg/" target="_blank" rel="noopener noreferrer">Yardley Gobion History Group</a></li>
+        </ul>
+      </section>
+      <section class="region-card" aria-labelledby="region-west">
+        <h3 id="region-west">Daventry &amp; West</h3>
+        <ul class="society-list">
+          <li><a href="https://www.northamptonshireheritageforum.co.uk/societies/west-haddon-local-history-group" target="_blank" rel="noopener noreferrer">West Haddon Local History Group</a></li>
+          <li><a href="https://www.crickhistory.org/" target="_blank" rel="noopener noreferrer">Crick History Society</a></li>
+          <li><a href="https://www.longbuckbymuseum.co.uk/local-history-society/" target="_blank" rel="noopener noreferrer">Long Buckby Local History Society</a></li>
+          <li><a href="https://www.balh.org.uk/societies-flore-heritage-society" target="_blank" rel="noopener noreferrer">Flore Heritage Society</a></li>
+          <li><a href="https://www.eydonhistoricalresearchgroup.org/" target="_blank" rel="noopener noreferrer">Eydon Historical Research Group</a></li>
+        </ul>
+      </section>
+      <section class="region-card" aria-labelledby="region-north">
+        <h3 id="region-north">North &amp; Corby / Oundle</h3>
+        <ul class="society-list">
+          <li><a href="https://www.oundlehistoricalsociety.org.uk/" target="_blank" rel="noopener noreferrer">Oundle Historical Society</a></li>
+          <li><a href="https://www.northamptonshireheritageforum.co.uk/societies/gretton-local-history-society" target="_blank" rel="noopener noreferrer">Gretton Local History Society</a></li>
+          <li><a href="https://www.northamptonshireheritageforum.co.uk/societies/kings-cliffe-heritage-society" target="_blank" rel="noopener noreferrer">King’s Cliffe Heritage Society</a></li>
+          <li><a href="https://www.brigstockparishcouncil.gov.uk/historical-society" target="_blank" rel="noopener noreferrer">Brigstock Historical Society</a></li>
+        </ul>
+      </section>
+      <section class="region-card" aria-labelledby="region-kettering">
+        <h3 id="region-kettering">Kettering &amp; Wellingborough</h3>
+        <ul class="society-list">
+          <li><a href="https://ketteringcivicsociety.net/" target="_blank" rel="noopener noreferrer">Kettering Civic Society</a></li>
+          <li><a href="https://www.northamptonshireheritageforum.co.uk/societies/wellingborough-archaeological-and-history-society" target="_blank" rel="noopener noreferrer">Wellingborough Archaeological &amp; Historical Society</a></li>
+          <li><a href="https://tingdenetofinedon.co.uk/" target="_blank" rel="noopener noreferrer">Finedon Local History Society</a></li>
+          <li><a href="https://wollastonheritage.org/" target="_blank" rel="noopener noreferrer">Wollaston Heritage Society</a></li>
+          <li><a href="https://www.northamptonshireheritageforum.co.uk/societies/irchester-parish-historical-society" target="_blank" rel="noopener noreferrer">Irchester Parish Historical Society</a></li>
+        </ul>
+      </section>
+      <section class="region-card" aria-labelledby="region-east">
+        <h3 id="region-east">East Northamptonshire</h3>
+        <ul class="society-list">
+          <li><a href="https://www.rdhs.org.uk/" target="_blank" rel="noopener noreferrer">Rushden &amp; District History Society</a></li>
+          <li><a href="https://www.hifars.co.uk/" target="_blank" rel="noopener noreferrer">Higham Ferrers Archaeology &amp; Research Society (HiFARS)</a></li>
+          <li><a href="https://www.balh.org.uk/societies-raunds-and-district-history-society" target="_blank" rel="noopener noreferrer">Raunds &amp; District History Society</a></li>
+          <li><a href="https://www.balh.org.uk/societies-thrapston-district-historical-society" target="_blank" rel="noopener noreferrer">Thrapston &amp; District Historical Society</a></li>
+        </ul>
+      </section>
+    </div>
+    <aside class="page-note" aria-label="Link information">
+      <p><strong>Links checked 28 August 2026.</strong> Where an organisation did not have a clearly verified current website, we have left its name unlinked rather than risk sending visitors to the wrong place.</p>
+      <p>Know a confirmed link, or want to suggest another resource? <a href="get-involved.html">Get involved</a> or email <a href="mailto:northantshistorynetwork@gmail.com">northantshistorynetwork@gmail.com</a>.</p>
+    </aside>
+  </section>
+</main>
+<footer class="approved-footer" aria-label="Northants History Network footer">
+  <img class="approved-footer-image" src="NHN-footer-approved-28aug2026.png" alt="">
+  <a class="approved-footer-hotspot approved-footer-about-link" href="about.html#about" aria-label="About Northants History Network"></a>
+  <span class="approved-footer-email-mask" aria-hidden="true"></span>
+  <a class="approved-footer-hotspot approved-footer-email-link" href="mailto:northantshistorynetwork@gmail.com" aria-label="Email Northants History Network"><strong>Email us</strong><span>northantshistorynetwork@gmail.com</span></a>
+  <a class="approved-footer-hotspot approved-footer-accessibility-link" href="about.html#accessibility" aria-label="Read the accessibility statement"></a>
+  <a class="approved-footer-hotspot approved-footer-privacy-link" href="about.html#privacy" aria-label="Read the privacy notice"></a>
+  <div class="approved-footer-accessible"><strong>Northants History Network</strong><span>Connecting Northamptonshire’s Past with Today’s Community</span><a href="about.html#about">About Northants History Network</a><a href="mailto:northantshistorynetwork@gmail.com">Email us at northantshistorynetwork@gmail.com</a><a href="about.html#accessibility">Accessibility statement</a><a href="about.html#privacy">Privacy notice</a><span>© 2026 Northants History Network</span></div>
+</footer>
+<script>
+  document.querySelectorAll('.nnhs-more-link[aria-controls]').forEach(function(button){
+    button.addEventListener('click',function(){
+      var extra=document.getElementById(button.getAttribute('aria-controls'));
+      var expanded=button.getAttribute('aria-expanded')==='true';
+      extra.hidden=expanded;
+      button.setAttribute('aria-expanded',String(!expanded));
+      button.textContent=expanded?'More':'Less';
+    });
+  });
+</script>
+</body>
+</html>
