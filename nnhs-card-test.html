@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NNHS Card Test | Northants History Network</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;700&display=swap');
+    :root{--green:#354726;--gold:#d5a94f;--cream:#fffaf0;--body:#4b463c}
+    *{box-sizing:border-box}
+    body{margin:0;padding:48px 24px;background:#fbf5e9;color:var(--body);font-family:Lato,Arial,sans-serif}
+    .wrap{max-width:1120px;margin:0 auto}
+    .card{display:grid;grid-template-columns:minmax(250px,37%) 1fr;gap:48px;align-items:center;background:var(--cream);border:3px solid var(--gold);border-radius:26px;padding:42px;box-shadow:0 10px 26px rgba(54,45,28,.14)}
+    .media{display:flex;flex-direction:column;gap:20px}
+    .media img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:22px}
+    .visit{display:flex;align-items:center;justify-content:center;min-height:74px;border-radius:999px;background:var(--green);color:#fff;text-decoration:none;font-size:1.3rem;font-weight:700}
+    .visit:hover,.visit:focus-visible{filter:brightness(.95)}
+    .content h1{margin:0 0 28px;color:var(--green);font:600 clamp(2.45rem,5vw,4.4rem)/1.06 "Cormorant Garamond",Georgia,serif}
+    .content p{margin:0 0 30px;font-size:clamp(1.12rem,2vw,1.55rem);line-height:1.6}
+    .more{color:var(--green);font:600 1.45rem/1.2 "Cormorant Garamond",Georgia,serif;text-decoration:underline;text-underline-offset:6px}
+    @media(max-width:760px){body{padding:22px 14px}.card{grid-template-columns:1fr;gap:28px;padding:24px;border-width:2px;border-radius:20px}.media{max-width:420px;width:100%;margin:0 auto}.visit{min-height:60px;font-size:1.1rem}.content h1{font-size:2.4rem;margin-bottom:18px}.content p{font-size:1rem;margin-bottom:20px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <article class="card" aria-labelledby="nnhs-title">
+      <div class="media">
+        <img src="assets/Natural History.png" alt="Northamptonshire Natural History Society image, supplied by NNHS">
+        <a class="visit" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+      </div>
+      <div class="content">
+        <h1 id="nnhs-title">Northamptonshire Natural History Society (NNHS)</h1>
+        <p>The Northamptonshire Natural History Society has been part of the local community since 1876, recording and preserving the county’s natural and local history. Its collections include fossils, historic photographs, journals and records gathered over generations.</p>
+        <a class="more" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">More</a>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
