@@ -61,8 +61,9 @@
     .nnhs-card p{grid-area:copy;margin:0 0 10px;font-size:.9rem;line-height:1.45;overflow:visible;height:auto;max-height:none;padding:0;color:var(--body)}
     .nnhs-card .nnhs-website-link{display:flex;align-items:center;justify-content:center;min-height:40px;border:0;border-radius:999px;padding:.5rem .7rem;background:#354726;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;font-size:.88rem}
     .nnhs-card .nnhs-website-link:hover,.nnhs-card .nnhs-website-link:focus-visible{background:#26371d;color:#fff}
-    .nnhs-card .nnhs-more-link{grid-area:more;justify-self:start;align-self:end;color:var(--green);font:600 1.08rem/1.2 "Cormorant Garamond",Georgia,serif;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;background:none;border:0;padding:0;border-radius:0}
+    .nnhs-card .nnhs-more-link{grid-area:more;justify-self:start;align-self:end;color:var(--green);font:600 1.08rem/1.2 "Cormorant Garamond",Georgia,serif;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;background:none;border:0;padding:0;border-radius:0;cursor:pointer}
     .nnhs-card .nnhs-more-link::after{content:none}
+    .card-extra[hidden]{display:none}
 
     .region-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
     .region-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:23px;box-shadow:var(--shadow)}
@@ -212,8 +213,8 @@
           <a class="nnhs-website-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
         </div>
         <h3>Northamptonshire Natural History Society</h3>
-        <p>The Northamptonshire Natural History Society has been part of the local community since 1876, recording and preserving the county’s natural and local history. Its collections include fossils, historic photographs, journals and records gathered over generations.</p>
-        <a class="nnhs-more-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">More</a>
+        <p>The Northamptonshire Natural History Society has been part of the local community since 1876.<span class="card-extra" id="nnhs-more-text" hidden> For 150 years, we have been recording and preserving Northamptonshire’s fascinating natural and local history, with collections including fossils, historic photographs, journals and records gathered over generations. Our History Section meets at the Humfrey Rooms, Northampton, NN1 1LD, on the last Thursday of each month at 2.30pm. Everyone is welcome – you don’t need to be a member or an expert to come along.</span></p>
+        <button class="nnhs-more-link" type="button" aria-expanded="false" aria-controls="nnhs-more-text">More</button>
       </article>
     </div>
   </section>
@@ -231,8 +232,8 @@
           <a class="nnhs-website-link" href="https://www.greataddingtonhistory.uk/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
         </div>
         <h3>Great Addington History</h3>
-        <p>Great Addington History explores the story of this Northamptonshire village, its people, buildings and Nene Valley landscape from the Iron Age to the modern day. The site includes material on archaeology, village buildings, maps, All Saints Church, transport and life through different historical periods.</p>
-        <a class="nnhs-more-link" href="https://www.greataddingtonhistory.uk/" target="_blank" rel="noopener noreferrer">More</a>
+        <p>Great Addington History explores the story of this Northamptonshire village, its people, buildings and Nene Valley landscape from the Iron Age to the modern day.<span class="card-extra" id="great-addington-more-text" hidden> The site includes material on archaeology, village buildings, maps, All Saints Church, transport and life through different historical periods.</span></p>
+        <button class="nnhs-more-link" type="button" aria-expanded="false" aria-controls="great-addington-more-text">More</button>
       </article>
     </div>
     <div class="region-grid">
@@ -309,5 +310,16 @@
   <a class="approved-footer-hotspot approved-footer-privacy-link" href="about.html#privacy" aria-label="Read the privacy notice"></a>
   <div class="approved-footer-accessible"><strong>Northants History Network</strong><span>Connecting Northamptonshire’s Past with Today’s Community</span><a href="about.html#about">About Northants History Network</a><a href="mailto:northantshistorynetwork@gmail.com">Email us at northantshistorynetwork@gmail.com</a><a href="about.html#accessibility">Accessibility statement</a><a href="about.html#privacy">Privacy notice</a><span>© 2026 Northants History Network</span></div>
 </footer>
+<script>
+  document.querySelectorAll('.nnhs-more-link[aria-controls]').forEach(function(button){
+    button.addEventListener('click',function(){
+      var extra=document.getElementById(button.getAttribute('aria-controls'));
+      var expanded=button.getAttribute('aria-expanded')==='true';
+      extra.hidden=expanded;
+      button.setAttribute('aria-expanded',String(!expanded));
+      button.textContent=expanded?'More':'Less';
+    });
+  });
+</script>
 </body>
 </html>
