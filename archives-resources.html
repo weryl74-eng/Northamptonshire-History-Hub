@@ -54,13 +54,14 @@
     .specialist-card .resource-link{margin-top:2px}
     .specialist-image{display:block;width:100%;max-height:180px;object-fit:cover;border-radius:10px;margin:0 0 16px;border:1px solid #eadbc5}
 
-    .nnhs-card{height:285px;overflow:hidden;display:grid;grid-template-columns:155px minmax(0,1fr);grid-template-rows:auto 1fr auto;grid-template-areas:"image title" "website copy" "website more";column-gap:18px;align-items:start}
-    .nnhs-card .specialist-image{grid-area:image;display:block;width:145px;height:110px;max-height:none;object-fit:contain;object-position:center;border-radius:8px;margin:0 0 8px;border:1px solid #eadbc5}
-    .nnhs-card h3{grid-area:title}
-    .nnhs-card p{grid-area:copy;height:82px;min-height:0;max-height:82px;overflow-y:scroll;overflow-x:hidden;margin:0;padding-right:8px;scrollbar-width:thin}
-    .nnhs-card .nnhs-website-link{grid-area:website;align-self:end;justify-self:start;display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--gold);border-radius:999px;padding:.48rem .7rem;color:var(--green);font-weight:700;text-decoration:none;background:#fff9ee;white-space:nowrap}
-    .nnhs-card .nnhs-website-link::after{content:"↗";font-size:1rem}
-    .nnhs-card .resource-link{grid-area:more;margin-top:8px;justify-self:start}
+    .nnhs-card{display:grid;grid-template-columns:150px minmax(0,1fr);grid-template-rows:auto auto 1fr;grid-template-areas:"media title" "media copy" "media more";column-gap:22px;align-items:start;padding:22px;background:#fffaf0;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:visible}
+    .nnhs-media{grid-area:media;display:flex;flex-direction:column;gap:12px}
+    .nnhs-card .specialist-image{display:block;width:150px;height:150px;max-height:none;object-fit:cover;object-position:center;border-radius:12px;margin:0;border:0}
+    .nnhs-card h3{grid-area:title;font:600 1.65rem/1.08 "Cormorant Garamond",Georgia,serif;margin:2px 0 12px;color:var(--green)}
+    .nnhs-card p{grid-area:copy;margin:0 0 14px;font-size:.96rem;line-height:1.52;overflow:visible;height:auto;max-height:none;padding:0}
+    .nnhs-card .nnhs-website-link{display:flex;align-items:center;justify-content:center;min-height:42px;border:0;border-radius:999px;padding:.55rem .75rem;background:#354726;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap}
+    .nnhs-card .nnhs-website-link:hover,.nnhs-card .nnhs-website-link:focus-visible{background:#26371d;color:#fff}
+    .nnhs-card .nnhs-more-link{grid-area:more;justify-self:start;align-self:end;color:var(--green);font:600 1.15rem/1.2 "Cormorant Garamond",Georgia,serif;text-decoration:underline;text-underline-offset:4px}
 
     .region-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
     .region-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:23px;box-shadow:var(--shadow)}
@@ -90,7 +91,7 @@
     .approved-footer-hotspot:hover{box-shadow:inset 0 0 0 2px rgba(205,164,62,.55)}
     .approved-footer-hotspot:focus-visible{outline:3px solid #f4d276;outline-offset:3px}
     .approved-footer-accessible{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-    @media(max-width:760px){.topbar-inner{align-items:flex-start;flex-direction:column;padding:12px 0 15px}.topnav{justify-content:flex-start;gap:14px}.section-nav{grid-template-columns:1fr;margin-top:-18px}.section-nav a{border-right:0;border-bottom:1px solid var(--line)}.section-nav a:last-child{border-bottom:0}.hero{padding-top:42px}.resource-grid,.specialist-grid,.region-grid{grid-template-columns:1fr}.resource-card,.region-card{border-radius:13px}.nnhs-card{grid-template-columns:125px minmax(0,1fr);grid-template-rows:auto 1fr auto;grid-template-areas:"image title" "website copy" "website more";column-gap:14px}.nnhs-card .specialist-image{width:115px;height:92px}.nnhs-card p{height:100px;max-height:100px}.nnhs-card .nnhs-website-link{font-size:.88rem}.nnhs-card .resource-link{font-size:.88rem}}
+    @media(max-width:760px){.topbar-inner{align-items:flex-start;flex-direction:column;padding:12px 0 15px}.topnav{justify-content:flex-start;gap:14px}.section-nav{grid-template-columns:1fr;margin-top:-18px}.section-nav a{border-right:0;border-bottom:1px solid var(--line)}.section-nav a:last-child{border-bottom:0}.hero{padding-top:42px}.resource-grid,.specialist-grid,.region-grid{grid-template-columns:1fr}.resource-card,.region-card{border-radius:13px}.nnhs-card{grid-template-columns:120px minmax(0,1fr);grid-template-areas:"media title" "media copy" "media more";column-gap:14px;padding:18px}.nnhs-card .specialist-image{width:120px;height:120px}.nnhs-card h3{font-size:1.35rem}.nnhs-card p{font-size:.9rem}.nnhs-card .nnhs-website-link{font-size:.82rem;min-height:38px}.nnhs-card .nnhs-more-link{font-size:1rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -205,11 +206,13 @@
         <a class="resource-link" href="https://ntheritage.org/" target="_blank" rel="noopener noreferrer">Visit website</a>
       </article>
       <article class="specialist-card nnhs-card">
-        <img class="specialist-image" src="assets/Natural History.png" alt="Northamptonshire Natural History Society image, supplied by NNHS">
+        <div class="nnhs-media">
+          <img class="specialist-image" src="assets/Natural History.png" alt="Northamptonshire Natural History Society image, supplied by NNHS">
+          <a class="nnhs-website-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+        </div>
         <h3>Northamptonshire Natural History Society (NNHS)</h3>
         <p>The Northamptonshire Natural History Society has been part of the local community since 1876, recording and preserving the county’s natural and local history. Its collections include fossils, historic photographs, journals and records gathered over generations.</p>
-        <a class="nnhs-website-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">Visit website</a>
-        <a class="resource-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">More</a>
+        <a class="nnhs-more-link" href="https://nnhs.info/" target="_blank" rel="noopener noreferrer">More</a>
       </article>
     </div>
   </section>
