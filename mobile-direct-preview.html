@@ -8,19 +8,26 @@
 <body>
 <p style="padding:16px;font-family:Arial,sans-serif">Loading the direct NHN mobile test…</p>
 <script>
-fetch('index.html?direct-mobile-preview=3', {cache:'no-store'})
+fetch('index.html?direct-mobile-preview=4', {cache:'no-store'})
   .then(response => {
     if (!response.ok) throw new Error('Could not load test homepage');
     return response.text();
   })
   .then(html => {
+    const exactFirstTestHero = `
+      <style>
+        .hero{position:relative!important;aspect-ratio:1728/864!important;background:#f5ead6 url('assets/heritage-landscape.png') center/100% 100% no-repeat!important;overflow:hidden!important;height:auto!important;min-height:0!important}
+      </style>`;
     const mobileCss = '<link rel="stylesheet" href="mobile-icons-sep2026.css">';
     const previewMarker = '<meta name="robots" content="noindex,nofollow">';
 
-    // For this visual mobile check, remove the homepage script because it rewrites the hero
-    // and is what is distorting the baked-in logo on mobile. The page remains fully visible.
+    // Replace the homepage hero with the exact simple hero used in the first successful mobile test.
+    html = html.replace(/<header class="hero" id="home">[\s\S]*?<\/header>/i, '<header class="hero" id="home" aria-label="NHN hero preview"></header>');
+
+    // Remove the homepage script because it rewrites the hero after load.
     html = html.replace(/<script\s+src="script\.js[^"]*"><\/script>/i, '');
-    html = html.replace('</head>', mobileCss + previewMarker + '</head>');
+
+    html = html.replace('</head>', mobileCss + exactFirstTestHero + previewMarker + '</head>');
 
     document.open();
     document.write(html);
