@@ -8,7 +8,7 @@
 <body>
 <p style="padding:16px;font-family:Arial,sans-serif">Loading the direct NHN mobile test…</p>
 <script>
-fetch('index.html?direct-mobile-preview=4', {cache:'no-store'})
+fetch('index.html?direct-mobile-preview=5', {cache:'no-store'})
   .then(response => {
     if (!response.ok) throw new Error('Could not load test homepage');
     return response.text();
@@ -20,14 +20,16 @@ fetch('index.html?direct-mobile-preview=4', {cache:'no-store'})
       </style>`;
     const mobileCss = '<link rel="stylesheet" href="mobile-icons-sep2026.css">';
     const previewMarker = '<meta name="robots" content="noindex,nofollow">';
+    const facebookOnlyScript = '<script src="mobile-facebook-preview.js?v=20260906"><\/script>';
 
     // Replace the homepage hero with the exact simple hero used in the first successful mobile test.
     html = html.replace(/<header class="hero" id="home">[\s\S]*?<\/header>/i, '<header class="hero" id="home" aria-label="NHN hero preview"></header>');
 
-    // Remove the homepage script because it rewrites the hero after load.
+    // Remove the normal homepage script because its hero code distorts the mobile artwork.
     html = html.replace(/<script\s+src="script\.js[^"]*"><\/script>/i, '');
 
     html = html.replace('</head>', mobileCss + exactFirstTestHero + previewMarker + '</head>');
+    html = html.replace('</body>', facebookOnlyScript + '</body>');
 
     document.open();
     document.write(html);
