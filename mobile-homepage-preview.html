@@ -20,10 +20,26 @@ frame.addEventListener('load',()=>{
   try{
     const doc=frame.contentDocument;
     if(!doc) return;
+
     const link=doc.createElement('link');
     link.rel='stylesheet';
     link.href='mobile-icons-sep2026.css';
     doc.head.appendChild(link);
+
+    const hero=doc.querySelector('.hero');
+    const landscape=doc.querySelector('.hero .landscape');
+    if(hero && landscape){
+      const heroImage=new frame.contentWindow.Image();
+      heroImage.onload=()=>{
+        if(heroImage.naturalWidth && heroImage.naturalHeight){
+          hero.style.setProperty('aspect-ratio', `${heroImage.naturalWidth} / ${heroImage.naturalHeight}`, 'important');
+          hero.style.setProperty('height','auto','important');
+          landscape.style.setProperty('background-size','100% 100%','important');
+          landscape.style.setProperty('background-position','center center','important');
+        }
+      };
+      heroImage.src='assets/heritage-landscape.png';
+    }
   }catch(e){}
 });
 </script>
