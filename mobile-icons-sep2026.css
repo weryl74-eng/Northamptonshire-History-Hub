@@ -1,11 +1,5 @@
 /* Mobile quick-links test — September 2026. Test branch only. Desktop unchanged. */
 @media (max-width:600px){
-  /* Keep the flattened hero artwork in its natural proportions on phones so the embedded NHN logo is not stretched. */
-  .hero .landscape{
-    background-size:cover!important;
-    background-position:center center!important;
-  }
-
   .quick-links{
     width:calc(100% - 20px)!important;
     margin:-10px auto 24px!important;
