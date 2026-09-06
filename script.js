@@ -1,17 +1,34 @@
 // Current test script — no stylesheet injection.
 
-// Keep the approved 22 August hero visible as a fallback.
+const mobileHomepage = window.matchMedia('(max-width: 600px)').matches;
 const hero = document.querySelector('.hero');
-if (hero) {
+
+// Mobile-only homepage refinement: keep the approved hero artwork untouched and use the verified 3 + 2 quick-link layout.
+if (mobileHomepage) {
+  const mobileHomepageStyle = document.createElement('style');
+  mobileHomepageStyle.textContent = `
+    .quick-links{width:calc(100% - 20px)!important;margin:-10px auto 24px!important;padding:14px 10px 42px!important;border-radius:22px!important;grid-template-columns:repeat(6,1fr)!important;row-gap:8px!important;overflow:visible!important;justify-content:stretch!important}
+    .quick-links a,.quick-links .quick-link-pending{min-height:82px!important;padding:4px 4px 8px!important;gap:4px!important;font-size:12px!important;line-height:1.08!important;border-right:0!important;border-bottom:1px solid rgba(162,109,32,.28)!important}
+    .quick-links>*:nth-child(1),.quick-links>*:nth-child(2),.quick-links>*:nth-child(3){grid-column:span 2!important}
+    .quick-links>*:nth-child(4){grid-column:2/span 2!important;border-bottom:0!important}
+    .quick-links>*:nth-child(5){grid-column:4/span 2!important;border-bottom:0!important}
+    .quick-links .quick-icon{width:44px!important;height:44px!important}
+    .quick-links .quick-icon svg{width:40px!important;height:40px!important}
+    .quick-links:after{width:68%!important;height:30px!important;bottom:4px!important}
+  `;
+  document.head.appendChild(mobileHomepageStyle);
+}
+
+// Keep the approved 22 August hero visible as a fallback on larger screens only.
+if (!mobileHomepage && hero) {
   hero.style.setProperty('background-image', "url('assets/heritage-landscape.png')", 'important');
   hero.style.setProperty('background-position', 'center center', 'important');
   hero.style.setProperty('background-size', '100% 100%', 'important');
   hero.style.setProperty('background-repeat', 'no-repeat', 'important');
 }
 
-// Delicate hero controls: keep the current test artwork (including the cleaner Hazelrigg House),
-// softly veil the baked-in button area, and show the real links as lightweight webpage controls.
-if (hero) {
+// Delicate hero controls: desktop/tablet only. On phones the baked-in approved hero remains untouched.
+if (!mobileHomepage && hero) {
   const siteNav = hero.querySelector('.site-nav');
   const brand = hero.querySelector('.brand');
   const heroActions = hero.querySelector('.hero-actions');
