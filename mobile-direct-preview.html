@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NHN Direct Mobile Preview</title>
+</head>
+<body>
+<p style="padding:16px;font-family:Arial,sans-serif">Loading the direct NHN mobile test…</p>
+<script>
+fetch('index.html?direct-mobile-preview=1', {cache:'no-store'})
+  .then(response => {
+    if (!response.ok) throw new Error('Could not load test homepage');
+    return response.text();
+  })
+  .then(html => {
+    const mobileCss = '<link rel="stylesheet" href="mobile-icons-sep2026.css">';
+    const previewMarker = '<meta name="robots" content="noindex,nofollow">';
+    html = html.replace('</head>', mobileCss + previewMarker + '</head>');
+    document.open();
+    document.write(html);
+    document.close();
+  })
+  .catch(error => {
+    document.body.innerHTML = '<p style="padding:16px;font-family:Arial,sans-serif">The preview could not be loaded. Please refresh the page.</p>';
+  });
+</script>
+</body>
+</html>
