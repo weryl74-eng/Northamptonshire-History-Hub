@@ -1,0 +1,45 @@
+// Mobile preview only: restore the three Facebook community posts without touching the hero.
+const community = document.querySelector('.community-facebook-feature');
+if (community) {
+  const hiddenHeritageUrl = 'https://www.facebook.com/hiddenheritagegenealogy/posts/pfbid02X4GioPPi1LYxgZmoeeCTLjnBTtWKPp6xBgdsaPQVyDyQoBsSsbsSiJ3ZEag3VBFHl';
+  const greatFireUrl = 'https://www.facebook.com/reel/1431671272352303';
+  const delapreUrl = 'https://www.facebook.com/delapreabbey.org/posts/pfbid02sB5Aggypi96f8rwvNL73afoCWzX52uBGDLuH1B24SdJBPA854qRopT6fihBWmErXl';
+  const plugin = url => `https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(url)}&show_text=true&width=500`;
+  const reelPlugin = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(greatFireUrl)}&show_text=true&width=500`;
+
+  community.innerHTML = `
+    <div class="ornate-flourish" aria-hidden="true">❦</div>
+    <h2>Northamptonshire’s History Starts With You</h2>
+    <div class="mini-flourish">— ✦ —</div>
+    <p class="community-tagline">Discover what is happening around Northamptonshire.</p>
+    <p class="community-copy"><em>Together we can celebrate, explore and preserve our county’s heritage.</em></p>
+    <div class="mini-flourish">— ✦ —</div>
+    <div class="facebook-glimpse facebook-real-posts">
+      <h3>A Glimpse of Our Facebook Community Recent Posts</h3>
+      <div class="mini-flourish">— ✦ —</div>
+      <div class="facebook-embed-grid">
+        <div class="facebook-embed-card"><iframe src="${plugin(hiddenHeritageUrl)}" title="Hidden Heritage Facebook post" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+        <div class="facebook-embed-card"><iframe src="${reelPlugin}" title="Great Fire of Northampton Facebook post" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+        <div class="facebook-embed-card"><iframe src="${plugin(delapreUrl)}" title="Delapré Abbey Facebook post" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+      </div>
+    </div>
+    <a class="facebook-cta" href="https://www.facebook.com/groups/872721351232099/" target="_blank" rel="noopener noreferrer">Visit Our Facebook Community →</a>`;
+
+  const facebookStyle = document.createElement('style');
+  facebookStyle.textContent = `
+    .community-facebook-feature{width:min(1180px,calc(100% - 40px))!important;margin:24px auto 22px!important;padding:16px 16px 20px!important;text-align:center!important}
+    .community-facebook-feature .ornate-flourish{width:270px!important;height:34px!important;margin:0 auto 2px!important}
+    .community-facebook-feature h2{font-size:clamp(28px,2.7vw,39px)!important;line-height:1.04!important;margin:0 auto 4px!important}
+    .community-facebook-feature .community-tagline{font-size:18px!important;margin:6px auto 2px!important}
+    .community-facebook-feature .community-copy{font-size:17px!important;margin:0 auto 8px!important}
+    .facebook-real-posts{padding:10px 10px 12px!important;margin:10px auto 14px!important;overflow:hidden!important}
+    .facebook-real-posts h3{font-size:21px!important;margin:0 0 2px!important;text-transform:uppercase!important}
+    .facebook-embed-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important;align-items:start!important;margin-top:7px!important}
+    .facebook-embed-card{height:400px!important;overflow:hidden!important;border:1px solid #e4d6c1!important;border-radius:8px!important;background:#fff!important}
+    .facebook-embed-card iframe{display:block!important;height:500px!important;border:0!important;background:#fff!important;transform:scale(.80)!important;transform-origin:top left!important;width:125%!important}
+    .community-facebook-feature .facebook-cta{margin-top:12px!important}
+    @media(max-width:1000px){.facebook-embed-grid{grid-template-columns:1fr!important}.facebook-embed-card{width:min(440px,100%)!important;margin:0 auto!important;height:500px!important}.facebook-embed-card iframe{height:625px!important}}
+    @media(max-width:600px){.community-facebook-feature{width:min(calc(100% - 20px),680px)!important;padding:14px 8px 18px!important}.facebook-real-posts{padding:8px 5px 10px!important}.facebook-real-posts h3{font-size:19px!important}.facebook-embed-card{height:470px!important}.facebook-embed-card iframe{height:588px!important}}
+  `;
+  document.head.appendChild(facebookStyle);
+}
