@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NHN Mobile Icons Preview</title>
+<style>
+:root{--green:#063d2c;--gold:#a26d20;--cream:#fbf5e9;--ink:#17392f;--line:#eadbc6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,sans-serif}
+.preview-note{margin:0;padding:10px 14px;text-align:center;background:#fff7e8;border-bottom:1px solid var(--line);font-size:13px}
+.hero{position:relative;aspect-ratio:1728/864;background:#f5ead6 url('assets/heritage-landscape.png') center/100% 100% no-repeat;overflow:hidden}
+.quick-links{position:relative;width:min(1160px,calc(100% - 48px));margin:-28px auto 40px;padding:16px 28px 58px;border:1px solid var(--line);border-radius:50% 50% 34px 34px / 12% 12% 34px 34px;background:rgba(251,245,233,.985);box-shadow:0 6px 16px rgb(67 45 19/.07);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible}
+.quick-links a{display:flex;min-width:0;min-height:102px;padding:0 20px;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;text-align:center;text-decoration:none;text-transform:uppercase;font:700 15px/1.12 Georgia,serif;border-right:1px solid #c99d5d}
+.quick-links a:last-child{border-right:0}
+.quick-icon{display:grid;place-items:center;width:58px;height:58px;color:var(--green)}
+.quick-icon svg{width:52px;height:52px;display:block}
+.quick-links:after{content:"";position:absolute;left:50%;bottom:5px;transform:translateX(-50%);width:min(680px,68%);height:48px;background:url('assets/hero-flourish-bottom.png') center/contain no-repeat;pointer-events:none}
+@media(max-width:600px){
+  .hero{aspect-ratio:1728/864}
+  .quick-links{width:calc(100% - 20px);margin:-10px auto 24px;padding:14px 10px 42px;border-radius:22px;grid-template-columns:repeat(6,1fr);row-gap:8px;overflow:visible}
+  .quick-links a{min-height:82px;padding:4px 4px 8px;gap:4px;font-size:12px;line-height:1.08;border-right:0;border-bottom:1px solid rgba(162,109,32,.28)}
+  .quick-links a:nth-child(1),.quick-links a:nth-child(2),.quick-links a:nth-child(3){grid-column:span 2}
+  .quick-links a:nth-child(4){grid-column:2/span 2;border-bottom:0}
+  .quick-links a:nth-child(5){grid-column:4/span 2;border-bottom:0}
+  .quick-icon{width:44px;height:44px}
+  .quick-icon svg{width:40px;height:40px}
+  .quick-links:after{width:68%;height:30px;bottom:4px}
+}
+</style>
+</head>
+<body>
+<p class="preview-note"><strong>Preview only:</strong> mobile quick-links layout. Nothing on the live site has been changed.</p>
+<header class="hero" aria-label="NHN hero preview"></header>
+<nav class="quick-links" aria-label="Explore the site">
+<a href="#"><span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M11 19h26L24 10 11 19Zm4 4v12m6-12v12m6-12v12m6-12v12M10 39h28" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></span><span>Explore History</span></a>
+<a href="#"><span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="15" r="7" fill="currentColor"/><circle cx="11" cy="20" r="5" fill="currentColor"/><circle cx="37" cy="20" r="5" fill="currentColor"/><path d="M14 39v-7c0-7 4-11 10-11s10 4 10 11v7H14ZM2 39v-6c0-5 3-8 8-8 2 0 4 .5 5.4 1.8-2.2 2.3-3.4 5.5-3.4 9.2v3H2Zm44 0v-6c0-5-3-8-8-8-2 0-4 .5-5.4 1.8 2.2 2.3 3.4 5.5 3.4 9.2v3h10Z" fill="currentColor"/></svg></span><span>Community &amp; Groups</span></a>
+<a href="#"><span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="7" y="9" width="34" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M7 18h34M15 5v9M33 5v9" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><rect x="13" y="23" width="5" height="5"/><rect x="22" y="23" width="5" height="5"/><rect x="31" y="23" width="5" height="5"/><rect x="13" y="32" width="5" height="5"/><rect x="22" y="32" width="5" height="5"/></g></svg></span><span>What’s On</span></a>
+<a href="#"><span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 13c-5-5-11-6-18-4v28c7-2 13-1 18 4V13Zm0 0c5-5 11-6 18-4v28c-7-2-13-1-18 4V13Z" fill="currentColor"/></svg></span><span>Archives &amp; Resources</span></a>
+<a href="#"><span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 45S11 30 11 19a13 13 0 1 1 26 0c0 11-13 26-13 26Z" fill="currentColor"/><circle cx="24" cy="19" r="5" fill="var(--cream)"/></svg></span><span>About NHN</span></a>
+</nav>
+</body>
+</html>
