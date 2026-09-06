@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NHN Mobile Homepage Preview</title>
+<style>
+html,body{margin:0;width:100%;height:100%;background:#fbf5e9}
+body{display:flex;flex-direction:column}
+.preview-note{margin:0;padding:8px 12px;text-align:center;background:#fff7e8;border-bottom:1px solid #eadbc6;color:#17392f;font:13px Arial,sans-serif}
+iframe{display:block;width:100%;flex:1;border:0;background:#fbf5e9}
+</style>
+</head>
+<body>
+<p class="preview-note"><strong>Preview only:</strong> full NHN test homepage with the new mobile icon layout. Live site unchanged.</p>
+<iframe id="sitePreview" src="index.html" title="Northants History Network mobile homepage preview"></iframe>
+<script>
+const frame=document.getElementById('sitePreview');
+frame.addEventListener('load',()=>{
+  try{
+    const doc=frame.contentDocument;
+    if(!doc) return;
+    const link=doc.createElement('link');
+    link.rel='stylesheet';
+    link.href='mobile-icons-sep2026.css';
+    doc.head.appendChild(link);
+  }catch(e){}
+});
+</script>
+</body>
+</html>
