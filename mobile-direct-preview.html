@@ -8,7 +8,7 @@
 <body>
 <p style="padding:16px;font-family:Arial,sans-serif">Loading the direct NHN mobile test…</p>
 <script>
-fetch('index.html?direct-mobile-preview=2', {cache:'no-store'})
+fetch('index.html?direct-mobile-preview=3', {cache:'no-store'})
   .then(response => {
     if (!response.ok) throw new Error('Could not load test homepage');
     return response.text();
@@ -16,25 +16,12 @@ fetch('index.html?direct-mobile-preview=2', {cache:'no-store'})
   .then(html => {
     const mobileCss = '<link rel="stylesheet" href="mobile-icons-sep2026.css">';
     const previewMarker = '<meta name="robots" content="noindex,nofollow">';
-    const heroFix = `<script>
-      window.addEventListener('load', function () {
-        const hero = document.querySelector('.hero');
-        const landscape = document.querySelector('.hero .landscape');
-        if (hero && landscape && window.innerWidth <= 600) {
-          hero.style.setProperty('background-image', 'none', 'important');
-          landscape.style.setProperty('display', 'block', 'important');
-          landscape.style.setProperty('inset', '0', 'important');
-          landscape.style.setProperty('width', '100%', 'important');
-          landscape.style.setProperty('height', '100%', 'important');
-          landscape.style.setProperty('background-image', "url('assets/heritage-landscape.png')", 'important');
-          landscape.style.setProperty('background-size', '100% 100%', 'important');
-          landscape.style.setProperty('background-position', 'center center', 'important');
-          landscape.style.setProperty('background-repeat', 'no-repeat', 'important');
-        }
-      });
-    <\/script>`;
+
+    // For this visual mobile check, remove the homepage script because it rewrites the hero
+    // and is what is distorting the baked-in logo on mobile. The page remains fully visible.
+    html = html.replace(/<script\s+src="script\.js[^"]*"><\/script>/i, '');
     html = html.replace('</head>', mobileCss + previewMarker + '</head>');
-    html = html.replace('</body>', heroFix + '</body>');
+
     document.open();
     document.write(html);
     document.close();
