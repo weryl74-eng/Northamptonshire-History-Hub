@@ -29,7 +29,7 @@ html,body{margin:0;width:100%;background:var(--cream);color:var(--ink);font-fami
   .quick-icon svg{width:40px;height:40px}
   .quick-links:after{width:68%;height:30px;bottom:4px}
 }
-#rest-of-homepage{display:block;width:100%;border:0;background:var(--cream);overflow:hidden;min-height:900px}
+#rest-of-homepage{display:block;width:100%;height:900px;border:0;background:var(--cream);overflow:hidden}
 </style>
 </head>
 <body>
@@ -50,7 +50,9 @@ function resizeFrame(){
   try{
     const doc=frame.contentDocument;
     if(!doc) return;
-    frame.style.height=Math.max(doc.documentElement.scrollHeight,doc.body.scrollHeight,900)+'px';
+    frame.style.height='1px';
+    const measuredHeight=Math.max(doc.documentElement.scrollHeight,doc.body.scrollHeight,320);
+    frame.style.height=measuredHeight+'px';
   }catch(e){}
 }
 frame.addEventListener('load',()=>{
@@ -68,6 +70,7 @@ frame.addEventListener('load',()=>{
     resizeFrame();
     if(frame.contentWindow.ResizeObserver){
       const ro=new frame.contentWindow.ResizeObserver(resizeFrame);
+      ro.observe(doc.documentElement);
       ro.observe(doc.body);
     }
     [300,800,1500,3000,6000].forEach(ms=>setTimeout(resizeFrame,ms));
