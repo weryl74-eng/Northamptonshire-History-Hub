@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Full Three-Column Timeline Mockup | Northants History Network</title>
+<meta name="description" content="Preview-only full-page mockup for the Northants History Network three-column Northamptonshire Timeline.">
+<style>
+:root{
+  --cream:#F8F3E9;--parchment:#F1E9D8;--paper:#fffaf0;--ink:#231B14;--mid:#584B3C;--light:#948572;
+  --green:#2E4A3B;--green-dark:#1D3128;--green-light:#E6EDE6;--nhn:#063d2c;--gold:#A3781B;--gold-light:#F6EBCF;
+  --burgundy:#6E2A3B;--burgundy-light:#F3E7EA;--border:rgba(35,27,20,.14);--r:14px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+.preview-note{margin:0;padding:9px 14px;text-align:center;background:#fff7e8;border-bottom:1px solid #eadbc6;color:#17392f;font-size:13px}
+.topbar{background:var(--nhn);color:#fff;border-bottom:3px solid var(--gold)}
+.topbar-inner{width:min(1180px,calc(100% - 36px));min-height:86px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:13px;color:#fff;text-decoration:none}.brand img{width:66px;height:66px;object-fit:contain}.brand strong{display:block;font:600 1.25rem/1.05 Georgia,serif}.brand small{display:block;margin-top:4px;color:#e9d7ae;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem}
+.topnav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.topnav a{color:#fff;text-decoration:none;font-weight:700;font-size:.92rem}.topnav a:hover,.topnav a:focus-visible{color:#f2cf72}
+.hero{background:linear-gradient(120deg,#073d2d,#0b5138);color:#fff;text-align:center;padding:52px 20px 46px}.hero h1{font:600 clamp(2.45rem,6vw,4.2rem)/1 Georgia,serif;margin:7px 0 10px}.hero p{max-width:810px;margin:auto;color:#f4ead7;font-size:1.04rem;line-height:1.65}.flourish{color:#d3ad4e;letter-spacing:.25em;margin:8px 0}
+.filter-wrap{background:var(--parchment);border-bottom:1px solid var(--border);padding:14px 18px;position:sticky;top:0;z-index:20}.filter-inner{max-width:1180px;margin:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.filter-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--light);margin-right:5px}.fbtn{font:500 12.5px Arial,sans-serif;padding:7px 13px;border-radius:20px;border:1px solid var(--border);background:var(--cream);color:var(--mid);cursor:pointer}.fbtn.active{background:var(--green-dark);color:#fff;border-color:var(--green-dark)}.fbtn:hover{background:var(--gold-light)}
+.wrap{max-width:1180px;margin:auto;padding:34px 20px 52px}
+.intro{max-width:900px;margin:0 auto 28px;text-align:center}.intro h2{font:600 2rem Georgia,serif;color:var(--green-dark);margin:0 0 8px}.intro p{margin:0;color:var(--mid)}
+.column-heads{display:grid;grid-template-columns:minmax(150px,.8fr) minmax(300px,1.65fr) minmax(290px,1.45fr);gap:16px;padding:0 0 10px;margin-bottom:2px;border-bottom:2px solid rgba(163,120,27,.45)}.column-heads div{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--green-dark);font-weight:800}.column-heads div:nth-child(3){color:var(--gold)}
+.timeline-grid{display:grid;gap:0}.timeline-row{display:grid;grid-template-columns:minmax(150px,.8fr) minmax(300px,1.65fr) minmax(290px,1.45fr);gap:16px;padding:22px 0;border-bottom:1px solid var(--border);align-items:stretch}.timeline-row:last-child{border-bottom:0}
+.era-cell{position:relative;background:linear-gradient(180deg,#f4ead8,#efe1c8);border:1px solid rgba(163,120,27,.22);border-radius:var(--r);padding:22px 18px;overflow:hidden}.era-cell::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--gold)}.era-number{font:700 11px Georgia,serif;color:var(--gold);letter-spacing:.12em;text-transform:uppercase}.era-cell h3{font:600 1.45rem/1.05 Georgia,serif;color:var(--green-dark);margin:8px 0 10px}.dates{font:700 13px Georgia,serif;color:var(--mid)}
+.about-cell{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:22px 24px}.cell-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--light);font-weight:800;margin-bottom:8px}.about-cell p{margin:0;color:var(--mid);line-height:1.7}
+.life-cell{background:var(--green-light);border:1px solid rgba(46,74,59,.18);border-radius:var(--r);padding:18px}.life-label{display:flex;align-items:center;gap:7px;font:700 13px Georgia,serif;color:var(--green-dark);margin-bottom:12px}.life-label span{color:var(--gold)}
+.connection{background:#fff;border:1px solid rgba(46,74,59,.18);border-radius:11px;padding:13px 14px;margin-top:9px}.connection:first-of-type{margin-top:0}.connection strong{display:block;color:var(--green-dark);font:700 15px Georgia,serif}.connection small{display:block;margin-top:3px;color:var(--light);font-size:11px}.connection p{margin:7px 0 0;color:var(--mid);font-size:13px;line-height:1.5}.connection a{display:inline-block;margin-top:8px;color:var(--green-dark);font-weight:800;font-size:12px;text-decoration:none}.connection a:hover,.connection a:focus-visible{text-decoration:underline}.contrib{background:rgba(255,255,255,.6);border:1px dashed rgba(163,120,27,.45);border-radius:11px;padding:13px 14px;color:#6B4E0F}.contrib strong{display:block;font:700 14px Georgia,serif}.contrib span{display:block;margin-top:4px;font-size:12px;line-height:1.45}
+.project-card{background:#fff;border:1px solid rgba(163,120,27,.35);border-radius:12px;overflow:hidden}.project-card img{display:block;width:100%;height:145px;object-fit:cover;background:#eee4cc}.project-body{padding:13px 14px}.project-body strong{display:block;font:700 17px Georgia,serif;color:var(--green-dark)}.project-body .by{display:block;margin-top:2px;color:var(--gold);font-size:11.5px;font-weight:800}.project-body p{margin:7px 0 0;color:var(--mid);font-size:12.8px;line-height:1.5}.tag{display:inline-block;margin-top:8px;padding:4px 8px;border-radius:999px;background:var(--gold-light);color:#6B4E0F;font-size:10.5px;font-weight:800}.project-body a{display:inline-block;margin-top:9px;color:var(--green-dark);font-size:12px;font-weight:800;text-decoration:none}.external-note{display:block;margin-top:5px;color:var(--light);font-size:10.5px;line-height:1.35}
+.cta{background:var(--burgundy-light);border:1px solid rgba(110,42,59,.18);border-radius:var(--r);padding:25px 26px;margin-top:34px;text-align:center}.cta h3{font:600 1.35rem Georgia,serif;color:var(--burgundy);margin:0 0 7px}.cta p{max-width:790px;margin:0 auto 9px;color:#5A2130;font-size:13.5px}.cta a{display:inline-block;margin-top:6px;background:var(--burgundy);color:#fff;padding:10px 19px;border-radius:999px;text-decoration:none;font-weight:800;font-size:13px}
+.approved-footer{position:relative;width:100%;margin:0;padding:0;background:#fff}.approved-footer-image{display:block;width:100%;height:auto}.footer-fallback{display:none;background:#002718;color:#f5ead6;text-align:center;padding:28px 18px}.footer-fallback a{color:#f4d276}
+@media(max-width:900px){.column-heads{display:none}.timeline-row{grid-template-columns:1fr;gap:9px;padding:18px 0}.era-cell,.about-cell,.life-cell{border-radius:12px}.era-cell{padding:17px 18px}.about-cell,.life-cell{padding:17px}.era-cell::after{content:"ERA / EVENT";display:block;margin-top:12px;color:var(--light);font-size:9.5px;letter-spacing:.12em;font-weight:800}.about-cell::before{content:"ABOUT THIS PERIOD";display:block;margin-bottom:8px;color:var(--light);font-size:9.5px;letter-spacing:.12em;font-weight:800}.life-cell::before{content:"BRINGING HISTORY TO LIFE";display:block;margin-bottom:8px;color:var(--gold);font-size:9.5px;letter-spacing:.12em;font-weight:800}.life-label{display:none}.project-card img{height:220px}}
+@media(max-width:720px){.topbar-inner{align-items:flex-start;flex-direction:column;padding:12px 0 15px}.topnav{gap:13px}.hero{padding:40px 18px}.filter-wrap{position:static}.wrap{padding-left:12px;padding-right:12px}.intro{text-align:left}.project-card img{height:190px}}
+</style>
+</head>
+<body>
+<p class="preview-note"><strong>Preview only:</strong> full three-column Northamptonshire Timeline mockup. The published site is unchanged.</p>
+<header>
+  <div class="topbar"><div class="topbar-inner">
+    <a class="brand" href="index.html"><img src="assets/nhn-seal.png" alt=""><span><strong>Northants History Network</strong><small>Established 2022</small></span></a>
+    <nav class="topnav" aria-label="Main navigation"><a href="index.html">Home</a><a href="#timeline">Timeline</a><a href="get-involved.html">Get Involved</a><a href="https://www.facebook.com/groups/872721351232099/" target="_blank" rel="noopener noreferrer">Facebook</a></nav>
+  </div></div>
+  <div class="hero"><div class="flourish" aria-hidden="true">— ✦ —</div><h1>The Northamptonshire Timeline</h1><p>Journey through the county's story, from earliest beginnings to the Northamptonshire we know today — and meet the projects, groups, organisations and people helping bring each era to life.</p></div>
+</header>
+<main>
+  <div class="filter-wrap"><div class="filter-inner"><span class="filter-label">Jump to era</span><button class="fbtn active" data-filter="all">All eras</button><button class="fbtn" data-filter="ancient">Prehistory &amp; Roman</button><button class="fbtn" data-filter="medieval">Anglo-Saxon &amp; Medieval</button><button class="fbtn" data-filter="early-modern">Tudor &amp; Stuart</button><button class="fbtn" data-filter="industrial">Georgian &amp; Victorian</button><button class="fbtn" data-filter="modern">20th Century to Today</button></div></div>
+  <div class="wrap" id="timeline">
+    <section class="intro"><h2>Explore Northamptonshire through time</h2><p>The historical overview stays clear in the centre, while the third column connects each era with present-day projects, organisations, groups and people.</p></section>
+    <div class="column-heads" aria-hidden="true"><div>Era / Event</div><div>About this period</div><div>Bringing History to Life</div></div>
+    <div class="timeline-grid">
+
+      <section class="timeline-row" data-group="ancient">
+        <div class="era-cell"><span class="era-number">Era I</span><h3>Prehistory</h3><div class="dates">Before AD 43</div></div>
+        <div class="about-cell"><div class="cell-label">Northamptonshire in this period</div><p>Long before Northampton or its castles existed, the land that became Northamptonshire was already shaped by human hands — hillforts, burial mounds and the earliest farming settlements across the county's ironstone ridges and river valleys.</p></div>
+        <aside class="life-cell"><div class="life-label"><span>✦</span> Bringing History to Life</div><div class="connection"><strong>Hunsbury Hill Fort</strong><small>Historic place</small><p>A surviving connection with Northamptonshire's prehistoric landscape.</p></div><div class="contrib"><strong>Contributions welcome</strong><span>Archaeology groups, research projects and local organisations connected with Northamptonshire prehistory could be featured here.</span></div></aside>
+      </section>
+
+      <section class="timeline-row" data-group="ancient">
+        <div class="era-cell"><span class="era-number">Era II</span><h3>Roman</h3><div class="dates">AD 43–410</div></div>
+        <div class="about-cell"><div class="cell-label">Northamptonshire in this period</div><p>Roman roads cut straight through the county, linking market towns and villas that grew wealthy on the surrounding farmland. Traces of this era still surface in Northamptonshire fields and gardens today.</p></div>
+        <aside class="life-cell"><div class="life-label"><span>✦</span> Bringing History to Life</div><div class="connection"><strong>Duston Roman Villa site</strong><small>Historic place</small><p>A local connection with Roman settlement and life in Northamptonshire.</p></div><div class="connection"><strong>Northamptonshire Archaeological Society</strong><small>Organisation / research</small><p>A potential route into archaeological research and discoveries relating to the county.</p></div></aside>
+      </section>
+
+      <section class="timeline-row" data-group="medieval">
+        <div class="era-cell"><span class="era-number">Era III</span><h3>Anglo-Saxon</h3><div class="dates">410–1066</div></div>
+        <div class="about-cell"><div class="cell-label">Northamptonshire in this period</div><p>Northampton emerged as a fortified Saxon burh and a strategic seat of Mercian power, while villages across the shire took root under the administrative pattern that still shapes the county map.</p></div>
+        <aside class="life-cell"><div class="life-label"><span>✦</span> Bringing History to Life</div><div class="connection"><strong>Northamptonshire Record Office</strong><small>Archive / research resource</small><p>A route into records and local research that help illuminate the county's past.</p></div><div class="contrib"><strong>Contributions welcome</strong><span>Parish history groups and projects exploring Anglo-Saxon Northamptonshire could be added here.</span></div></aside>
+      </section>
+
+      <section class="timeline-row" data-group="medieval">
+        <div class="era-cell"><span class="era-number">Era IV</span><h3>Medieval</h3><div class="dates">1066–1485</div></div>
+        <div class="about-cell"><div class="cell-label">Northamptonshire in this period</div><p>Castles, abbeys and a thriving wool trade defined medieval Northamptonshire. Northampton Castle hosted kings and church trials, while Delapré Abbey and the county's market towns grew in influence.</p></div>
+        <aside class="life-cell"><div class="life-label"><span>✦</span> Bringing History to Life</div>
+          <article class="project-card"><img src="https://storage.tally.so/private/57926F3E-92A7-44EB-AB0E-32117A48E1C6_Original.jpeg?id=ANR2Ze&amp;accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkFOUjJaZSIsImZvcm1JZCI6IlpqcldvYSIsImlhdCI6MTc4ODYwNDg5NH0.zFrowhdQOtHbv9cuTA6aLZntUPGMliOFuixxsugA-D8&amp;signature=23fa18e5a959cfe625b98ae75cb39dc10cf3c0ad2da865436a283efcc69fe7e2" alt="Photograph supplied by Louisa Munro"><div class="project-body"><strong>A Lens Through The Teyn</strong><span class="by">Louisa Munro</span><p>Photography, local research and creative storytelling exploring Northamptonshire's medieval and early-modern people, places, churches, ruins, folklore and archaeology.</p><span class="tag">Medieval • Tudor &amp; Stuart</span><br><a href="https://www.instagram.com/a.lens.through.the.teyn" target="_blank" rel="noopener noreferrer">View on Instagram ↗</a><span class="external-note">External link to Instagram. Instagram may ask you to sign in to view all content.</span></div></article>
+          <div class="connection"><strong>Delapré Abbey Trust</strong><small>Heritage organisation</small></div>
+        </aside>
+      </section>
+
+      <section class="timeline-row" data-group="early-modern">
+        <div class="era-cell"><span class="era-number">Era V</span><h3>Tudor &amp; Stuart</h3><div class="dates">1485–1714</div></div>
+        <div class="about-cell"><div class="cell-label">Northamptonshire in this period</div><p>Civil War fighting reached the county at Naseby, Puritan communities took hold, and the seeds of Northampton's boot and shoe trade were quietly sown in this turbulent, transformative period.</p></div>
+        <aside class="life-cell"><div class="life-label"><span>✦</span> Bringing History to Life</div>
+          <article class="project-card"><div class="project-body"><strong>A Lens Through The Teyn</strong><span class="by">Louisa Munro</span><p>Louisa's project continues into the early-modern period, connecting medieval Northamptonshire with Tudor and Stuart people, places and stories.</p><span class="tag">Also featured in Medieval</span><br><a href="https://www.instagram.com/a.lens.through.the.teyn" target="_blank" rel="noopener noreferrer">View on Instagram ↗</a><span class="external-note">External link to Instagram. Instagram may ask you to sign in to view all content.</span></div></article>
+          <div class="connection"><strong>Naseby Battlefield Project</strong><small>Heritage project</small><p>A present-day connection with one of Northamptonshire's most significant Civil War landscapes.</p></div>
+        </aside>
+      </section>
+
+      <section class="timeline-row" data-group="industrial">
+        <div class="era-cell"><span class="era-number">Era VI</span><h3>Georgian &amp; Victorian</h3><div class="dates">1714–1901</div></div>
+        <div class="about-cell"><div class="cell-label">Northamptonshire in this period</div><p>Canals and railways arrived, market towns expanded, and Northamptonshire became the beating heart of Britain's footwear industry — a legacy still written into the county's streets, factories and museums.</p></div>
+        <aside class="life-cell"><div class="life-label"><span>✦</span> Bringing History to Life</div><div class="connection"><strong>Northampton Museum &amp; Art Gallery</strong><small>Museum / collections</small></div><div class="connection"><strong>Northamptonshire Heritage Forum</strong><small>Heritage network</small></div></aside>
+      </section>
+
+      <section class="timeline-row" data-group="modern">
+        <div class="era-cell"><span class="era-number">Era VII</span><h3>20th Century to Today</h3><div class="dates">1901–Present</div></div>
+        <div class="about-cell"><div class="cell-label">Northamptonshire in this period</div><p>Two world wars, new communities, regeneration and a growing multicultural county bring the Northamptonshire story up to the present day — still being written by the people and places that call it home.</p></div>
+        <aside class="life-cell"><div class="life-label"><span>✦</span> Bringing History to Life</div><div class="connection"><strong>University of Northampton</strong><small>Education / research</small></div><div class="contrib"><strong>Contributions welcome</strong><span>Oral-history projects, community archives, local groups and contemporary heritage projects could bring this section to life.</span></div></aside>
+      </section>
+    </div>
+
+    <section class="cta"><h3>Help build the Northamptonshire Timeline</h3><p>This is a growing community project. If you have well-sourced historical information, research, images, or a group, organisation or project that helps bring a period of Northamptonshire's past to life, we'd love to hear from you.</p><p>Contributions will be reviewed before being added, and contributors can be credited.</p><a href="get-involved.html">Contribute to the Timeline →</a></section>
+  </div>
+</main>
+<footer class="approved-footer" aria-label="Northants History Network footer"><img class="approved-footer-image" src="NHN-footer-approved-28aug2026.png" alt=""><div class="footer-fallback">Northants History Network · <a href="about.html">About</a> · <a href="mailto:northantshistorynetwork@gmail.com">Email us</a></div></footer>
+<script>
+const buttons=[...document.querySelectorAll('.fbtn')];
+const rows=[...document.querySelectorAll('.timeline-row')];
+buttons.forEach(button=>button.addEventListener('click',()=>{
+  buttons.forEach(b=>b.classList.remove('active'));button.classList.add('active');
+  const filter=button.dataset.filter;
+  rows.forEach(row=>row.style.display=(filter==='all'||row.dataset.group===filter)?'grid':'none');
+}));
+</script>
+</body>
+</html>
