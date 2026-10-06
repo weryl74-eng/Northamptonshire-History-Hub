@@ -2,6 +2,13 @@ NORTHANTS HISTORY NETWORK — HOW TO ADD AN ORGANISATION CARD
 
 Use this process for an approved organisation submission such as Duston History Society.
 
+STANDARD CARD RULE — IMPORTANT
+- Organisation cards on the TEST website should use the same height and proportions as the Northamptonshire Natural History Society card.
+- Great Addington History already uses the standard organisation-card structure.
+- Standard desktop card: 216px minimum height, with a 145px × 122px image and the Visit website button beneath it.
+- Do not make individual cards taller or shorter just because their wording is longer. Use “More” for additional wording. If content genuinely cannot fit, increase the card height consistently rather than changing one card on its own.
+- Mobile cards use the same proportions responsively.
+
 1. Check the Notion submission
 - Open NHN Website Submissions.
 - Find the organisation.
@@ -27,6 +34,7 @@ Check:
 - image displays correctly
 - image is not stretched or distorted
 - organisation name and wording are correct
+- card height matches the standard Natural History Society card
 - Visit website opens the supplied website
 - Facebook button opens the supplied Facebook group, if used
 - More/Less opens and closes correctly
