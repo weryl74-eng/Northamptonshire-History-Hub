@@ -1,0 +1,53 @@
+NORTHANTS HISTORY NETWORK — HOW TO ADD AN ORGANISATION CARD
+
+Use this process for an approved organisation submission such as Duston History Society.
+
+1. Check the Notion submission
+- Open NHN Website Submissions.
+- Find the organisation.
+- Copy the organisation name, description/write-up, website link, Facebook link (if supplied), image and image permission.
+- Do not invent missing information.
+
+2. Prepare the card
+- Use the existing NHN organisation-card layout.
+- Image goes on the left.
+- Organisation name and description go on the right.
+- Use the green “Visit website ↗” button.
+- If the description is long, keep a short opening paragraph visible and put the rest behind “More”.
+- Use the submitted image when permission is confirmed.
+
+3. Put it on TEST first
+- Never edit the live site first.
+- Make sure the testing branch starts from the latest main/live version.
+- Add the card to Archives & Resources → Local historical & heritage societies.
+- If it already appears as a simple link in the regional list, remove the duplicate simple link when the full card is added.
+
+4. Test it
+Check:
+- image displays correctly
+- image is not stretched or distorted
+- organisation name and wording are correct
+- Visit website opens the supplied website
+- Facebook button opens the supplied Facebook group, if used
+- More/Less opens and closes correctly
+- desktop layout looks right
+- mobile layout looks right
+- no other cards or page sections have changed
+
+5. Cheryl approves
+Do not publish to main until Cheryl has viewed the TEST version and approved it.
+
+6. Publish
+- Merge/publish the approved TEST change to main.
+- Check the live page afterwards.
+- Update the Verified Files master.
+- Reset the testing branch from the newly published main version.
+
+DUSTON HISTORY SOCIETY — CURRENT TEST CARD
+The current test preview is: duston-history-society.html
+The live site has NOT been changed by this card work.
+
+Source wording supplied for the card:
+“We are a small History Society based in Duston. We meet on the second Monday of each month, except in July, August, and May, when we go on a coach trip. We meet at St. Crispin's Social Club on Berryfields Road in Duston. £5 entry on the door of £40 for the year. Talks are given on historical events in Northamptonshire and the wider area.”
+
+Verified submission details include the Duston History Society website and Facebook group, with image permission recorded as YES in the NHN Website Submissions entry.
