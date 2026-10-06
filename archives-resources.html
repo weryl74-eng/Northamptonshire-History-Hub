@@ -54,7 +54,7 @@
     .specialist-card .resource-link{margin-top:2px}
     .specialist-image{display:block;width:100%;max-height:180px;object-fit:cover;border-radius:10px;margin:0 0 16px;border:1px solid #eadbc5}
 
-    .nnhs-card{display:grid;grid-template-columns:145px minmax(0,1fr);grid-template-areas:"media title" "media copy" "media more";column-gap:18px;align-items:start;background:#fffdf7;border:1px solid var(--line);border-radius:14px;padding:21px;overflow:visible}
+    .nnhs-card{display:grid;grid-template-columns:145px minmax(0,1fr);grid-template-areas:"media title" "media copy" "media more";column-gap:18px;align-items:start;background:#fffdf7;min-height:216px;border:1px solid var(--line);border-radius:14px;padding:21px;overflow:visible}
     .nnhs-media{grid-area:media;display:flex;flex-direction:column;gap:12px}
     .nnhs-card .specialist-image{display:block;width:145px;height:122px;max-height:none;object-fit:cover;object-position:center;border-radius:10px;margin:0;border:1px solid #eadbc5}
     .nnhs-card h3{grid-area:title;font:700 1.3rem/1.15 "Cormorant Garamond",Georgia,serif;margin:0 0 8px;color:var(--green)}
@@ -240,12 +240,20 @@
         <p>Great Addington History explores the story of this Northamptonshire village, its people, buildings and Nene Valley landscape from the Iron Age to the modern day.<span class="card-extra" id="great-addington-more-text" hidden> The site includes material on archaeology, village buildings, maps, All Saints Church, transport and life through different historical periods.</span></p>
         <button class="nnhs-more-link" type="button" aria-expanded="false" aria-controls="great-addington-more-text">More</button>
       </article>
+      <article class="specialist-card nnhs-card">
+        <div class="nnhs-media">
+          <img class="specialist-image" src="assets/duston-history-society-card-photo.svg" alt="Duston History Society display at a community event">
+          <a class="nnhs-website-link" href="https://www.duston-pc.gov.uk/duston-history-society" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+        </div>
+        <h3>Duston History Society</h3>
+        <p>We are a small History Society based in Duston. We meet on the second Monday of each month, except in July, August, and May, when we go on a coach trip.<span class="card-extra" id="duston-more-text" hidden> We meet at St. Crispin's Social Club on Berryfields Road in Duston. £5 entry on the door of £40 for the year. Talks are given on historical events in Northamptonshire and the wider area.</span></p>
+        <button class="nnhs-more-link" type="button" aria-expanded="false" aria-controls="duston-more-text">More</button>
+      </article>
     </div>
     <div class="region-grid">
       <section class="region-card" aria-labelledby="region-central">
         <h3 id="region-central">Northampton &amp; Central</h3>
         <ul class="society-list">
-          <li><a href="https://www.duston-pc.gov.uk/duston-history-society" target="_blank" rel="noopener noreferrer">Duston History Society</a></li>
           <li><a href="https://www.cogenhoeheritage.org.uk/" target="_blank" rel="noopener noreferrer">Cogenhoe &amp; Whiston Heritage Society</a></li>
           <li>Kingsthorpe Local History Society<span class="unverified">A current public website has not yet been verified.</span></li>
           <li>Billing History Group<span class="unverified">A current public website has not yet been verified.</span></li>
