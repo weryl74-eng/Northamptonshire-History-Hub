@@ -54,7 +54,7 @@
     .specialist-card .resource-link{margin-top:2px}
     .specialist-image{display:block;width:100%;max-height:180px;object-fit:cover;border-radius:10px;margin:0 0 16px;border:1px solid #eadbc5}
 
-    .nnhs-card{display:grid;grid-template-columns:145px minmax(0,1fr);grid-template-areas:"media title" "media copy" "media more";column-gap:18px;align-items:start;background:#fffdf7;border:1px solid var(--line);border-radius:14px;padding:21px;overflow:visible}
+    .nnhs-card{display:grid;grid-template-columns:145px minmax(0,1fr);grid-template-areas:"media title" "media copy" "media more";column-gap:18px;align-items:start;background:#fffdf7;border:1px solid var(--line);border-radius:14px;padding:21px;overflow:visible;min-height:216px}
     .nnhs-media{grid-area:media;display:flex;flex-direction:column;gap:12px}
     .nnhs-card .specialist-image{display:block;width:145px;height:122px;max-height:none;object-fit:cover;object-position:center;border-radius:10px;margin:0;border:1px solid #eadbc5}
     .nnhs-card h3{grid-area:title;font:700 1.3rem/1.15 "Cormorant Garamond",Georgia,serif;margin:0 0 8px;color:var(--green)}
@@ -63,10 +63,7 @@
     .nnhs-card .nnhs-website-link:hover,.nnhs-card .nnhs-website-link:focus-visible{background:#26371d;color:#fff}
     .nnhs-card .nnhs-more-link{grid-area:more;justify-self:start;align-self:end;color:var(--green);font:600 1.08rem/1.2 "Cormorant Garamond",Georgia,serif;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;background:none;border:0;padding:0;border-radius:0;cursor:pointer}
     .nnhs-card .nnhs-more-link::after{content:none}
-    .duston-image-frame{width:145px;height:122px;overflow:hidden;border:1px solid #eadbc5;border-radius:10px}
-    .duston-image-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.45)}
-    .duston-image-credit{font-size:.7rem;line-height:1.25;color:var(--body)}
-    .nfhs-card .specialist-image{object-fit:contain;background:#fffdf7;padding:4px}
+        .nfhs-card .specialist-image{object-fit:contain;background:#fffdf7;padding:4px}
     .card-extra[hidden]{display:none}
 
     .region-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
@@ -245,12 +242,12 @@
       </article>
       <article class="specialist-card nnhs-card">
         <div class="nnhs-media">
-          <div class="duston-image-frame"><img src="assets/duston-fun-day-2026.jpg" alt="Duston History Society display at the 2026 council fun day"></div>
-          <small class="duston-image-credit">Duston Fun Day Display</small>
+          <img class="specialist-image" src="assets/duston-fun-day-2026.jpg" alt="Duston History Society display at the 2026 council fun day">
           <a class="nnhs-website-link" href="https://www.duston-pc.gov.uk/duston-history-society" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
         </div>
         <h3>Duston History Society</h3>
-        <p>Based in Duston, the society holds talks on Northamptonshire history and subjects further afield. Meetings are on the second Monday of each month, except July and August, at St Crispin's Social Club, Berrywood Road, Duston. Check the society's page for its current programme and details.</p>
+        <p>We are a small History Society based in Duston. We meet on the second Monday of each month, except in July, August, and May, when we go on a coach trip.<span class="card-extra" id="duston-more-text" hidden> We meet at St. Crispin's Social Club on Berryfields Road in Duston. £5 entry on the door of £40 for the year. Talks are given on historical events in Northamptonshire and the wider area.</span></p>
+        <button class="nnhs-more-link" type="button" aria-expanded="false" aria-controls="duston-more-text">More</button>
       </article>
     </div>
     <div class="region-grid">
