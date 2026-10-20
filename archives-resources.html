@@ -57,6 +57,7 @@
     .nnhs-card{display:grid;grid-template-columns:145px minmax(0,1fr);grid-template-areas:"media title" "media copy" "media more";column-gap:18px;align-items:start;background:#fffdf7;border:1px solid var(--line);border-radius:14px;padding:21px;overflow:visible;min-height:216px}
     .nnhs-media{grid-area:media;display:flex;flex-direction:column;gap:12px}
     .nnhs-card .specialist-image{display:block;width:145px;height:122px;max-height:none;object-fit:cover;object-position:center;border-radius:10px;margin:0;border:1px solid #eadbc5}
+    .nnhs-card .specialist-image.discover-alone-image{object-fit:contain;object-position:center;background:#063d2c}
     .nnhs-card h3{grid-area:title;font:700 1.3rem/1.15 "Cormorant Garamond",Georgia,serif;margin:0 0 8px;color:var(--green)}
     .nnhs-card p{grid-area:copy;margin:0 0 10px;font-size:.9rem;line-height:1.45;overflow:visible;height:auto;max-height:none;padding:0;color:var(--body)}
     .nnhs-card .nnhs-website-link{display:flex;align-items:center;justify-content:center;min-height:40px;border:0;border-radius:999px;padding:.5rem .7rem;background:#354726;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;font-size:.88rem}
@@ -223,7 +224,7 @@
       </article>
       <article class="specialist-card nnhs-card">
         <div class="nnhs-media">
-          <img class="specialist-image" src="https://discoveralone.com/assets/share-card.png" alt="Discover Alone">
+          <img class="specialist-image discover-alone-image" src="https://discoveralone.com/assets/share-card.png" alt="Discover Alone">
           <a class="nnhs-website-link" href="https://discoveralone.com/?lat=52.25&lng=-0.8833333&miles=3&place=Northampton" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
         </div>
         <h3>Discover Alone</h3>
