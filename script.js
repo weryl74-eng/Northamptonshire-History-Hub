@@ -211,7 +211,13 @@ if (community) {
       <div class="mini-flourish">— ✦ —</div>
       <div class="facebook-embed-grid">
         <div class="facebook-embed-card"><iframe src="${plugin(hiddenHeritageUrl)}" title="Hidden Heritage Facebook post" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
-        <div class="facebook-embed-card"><iframe src="${plugin(regimentFootageUrl)}" title="Northamptonshire Regiment First World War footage Facebook post" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+        <div class="facebook-embed-card regiment-footage-card">
+          <iframe src="https://www.youtube-nocookie.com/embed/qU0SPp1E3Tg" title="Rare First World War footage of a Northamptonshire Regiment battalion" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="regiment-footage-links">
+            <a href="${regimentFootageUrl}" target="_blank" rel="noopener noreferrer">View James Tomalin’s Facebook post ↗</a>
+            <a href="https://catalog.archives.gov/id/24615" target="_blank" rel="noopener noreferrer">View US National Archives record ↗</a>
+          </div>
+        </div>
         <div class="facebook-embed-card"><iframe src="${plugin(delapreUrl)}" title="Delapré Abbey Facebook post" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
       </div>
     </div>
@@ -229,9 +235,14 @@ if (community) {
     .facebook-embed-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important;align-items:start!important;margin-top:7px!important}
     .facebook-embed-card{height:400px!important;overflow:hidden!important;border:1px solid #e4d6c1!important;border-radius:8px!important;background:#fff!important}
     .facebook-embed-card iframe{display:block!important;width:100%!important;height:500px!important;border:0!important;background:#fff!important;transform:scale(.80)!important;transform-origin:top left!important;width:125%!important}
+    .regiment-footage-card{height:400px!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;padding:8px!important;gap:8px!important}
+    .regiment-footage-card iframe{display:block!important;flex:0 0 auto!important;width:100%!important;height:220px!important;transform:none!important;border:0!important}
+    .regiment-footage-links{display:flex!important;flex-direction:column!important;gap:8px!important;padding:0 6px 6px!important;text-align:left!important}
+    .regiment-footage-links a{color:#3A4A30!important;font-size:14px!important;line-height:1.3!important;text-decoration:underline!important}
+
     .community-facebook-feature .facebook-cta{margin-top:12px!important}
-    @media(max-width:1000px){.facebook-embed-grid{grid-template-columns:1fr!important}.facebook-embed-card{width:min(440px,100%)!important;margin:0 auto!important;height:500px!important}.facebook-embed-card iframe{height:625px!important}}
-    @media(max-width:600px){.community-facebook-feature{width:min(calc(100% - 20px),680px)!important;padding:14px 8px 18px!important}.facebook-real-posts{padding:8px 5px 10px!important}.facebook-real-posts h3{font-size:19px!important}.facebook-embed-card{height:470px!important}.facebook-embed-card iframe{height:588px!important}}
+    @media(max-width:1000px){.facebook-embed-grid{grid-template-columns:1fr!important}.facebook-embed-card{width:min(440px,100%)!important;margin:0 auto!important;height:500px!important}.facebook-embed-card iframe{height:625px!important}.regiment-footage-card{height:400px!important}.regiment-footage-card iframe{height:220px!important}}
+    @media(max-width:600px){.community-facebook-feature{width:min(calc(100% - 20px),680px)!important;padding:14px 8px 18px!important}.facebook-real-posts{padding:8px 5px 10px!important}.facebook-real-posts h3{font-size:19px!important}.facebook-embed-card{height:470px!important}.facebook-embed-card iframe{height:588px!important}.regiment-footage-card{height:400px!important}.regiment-footage-card iframe{height:220px!important}}
   `;
   document.head.appendChild(facebookStyle);
 }
