@@ -194,10 +194,10 @@ window.addEventListener('resize', applyAuthorResponsiveLayout);
 const community = document.querySelector('.community-facebook-feature');
 if (community) {
   const hiddenHeritageUrl = 'https://www.facebook.com/hiddenheritagegenealogy/posts/pfbid02X4GioPPi1LYxgZmoeeCTLjnBTtWKPp6xBgdsaPQVyDyQoBsSsbsSiJ3ZEag3VBFHl';
-  const greatFireUrl = 'https://www.facebook.com/reel/1431671272352303';
+  const regimentFootageUrl = 'https://www.facebook.com/groups/872721351232099/posts/1670543904783169/';
   const delapreUrl = 'https://www.facebook.com/delapreabbey.org/posts/pfbid02sB5Aggypi96f8rwvNL73afoCWzX52uBGDLuH1B24SdJBPA854qRopT6fihBWmErXl';
   const plugin = url => `https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(url)}&show_text=true&width=500`;
-  const reelPlugin = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(greatFireUrl)}&show_text=true&width=500`;
+
 
   community.innerHTML = `
     <div class="ornate-flourish" aria-hidden="true">❦</div>
@@ -211,7 +211,7 @@ if (community) {
       <div class="mini-flourish">— ✦ —</div>
       <div class="facebook-embed-grid">
         <div class="facebook-embed-card"><iframe src="${plugin(hiddenHeritageUrl)}" title="Hidden Heritage Facebook post" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
-        <div class="facebook-embed-card"><iframe src="${reelPlugin}" title="Great Fire of Northampton Facebook post" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+        <div class="facebook-embed-card"><iframe src="${plugin(regimentFootageUrl)}" title="Northamptonshire Regiment First World War footage Facebook post" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
         <div class="facebook-embed-card"><iframe src="${plugin(delapreUrl)}" title="Delapré Abbey Facebook post" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
       </div>
     </div>
