@@ -1,39 +1,32 @@
-# 1. Define where your uploaded images will go
-media: media
+# 1. Media folder for your photos
+media: /
 
-# 2. Define the editing forms for your site sections
+# 2. Direct links to your individual web pages
 content:
-  # The Historical Timeline Section
-  - name: timeline
-    label: History Timeline
-    type: collection
-    path: _timeline/ # Tells the CMS where timeline files live
+  - name: about
+    label: About Page
+    type: file
+    path: about.html
     fields:
-      - name: title
-        label: Era Title (e.g., Roman, Medieval)
-        type: string
-      - name: dates
-        label: Date Range (e.g., AD 43–410)
-        type: string
       - name: body
-        label: Era Description Text
+        label: Page Content (HTML Code & Text)
         type: rich-text
 
-  # The What's On / Events Section
-  - name: events
-    label: What's On Events
-    type: collection
-    path: _events/ 
+  - name: get_involved
+    label: Get Involved Page
+    type: file
+    path: get-involved.html
     fields:
-      - name: title
-        label: Event Name
-        type: string
-      - name: date
-        label: Event Date
-        type: date
-      - name: image
-        label: Featured Image Banner
-        type: image
       - name: body
-        label: Event Details & Ticket Info
+        label: Page Content (HTML Code & Text)
         type: rich-text
+
+  - name: archives
+    label: Archives & Resources Page
+    type: file
+    path: archives-resources.html
+    fields:
+      - name: body
+        label: Page Content (HTML Code & Text)
+        type: rich-text
+
