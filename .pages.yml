@@ -1,8 +1,18 @@
+
 # 1. Media folder for your photos
 media: /
 
 # 2. Direct links to your individual web pages
 content:
+  - name: homepage
+    label: Homepage (Main Page)
+    type: file
+    path: index.html
+    fields:
+      - name: body
+        label: Page Content (HTML Code & Text)
+        type: rich-text
+
   - name: about
     label: About Page
     type: file
@@ -15,7 +25,7 @@ content:
   - name: get_involved
     label: Get Involved Page
     type: file
-    path: get-involved.html
+    path: get-involved-html
     fields:
       - name: body
         label: Page Content (HTML Code & Text)
@@ -29,4 +39,3 @@ content:
       - name: body
         label: Page Content (HTML Code & Text)
         type: rich-text
-
