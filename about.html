@@ -1,132 +1,187 @@
----
----
----
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Northants History Network | Northamptonshire History &amp; Heritage</title>
+  <meta name="description" content="Learn about Northants History Network, a community gateway connecting Northamptonshire history groups, researchers, authors, archives, heritage organisations and local people.">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;700&display=swap');
+    :root{--green:#063d2c;--green-2:#164d35;--gold:#a26d20;--cream:#fbf5e9;--paper:#fffaf0;--ink:#17392f;--body:#344b4a;--line:#dfc49c;--shadow:0 10px 30px rgba(49,42,28,.08)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:24px}
+    body{margin:0;background:var(--cream);color:var(--body);font-family:Lato,Arial,sans-serif;line-height:1.68}
+    a{color:#765018;text-underline-offset:3px}
+    a:hover{color:var(--green)}
+    .skip-link{position:fixed;z-index:100;left:1rem;top:-5rem;background:#fff;padding:.75rem 1rem;border:2px solid var(--gold)}
+    .skip-link:focus{top:1rem}
+    .topbar{background:var(--green);color:#fff;border-bottom:3px solid var(--gold)}
+    .topbar-inner{width:min(1120px,calc(100% - 36px));min-height:86px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:13px;color:#fff;text-decoration:none}
+    .brand img{width:66px;height:66px;object-fit:contain}
+    .brand strong{display:block;font:600 1.25rem/1.05 "Cormorant Garamond",Georgia,serif}
+    .brand small{display:block;margin-top:4px;color:#e9d7ae;letter-spacing:.08em;text-transform:uppercase}
+    .topnav{display:flex;align-items:center;gap:19px;flex-wrap:wrap;justify-content:flex-end}
+    .topnav a{color:#fff;text-decoration:none;font-weight:700;font-size:.92rem}
+    .topnav a:hover,.topnav a:focus-visible{color:#f2cf72}
+    .hero{background:linear-gradient(120deg,#073d2d,#0b5138);color:#fff;text-align:center;padding:54px 20px 48px}
+    .hero h1{font:600 clamp(2.45rem,6vw,4.25rem)/1 "Cormorant Garamond",Georgia,serif;margin:5px 0 8px}
+    .hero p{max-width:720px;margin:0 auto;color:#f4ead7;font-size:1.06rem}
+    .flourish{color:#d3ad4e;letter-spacing:.25em;margin:10px 0}
+    .section-nav{width:min(880px,calc(100% - 32px));margin:-23px auto 34px;display:grid;grid-template-columns:repeat(3,1fr);background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .section-nav a{display:flex;align-items:center;justify-content:center;min-height:58px;padding:12px;text-align:center;text-decoration:none;color:var(--green);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.18rem;font-weight:700;border-right:1px solid var(--line)}
+    .section-nav a:last-child{border-right:0}
+    .section-nav a:hover,.section-nav a:focus-visible{background:#f2e8d7}
+    main{width:min(900px,calc(100% - 32px));margin:0 auto 54px}
+    .info-section{scroll-margin-top:24px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:clamp(24px,4vw,42px);margin:0 0 26px;box-shadow:var(--shadow)}
+    .info-section h2{font:600 clamp(2rem,4vw,2.75rem)/1.08 "Cormorant Garamond",Georgia,serif;color:var(--green);margin:0 0 8px}
+    .info-section h3{font:700 1.35rem/1.2 "Cormorant Garamond",Georgia,serif;color:var(--green);margin:28px 0 8px}
+    .info-section p{margin:0 0 14px}
+    .info-section ul{padding-left:1.25rem;margin:8px 0 17px}
+    .info-section li{margin:6px 0}
+    .intro{font-size:1.08rem;color:#314940}
+    .library-support{margin:18px 0 26px;padding:22px 24px;background:#f3ead9;border-left:4px solid var(--gold);border-radius:10px}
+    .library-support blockquote{margin:0;color:#314940;font:500 1.08rem/1.7 "Cormorant Garamond",Georgia,serif}
+    .library-support .attribution{margin:16px 0 0;font-size:.95rem;color:var(--green)}
+    .notice{background:#f3ead9;border-left:4px solid var(--gold);border-radius:8px;padding:14px 16px;margin:18px 0}
+    .contact-card{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:var(--green);color:#fff;border-radius:13px;padding:18px 20px;margin-top:24px}
+    .contact-card p{margin:0}
+    .contact-card a{color:#f4d47c;font-weight:700}
+    .reviewed{color:#6f675f;font-size:.9rem;margin-top:24px!important}
+    .approved-footer{position:relative;width:100%;margin:0;padding:0;background:#fff}
+    .approved-footer-image{display:block;width:100%;height:auto}
+    .approved-footer-hotspot{position:absolute;z-index:3;display:block;border-radius:6px;text-decoration:none}
+    .approved-footer-about-link{left:3.5%;top:23%;width:39%;height:52%}
+    .approved-footer-email-mask{position:absolute;z-index:2;left:48.75%;top:43.9%;width:20.3%;height:20.2%;background:#002718}
+    .approved-footer-email-mask::after{content:"";position:absolute;z-index:0;left:100%;top:40%;width:11.25%;height:60%;background:#002718}
+    .approved-footer-email-mask::before{content:"";position:absolute;z-index:1;left:101.55%;top:40%;width:max(1px,.08vw);height:60%;background:rgba(183,150,70,.62)}
+    .approved-footer-email-link{left:48.45%;top:43.9%;width:20.65%;height:20.2%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 .45% 0 .75%;overflow:hidden;background:transparent;color:#f5ead6;font-family:"Cormorant Garamond",Georgia,serif;white-space:nowrap}
+    .approved-footer-email-link strong{font-size:clamp(5px,1.38vw,27px);line-height:1.02;font-weight:500}
+    .approved-footer-email-link span{font-size:clamp(5px,1vw,20px);line-height:1.22}
+    .approved-footer-accessibility-link{left:70.2%;top:34%;width:14.3%;height:38%}
+    .approved-footer-privacy-link{left:85.2%;top:34%;width:11.7%;height:38%}
+    .approved-footer-hotspot:hover{box-shadow:inset 0 0 0 2px rgba(205,164,62,.55)}
+    .approved-footer-hotspot:focus-visible{outline:3px solid #f4d276;outline-offset:3px}
+    .approved-footer-accessible{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    @media(max-width:720px){.topbar-inner{align-items:flex-start;flex-direction:column;padding:12px 0 15px}.topnav{justify-content:flex-start;gap:14px}.section-nav{grid-template-columns:1fr;margin-top:-18px}.section-nav a{border-right:0;border-bottom:1px solid var(--line)}.section-nav a:last-child{border-bottom:0}.hero{padding-top:42px}.info-section{border-radius:13px}.library-support{padding:18px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Northants History Network home">
+        <img src="assets/nhn-seal.png" alt="">
+        <span><strong>Northants History Network</strong><small>Established 2022</small></span>
+      </a>
+      <nav class="topnav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="northamptonshire_full_timeline.html">Timeline</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="https://www.facebook.com/groups/872721351232099/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </nav>
+    </div>
+  </div>
+  <div class="hero">
+    <div class="flourish" aria-hidden="true">— ✦ —</div>
+    <h1>About Northants History Network</h1>
+    <p>Connecting Northamptonshire’s Past with Today’s Community.</p>
+  </div>
+</header>
+<nav class="section-nav" aria-label="On this page">
+  <a href="#about">About NHN</a>
+  <a href="#accessibility">Accessibility</a>
+  <a href="#privacy">Privacy</a>
+</nav>
+<main id="main">
+  <section class="info-section" id="about" aria-labelledby="about-title">
+    <h2 id="about-title">About NHN</h2>
+    <div class="flourish" aria-hidden="true">— ✦ —</div>
+    <p class="intro">Northants History Network is an independent community project established in 2022 by founder Cheryl Workman. It brings together people and organisations who care about Northamptonshire’s history and heritage.</p>
+    <p>Our aim is to make the county’s history easier to discover by connecting local history groups, researchers, authors, museums, archives, heritage organisations, event organisers and interested members of the public.</p>
+    <p>This website is being built as a community gateway. It brings together stories, events, organisations and useful resources, and its Northamptonshire timeline will continue to grow as knowledge and contributions are added.</p>
 
----
+    <h3>Our Story</h3>
+    <p>The Northants History Network grew from a simple observation. While working at Discover, the local history department of Northamptonshire Central Library, our founder regularly met people researching similar subjects — authors, students, researchers and curious minds — who were often unaware of others sharing their interests. It seemed natural to ask: what if we connected them?</p>
+    <p>From the very first meetings, one thing became clear. Many people were already members of organisations with formal memberships, fees and AGMs, but what they also wanted was somewhere less structured — a relaxed and welcoming space to meet like-minded people and share their enthusiasm for local history.</p>
+    <p>And so the Northants History Network was born.</p>
+    <p>Established in 2022, the Network meets four times a year in a friendly, informal setting and welcomes anyone with an interest in the history of Northamptonshire — whether you are researching a book, studying, exploring your family or local history, or simply enjoy discovering more about the county’s past.</p>
 
-[Skip to main content](#main)
+    <h3>Support from Northampton Central Library</h3>
+    <div class="library-support">
+      <blockquote>“Northampton Central Library is pleased to support the Northants History Network, which grew from people using the Library’s local history collections and wanting to connect with others who shared their interests. The Network offers a relaxed, welcoming space for anyone curious about Northamptonshire’s past to meet, share ideas and learn together. Supporting the Network reflects the Library’s role as a community hub, not just a place for books, but a place where people, stories and local history come together.”</blockquote>
+      <p class="attribution"><strong>James Toal</strong><br>Northamptonshire Central Library Manager</p>
+    </div>
 
-![](//assets/nhn-seal.png)
+    <h3>Help the Network grow</h3>
+    <p>If you have a local event, historical resource, group, story or specialist subject to share, visit our <a href="get-involved.html">Get Involved page</a> or email us.</p>
+    <div class="contact-card">
+      <p><strong>Contact Northants History Network</strong><br>We welcome questions, suggestions and accessibility requests.</p>
+      <a href="mailto:northantshistorynetwork@gmail.com">northantshistorynetwork@gmail.com</a>
+    </div>
+  </section>
+  <section class="info-section" id="accessibility" aria-labelledby="accessibility-title">
+    <h2 id="accessibility-title">Accessibility statement</h2>
+    <div class="flourish" aria-hidden="true">— ✦ —</div>
+    <p class="intro">We want the Northants History Network website to be welcoming and usable for as many people as possible.</p>
+    <p>As the site develops, we aim to follow the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. This is an aim, not a claim that every page currently meets that standard.</p>
+    <h3>What we are doing</h3>
+    <ul>
+      <li>Using clear headings, readable text and meaningful link wording.</li>
+      <li>Providing text alternatives for informative images wherever possible.</li>
+      <li>Supporting keyboard navigation, browser zoom and visible keyboard focus.</li>
+      <li>Reviewing colour contrast and layouts at different screen sizes.</li>
+      <li>Considering accessible alternatives when new content is added.</li>
+    </ul>
+    <h3>Known limitations</h3>
+    <p>The website has not yet had a full independent accessibility audit. Some older visual material and third-party content may not yet be as accessible as we would like. In particular, embedded Facebook posts are controlled by Meta and may not meet the same accessibility standard as the rest of the site.</p>
+    <h3>Tell us about a problem</h3>
+    <p>If you cannot access something, need information in a different format, or notice an accessibility problem, please email <a href="mailto:northantshistorynetwork@gmail.com">northantshistorynetwork@gmail.com</a>. Please tell us which page you were using and what went wrong. We will consider a reasonable alternative or adjustment.</p>
+    <p>For more information about the standard we are working towards, see the <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">Web Content Accessibility Guidelines 2.2</a>.</p>
+    <p class="reviewed">Last reviewed: 28 August 2026.</p>
+  </section>
 
-**[Northants History Network**Established 2022 Home](index.html) [Timeline](northamptonshire_full_timeline.html) [Get Involved](get-involved.html) [Facebook](https://www.facebook.com/groups/872721351232099/)
-
-— ✦ —
-
-# About Northants History Network
-
-Connecting Northamptonshire’s Past with Today’s Community.
-
-[About NHNAccessibilityPrivacy](#privacy)
-
-## About NHN
-
-— ✦ —
-
-Northants History Network is an independent community project established in 2022 by founder Cheryl Workman. It brings together people and organisations who care about Northamptonshire’s history and heritage.
-
-Our aim is to make the county’s history easier to discover by connecting local history groups, researchers, authors, museums, archives, heritage organisations, event organisers and interested members of the public.
-
-This website is being built as a community gateway. It brings together stories, events, organisations and useful resources, and its Northamptonshire timeline will continue to grow as knowledge and contributions are added.
-
-```
-<h3>Our Story</h3>
-<p>The Northants History Network grew from a simple observation. While working at Discover, the local history department of Northamptonshire Central Library, our founder regularly met people researching similar subjects — authors, students, researchers and curious minds — who were often unaware of others sharing their interests. It seemed natural to ask: what if we connected them?</p>
-<p>From the very first meetings, one thing became clear. Many people were already members of organisations with formal memberships, fees and AGMs, but what they also wanted was somewhere less structured — a relaxed and welcoming space to meet like-minded people and share their enthusiasm for local history.</p>
-<p>And so the Northants History Network was born.</p>
-<p>Established in 2022, the Network meets four times a year in a friendly, informal setting and welcomes anyone with an interest in the history of Northamptonshire — whether you are researching a book, studying, exploring your family or local history, or simply enjoy discovering more about the county’s past.</p>
-
-<h3>Support from Northampton Central Library</h3>
-<div class="library-support">
-  <blockquote>“Northampton Central Library is pleased to support the Northants History Network, which grew from people using the Library’s local history collections and wanting to connect with others who shared their interests. The Network offers a relaxed, welcoming space for anyone curious about Northamptonshire’s past to meet, share ideas and learn together. Supporting the Network reflects the Library’s role as a community hub, not just a place for books, but a place where people, stories and local history come together.”</blockquote>
-  <p class="attribution"><strong>James Toal</strong><br>Northamptonshire Central Library Manager</p>
-</div>
-
-<h3>Help the Network grow</h3>
-<p>If you have a local event, historical resource, group, story or specialist subject to share, visit our <a href="get-involved.html">Get Involved page</a> or email us.</p>
-<div class="contact-card">
-  <p><strong>Contact Northants History Network</strong><br>We welcome questions, suggestions and accessibility requests.</p>
-  <a href="mailto:northantshistorynetwork@gmail.com">northantshistorynetwork@gmail.com</a>
-</div>
-```
-
-## Accessibility statement
-
-— ✦ —
-
-We want the Northants History Network website to be welcoming and usable for as many people as possible.
-
-As the site develops, we aim to follow the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. This is an aim, not a claim that every page currently meets that standard.
-
-### What we are doing
-
-- Using clear headings, readable text and meaningful link wording.
-- Providing text alternatives for informative images wherever possible.
-- Supporting keyboard navigation, browser zoom and visible keyboard focus.
-- Reviewing colour contrast and layouts at different screen sizes.
-- Considering accessible alternatives when new content is added.
-
-### Known limitations
-
-The website has not yet had a full independent accessibility audit. Some older visual material and third-party content may not yet be as accessible as we would like. In particular, embedded Facebook posts are controlled by Meta and may not meet the same accessibility standard as the rest of the site.
-
-### Tell us about a problem
-
-If you cannot access something, need information in a different format, or notice an accessibility problem, please email [northantshistorynetwork@gmail.com](mailto:northantshistorynetwork@gmail.com). Please tell us which page you were using and what went wrong. We will consider a reasonable alternative or adjustment.
-
-For more information about the standard we are working towards, see the [Web Content Accessibility Guidelines 2.2](https://www.w3.org/TR/WCAG22/).
-
-Last reviewed: 28 August 2026.
-
-## Privacy notice
-
-— ✦ —
-
-This notice explains what personal information Northants History Network may receive, why we use it and the choices available to you.
-
-### Who is responsible for your information?
-
-Northants History Network is responsible for the personal information described in this notice. Privacy questions and requests can be sent to [northantshistorynetwork@gmail.com](mailto:northantshistorynetwork@gmail.com).
-
-### Information we may receive
-
-If you email us or contribute to the Network, we may receive your name, email address, organisation or group, area, website or social-media link, the content you submit, an image and credit, and records of any permission you give us.
-
-**Get Involved form:** our contribution form is provided by Tally. Information entered into the form is handled by Tally and made available to Northants History Network when it is submitted.
-
-### How and why we use it
-
-We use personal information to reply to enquiries, assess and manage contributions, maintain contact with contributors, and operate and improve the Network. We normally do this because it is in our legitimate interests to run the community project. Where we ask for permission to publish personal details, words or images, we rely on and record that permission. We may also use information where necessary to meet a legal obligation.
-
-### Sharing and service providers
-
-We do not sell personal information. Information may be handled by services that help us operate the website and communicate, including GitHub Pages for website hosting, Google/Gmail for email, and Tally for the Get Involved form. These providers have their own privacy information:
-
-- [GitHub Privacy Statement](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
-- [Google Privacy Policy](https://policies.google.com/privacy)
-- [Tally Privacy Policy](https://tally.so/help/privacy-policy)
-
-We may also share information if required by law or if you specifically ask us to publish or pass it to another organisation.
-
-### Facebook and links to other websites
-
-The homepage contains embedded Facebook content, and the site links to Facebook and other external websites. Meta or another third party may receive technical information, use cookies or process information when its content loads or when you follow a link. Their use of information is governed by their own policies. See the [Meta Privacy Policy](https://www.facebook.com/privacy/policy/).
-
-Northants History Network does not currently use its own advertising or analytics cookies. This does not prevent third-party content from using cookies or similar technology.
-
-### How long we keep information
-
-We keep personal information only for as long as it is needed for the purpose for which it was collected, or to meet a legal requirement. Contact details for an enquiry are removed when they are no longer needed. Records connected with published contributions or permissions may be retained while the content remains published and for as long as reasonably needed to demonstrate the permission given.
-
-### Your data-protection rights
-
-Depending on the circumstances, you may have rights to ask for a copy of your personal information, correct it, request deletion or restriction, object to particular uses, or withdraw consent. To make a request, email us at the address above.
-
-If you have a concern, please contact us first so we can try to resolve it. You can also [make a complaint to the Information Commissioner’s Office](https://ico.org.uk/make-a-complaint/).
-
-Last updated: 28 August 2026.
-
-![](//NHN-footer-approved-28aug2026.png)
-
-**[Email us**northantshistorynetwork@gmail.com](mailto:northantshistorynetwork@gmail.com)
-
-**Northants History Network**Connecting Northamptonshire’s Past with Today’s Community[About Northants History NetworkEmail us at northantshistorynetwork@gmail.comAccessibility statementPrivacy notice](#privacy)© 2026 Northants History Network
+  <section class="info-section" id="privacy" aria-labelledby="privacy-title">
+    <h2 id="privacy-title">Privacy notice</h2>
+    <div class="flourish" aria-hidden="true">— ✦ —</div>
+    <p class="intro">This notice explains what personal information Northants History Network may receive, why we use it and the choices available to you.</p>
+    <h3>Who is responsible for your information?</h3>
+    <p>Northants History Network is responsible for the personal information described in this notice. Privacy questions and requests can be sent to <a href="mailto:northantshistorynetwork@gmail.com">northantshistorynetwork@gmail.com</a>.</p>
+    <h3>Information we may receive</h3>
+    <p>If you email us or contribute to the Network, we may receive your name, email address, organisation or group, area, website or social-media link, the content you submit, an image and credit, and records of any permission you give us.</p>
+    <div class="notice"><strong>Get Involved form:</strong> our contribution form is provided by Tally. Information entered into the form is handled by Tally and made available to Northants History Network when it is submitted.</div>
+    <h3>How and why we use it</h3>
+    <p>We use personal information to reply to enquiries, assess and manage contributions, maintain contact with contributors, and operate and improve the Network. We normally do this because it is in our legitimate interests to run the community project. Where we ask for permission to publish personal details, words or images, we rely on and record that permission. We may also use information where necessary to meet a legal obligation.</p>
+    <h3>Sharing and service providers</h3>
+    <p>We do not sell personal information. Information may be handled by services that help us operate the website and communicate, including GitHub Pages for website hosting, Google/Gmail for email, and Tally for the Get Involved form. These providers have their own privacy information:</p>
+    <ul>
+      <li><a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a></li>
+      <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+      <li><a href="https://tally.so/help/privacy-policy" target="_blank" rel="noopener noreferrer">Tally Privacy Policy</a></li>
+    </ul>
+    <p>We may also share information if required by law or if you specifically ask us to publish or pass it to another organisation.</p>
+    <h3>Facebook and links to other websites</h3>
+    <p>The homepage contains embedded Facebook content, and the site links to Facebook and other external websites. Meta or another third party may receive technical information, use cookies or process information when its content loads or when you follow a link. Their use of information is governed by their own policies. See the <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a>.</p>
+    <p>Northants History Network does not currently use its own advertising or analytics cookies. This does not prevent third-party content from using cookies or similar technology.</p>
+    <h3>How long we keep information</h3>
+    <p>We keep personal information only for as long as it is needed for the purpose for which it was collected, or to meet a legal requirement. Contact details for an enquiry are removed when they are no longer needed. Records connected with published contributions or permissions may be retained while the content remains published and for as long as reasonably needed to demonstrate the permission given.</p>
+    <h3>Your data-protection rights</h3>
+    <p>Depending on the circumstances, you may have rights to ask for a copy of your personal information, correct it, request deletion or restriction, object to particular uses, or withdraw consent. To make a request, email us at the address above.</p>
+    <p>If you have a concern, please contact us first so we can try to resolve it. You can also <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener noreferrer">make a complaint to the Information Commissioner’s Office</a>.</p>
+    <p class="reviewed">Last updated: 28 August 2026.</p>
+  </section>
+</main>
+<footer class="approved-footer" aria-label="Northants History Network footer">
+  <img class="approved-footer-image" src="NHN-footer-approved-28aug2026.png" alt="">
+  <a class="approved-footer-hotspot approved-footer-about-link" href="#about" aria-label="About Northants History Network"></a>
+  <span class="approved-footer-email-mask" aria-hidden="true"></span>
+  <a class="approved-footer-hotspot approved-footer-email-link" href="mailto:northantshistorynetwork@gmail.com" aria-label="Email Northants History Network"><strong>Email us</strong><span>northantshistorynetwork@gmail.com</span></a>
+  <a class="approved-footer-hotspot approved-footer-accessibility-link" href="#accessibility" aria-label="Read the accessibility statement"></a>
+  <a class="approved-footer-hotspot approved-footer-privacy-link" href="#privacy" aria-label="Read the privacy notice"></a>
+  <div class="approved-footer-accessible"><strong>Northants History Network</strong><span>Connecting Northamptonshire’s Past with Today’s Community</span><a href="#about">About Northants History Network</a><a href="mailto:northantshistorynetwork@gmail.com">Email us at northantshistorynetwork@gmail.com</a><a href="#accessibility">Accessibility statement</a><a href="#privacy">Privacy notice</a><span>© 2026 Northants History Network</span></div>
+</footer>
+</body>
+</html>
