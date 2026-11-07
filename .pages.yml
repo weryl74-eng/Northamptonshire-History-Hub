@@ -1,6 +1,7 @@
 
-# 1. Media folder for your photos
-media: /
+# 1. Media folder location
+media:
+  input: public/images
 
 # 2. Direct links to your individual web pages
 content:
@@ -9,6 +10,9 @@ content:
     type: file
     path: index.html
     fields:
+      - name: hero_image
+        label: Featured Event Image (Christmas Tree)
+        type: image
       - name: body
         label: Page Content (HTML Code & Text)
         type: rich-text
@@ -25,7 +29,7 @@ content:
   - name: get_involved
     label: Get Involved Page
     type: file
-    path: get-involved-html
+    path: get-involved.html
     fields:
       - name: body
         label: Page Content (HTML Code & Text)
