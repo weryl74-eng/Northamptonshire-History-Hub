@@ -1,7 +1,6 @@
-
 # 1. Media folder location
 media:
-  input: images
+  input: ""
 
 # 2. Direct links to your individual web pages
 content:
