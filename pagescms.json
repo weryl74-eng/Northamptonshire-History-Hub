@@ -1,5 +1,13 @@
 {
   "media": {
     "input": "public/images"
+  },
+  "collections": {
+    "history_hub": {
+      "label": "Northampton History Hub",
+      "type": "collection",
+      "path": "content/hub",
+      "fields": {}
+    }
   }
 }
