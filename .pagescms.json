@@ -1,0 +1,18 @@
+{
+  "media": {
+    "input": "public/images"
+  },
+  "collections": {
+    "history_hub": {
+      "label": "Northampton History Hub",
+      "type": "collection",
+      "path": "content/hub",
+      "fields": {
+        "hero_image": {
+          "label": "Featured Event Image",
+          "type": "image"
+        }
+      }
+    }
+  }
+}
