@@ -1,3 +1,6 @@
+media:
+  input: assets
+  output: /assets
 # 1. Media folder location
 media:
   input: ""
