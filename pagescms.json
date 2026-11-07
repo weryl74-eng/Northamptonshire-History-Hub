@@ -7,7 +7,13 @@
       "label": "Northampton History Hub",
       "type": "collection",
       "path": "content/hub",
-      "fields": {}
+      "fields": {
+        "hero_image": {
+          "label": "Featured Event Image",
+          "type": "image"
+        }
+      }
     }
   }
 }
+
