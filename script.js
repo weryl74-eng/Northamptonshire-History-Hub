@@ -156,13 +156,15 @@ if (authorButton) {
   authorButton.style.setProperty('line-height', '1.2', 'important');
   authorButton.style.setProperty('white-space', 'normal', 'important');
 }
-if (authorCopy && !authorCopy.querySelector('.author-website-link')) {
+// The small link under the button is set on the card itself in index.html
+// (data-link-url and data-link-text), so changing author only means editing index.html.
+if (authorCopy && authorCard && authorCard.dataset.linkUrl && !authorCopy.querySelector('.author-website-link')) {
   const websiteLink = document.createElement('a');
   websiteLink.className = 'author-website-link';
-  websiteLink.href = 'https://jackpreston.co.uk/';
+  websiteLink.href = authorCard.dataset.linkUrl;
   websiteLink.target = '_blank';
   websiteLink.rel = 'noopener noreferrer';
-  websiteLink.textContent = '◉  Visit Jack’s website jackpreston.co.uk →';
+  websiteLink.textContent = '◉  ' + (authorCard.dataset.linkText || 'Visit website') + ' →';
   websiteLink.style.setProperty('display', 'block', 'important');
   websiteLink.style.setProperty('margin-top', '10px', 'important');
   websiteLink.style.setProperty('color', 'var(--nhn-green)', 'important');
