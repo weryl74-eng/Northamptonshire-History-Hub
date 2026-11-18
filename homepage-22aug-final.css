@@ -48,3 +48,5 @@
 #explore .author-more{margin:-8px 0 12px}
 #explore .author-more p{font-size:16px;line-height:1.55}
 .experience-extra-link{display:block;margin-top:10px;color:var(--green,#0b5a3e);font-size:14px;text-decoration:none}
+/* Show the whole picture (no cropping) for designed images like logos and book covers */
+#explore > img.feature-image-whole{object-fit:contain!important;background:#000!important}
