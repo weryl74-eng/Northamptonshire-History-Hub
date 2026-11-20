@@ -50,3 +50,7 @@
 .experience-extra-link{display:block;margin-top:10px;color:var(--green,#0b5a3e);font-size:14px;text-decoration:none}
 /* Show the whole picture (no cropping) for designed images like logos and book covers */
 #explore > img.feature-image-whole{object-fit:contain!important;background:#000!important}
+/* 20 Nov 2026: Featured Experience - image fills the full height of the card on wider screens, and the wording sits a little tighter */
+@media(min-width:901px){#explore{align-items:stretch!important}#explore > img.feature-image-whole{align-self:stretch!important;height:100%!important;min-height:0!important;max-height:none!important}}
+#explore .featured-copy h2{margin-top:4px!important;margin-bottom:8px!important}
+#explore .experience-extra-link{margin-top:6px!important}
