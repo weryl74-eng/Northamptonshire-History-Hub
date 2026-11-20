@@ -156,13 +156,15 @@ if (authorButton) {
   authorButton.style.setProperty('line-height', '1.2', 'important');
   authorButton.style.setProperty('white-space', 'normal', 'important');
 }
-if (authorCopy && !authorCopy.querySelector('.author-website-link')) {
+// The small link under the button is set on the card itself in index.html
+// (data-link-url and data-link-text), so changing author only means editing index.html.
+if (authorCopy && authorCard && authorCard.dataset.linkUrl && !authorCopy.querySelector('.author-website-link')) {
   const websiteLink = document.createElement('a');
   websiteLink.className = 'author-website-link';
-  websiteLink.href = 'https://jackpreston.co.uk/';
+  websiteLink.href = authorCard.dataset.linkUrl;
   websiteLink.target = '_blank';
   websiteLink.rel = 'noopener noreferrer';
-  websiteLink.textContent = '◉  Visit Jack’s website jackpreston.co.uk →';
+  websiteLink.textContent = '◉  ' + (authorCard.dataset.linkText || 'Visit website') + ' →';
   websiteLink.style.setProperty('display', 'block', 'important');
   websiteLink.style.setProperty('margin-top', '10px', 'important');
   websiteLink.style.setProperty('color', 'var(--nhn-green)', 'important');
@@ -178,11 +180,29 @@ const applyAuthorResponsiveLayout = () => {
     const size = window.innerWidth <= 520 ? '160px' : '170px';
     authorPhoto.style.setProperty('grid-column', '1', 'important');
     ['width','height','min-width','min-height','max-width','max-height'].forEach(p => authorPhoto.style.setProperty(p, size, 'important'));
+    authorCard.style.setProperty('align-items', 'center', 'important');
+    authorCard.style.setProperty('padding', '18px 22px', 'important');
+    authorPhoto.style.setProperty('aspect-ratio', '1 / 1', 'important');
+    authorPhoto.style.setProperty('border-radius', '50%', 'important');
+    authorPhoto.style.setProperty('align-self', 'center', 'important');
+    authorPhoto.style.setProperty('justify-self', 'center', 'important');
     authorCopy.style.setProperty('grid-column', '1', 'important');
   } else {
-    authorCard.style.setProperty('grid-template-columns', '190px minmax(0, 1fr)', 'important');
+    // 20 Nov 2026: on wider screens the photo fills the full height of the card,
+    // matching the Featured Experience card (it stays a circle on phones).
+    authorCard.style.setProperty('grid-template-columns', '40% minmax(0, 1fr)', 'important');
+    authorCard.style.setProperty('align-items', 'stretch', 'important');
+    authorCard.style.setProperty('padding', '12px 22px 12px 12px', 'important');
     authorCard.style.removeProperty('row-gap');
-    ['width','height','min-width','min-height','max-width','max-height'].forEach(p => authorPhoto.style.setProperty(p, '176px', 'important'));
+    ['min-width','min-height'].forEach(p => authorPhoto.style.setProperty(p, '0', 'important'));
+    ['max-width','max-height'].forEach(p => authorPhoto.style.setProperty(p, 'none', 'important'));
+    ['width','height'].forEach(p => authorPhoto.style.setProperty(p, '100%', 'important'));
+    authorPhoto.style.setProperty('aspect-ratio', 'auto', 'important');
+    authorPhoto.style.setProperty('border-radius', '10px', 'important');
+    authorPhoto.style.setProperty('object-position', '50% 30%', 'important');
+    authorPhoto.style.setProperty('align-self', 'stretch', 'important');
+    authorPhoto.style.setProperty('justify-self', 'stretch', 'important');
+    authorCopy.style.setProperty('align-self', 'center', 'important');
     authorPhoto.style.setProperty('grid-column', '1', 'important');
     authorCopy.style.setProperty('grid-column', '2', 'important');
   }

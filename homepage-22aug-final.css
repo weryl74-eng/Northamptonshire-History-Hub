@@ -34,3 +34,23 @@
 @media(max-width:1100px){.heritage-footer .footer-inner{grid-template-columns:170px 1fr 1fr!important}.heritage-footer nav{grid-column:1/-1!important;height:auto!important;margin-top:12px!important;padding-top:12px!important;border-top:1px solid #b38c39!important}.heritage-footer .footer-brand,.heritage-footer .footer-network,.heritage-footer .contact{height:145px!important}}
 @media(max-width:800px){.hero{height:auto!important;aspect-ratio:1728/864!important}.quick-links{grid-template-columns:repeat(5,145px)!important;overflow-x:auto!important;border-radius:34px!important;margin-top:-18px!important;margin-bottom:36px!important;padding:16px 12px 54px!important;justify-content:flex-start!important}.quick-links a,.quick-links .quick-link-pending{min-height:98px!important;padding-inline:12px!important}.quick-links .quick-icon{width:56px!important;height:56px!important}.quick-links .quick-icon svg{width:50px!important;height:50px!important}.quick-links:after{width:min(500px,80%)!important;height:44px!important;bottom:5px!important}.author-homepage-feature>img{width:210px!important;height:210px!important;min-width:210px!important;min-height:210px!important;max-width:210px!important;max-height:210px!important}.community-facebook-feature{width:min(calc(100% - 28px),680px)!important;padding:26px 10px 22px!important}.community-facebook-feature .ornate-flourish{width:260px!important}.community-facebook-feature .facebook-cta{font-size:21px!important}.heritage-footer{width:calc(100% - 12px)!important;padding:28px 18px 16px!important}.heritage-footer .footer-inner{grid-template-columns:1fr!important;text-align:center!important}.heritage-footer .footer-brand,.heritage-footer .footer-network,.heritage-footer .contact{height:auto!important;min-height:0!important;border:0!important;padding:12px 0!important;justify-content:center!important}.heritage-footer .footer-network{align-items:center!important}.heritage-footer .contact{text-align:center!important}.heritage-footer nav{grid-template-columns:1fr 1fr!important;width:100%!important}.footer-link-block{justify-content:center!important}}
 @media(max-width:520px){.author-homepage-feature>img{width:180px!important;height:180px!important;min-width:180px!important;min-height:180px!important;max-width:180px!important;max-height:180px!important}.community-facebook-feature h2{font-size:31px!important}.community-facebook-feature .community-tagline{font-size:21px!important}.community-facebook-feature .facebook-cta{font-size:19px!important;padding:17px 12px!important}.heritage-footer nav{grid-template-columns:1fr!important}.footer-link-block+.footer-link-block{border:0!important}}
+
+/* Featured author "Read more" (added Nov 2026). The extra text opens below the first sentence. */
+.author-more{margin:2px 0 0}
+.author-more summary{display:inline-block;cursor:pointer;list-style:none;color:var(--green,#0b5a3e);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.author-more summary::-webkit-details-marker{display:none}
+.author-more summary::after{content:" ▾"}
+.author-more[open] summary{font-size:0}
+.author-more[open] summary::after{content:"Read less ▴";font-size:14px}
+.author-more[open] summary{order:2}
+.author-more[open]{display:flex;flex-direction:column}
+.author-more p{margin:4px 0 4px;font-size:14px;line-height:1.45}
+#explore .author-more{margin:-8px 0 12px}
+#explore .author-more p{font-size:16px;line-height:1.55}
+.experience-extra-link{display:block;margin-top:10px;color:var(--green,#0b5a3e);font-size:14px;text-decoration:none}
+/* Show the whole picture (no cropping) for designed images like logos and book covers */
+#explore > img.feature-image-whole{object-fit:contain!important;background:#000!important}
+/* 20 Nov 2026: Featured Experience - image fills the full height of the card on wider screens, and the wording sits a little tighter */
+@media(min-width:901px){#explore{align-items:stretch!important}#explore > img.feature-image-whole{align-self:stretch!important;height:100%!important;min-height:0!important;max-height:none!important}}
+#explore .featured-copy h2{margin-top:4px!important;margin-bottom:8px!important}
+#explore .experience-extra-link{margin-top:6px!important}
