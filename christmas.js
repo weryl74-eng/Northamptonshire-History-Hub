@@ -36,7 +36,7 @@ var CHRISTMAS_MESSAGE = "Season’s Greetings\nfrom the Northants History Networ
 
   var css = document.createElement("style");
   css.textContent =
-    "@font-face{font-family:'NHN Great Vibes';src:url('assets/great-vibes.woff2') format('woff2');font-display:swap}" +
+    "@font-face{font-family:'NHN Great Vibes';src:url('great-vibes.woff2') format('woff2');font-display:swap}" +
     ".nhn-snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}" +
     ".nhn-xmas-message{position:absolute;z-index:6;left:50%;top:16px;transform:translateX(-50%);" +
     "width:max-content;max-width:46vw;white-space:pre-line;margin:0;text-align:center;" +
